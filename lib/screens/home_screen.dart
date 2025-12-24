@@ -1,0 +1,319 @@
+import 'dart:math';
+import 'package:flutter/material.dart';
+import '../models/food_item.dart';
+import '../widgets/lucky_wheel.dart';
+import 'settings_screen.dart';
+import 'result_screen.dart';
+
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
+  late AnimationController _spinController;
+  bool _isSpinning = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _spinController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 3000),
+    );
+  }
+
+  @override
+  void dispose() {
+    _spinController.dispose();
+    super.dispose();
+  }
+
+  void _spinWheel() async {
+    if (_isSpinning) return;
+
+    setState(() => _isSpinning = true);
+
+    // Random rotation (5-8 full spins + random position)
+    final randomSpins = 5 + Random().nextInt(4);
+    final randomIndex = Random().nextInt(FoodItem.foodList.length);
+    final targetRotation = (randomSpins * 2 * pi) + (randomIndex * (2 * pi / 6));
+
+    _spinController.reset();
+    await _spinController.animateTo(
+      1.0,
+      curve: Curves.easeOutQuint,
+    );
+
+    setState(() => _isSpinning = false);
+
+    // Navigate to result screen
+    if (mounted) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ResultScreen(
+            foodItem: FoodItem.foodList[randomIndex],
+          ),
+        ),
+      );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final bgColor = isDark ? const Color(0xFF221a10) : const Color(0xFFFFFDF5);
+    final primaryColor = const Color(0xFFEC9213);
+
+    return Scaffold(
+      backgroundColor: bgColor,
+      body: SafeArea(
+        child: Column(
+          children: [
+            // Header
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  // Menu Icon (left)
+                  InkWell(
+                    onTap: () {
+                      // Open menu/drawer
+                    },
+                    borderRadius: BorderRadius.circular(12),
+                    child: Container(
+                      width: 48,
+                      height: 48,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Icon(
+                        Icons.menu,
+                        color: primaryColor,
+                        size: 28,
+                      ),
+                    ),
+                  ),
+                  // Title (center)
+                  const Expanded(
+                    child: Text(
+                      'Hôm nay ăn gì nhỉ? 🤔',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  // Settings Icon (right)
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SettingsScreen(),
+                        ),
+                      );
+                    },
+                    borderRadius: BorderRadius.circular(12),
+                    child: Container(
+                      width: 48,
+                      height: 48,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: const Icon(Icons.settings, size: 28),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            // Lucky Wheel - Takes up available space
+            Expanded(
+              child: Center(
+                child: LuckyWheel(
+                  controller: _spinController,
+                  isSpinning: _isSpinning,
+                ),
+              ),
+            ),
+            // Spin Button Section
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  // Spin Button with gradient
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(32),
+                      gradient: const LinearGradient(
+                        colors: [Color(0xFFEC9213), Color(0xFFFF6B00)],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: const Color(0xFFEC9213).withOpacity(0.4),
+                          blurRadius: 20,
+                          spreadRadius: 0,
+                          offset: const Offset(0, 8),
+                        ),
+                      ],
+                    ),
+                    child: Material(
+                      color: Colors.transparent,
+                      child: InkWell(
+                        onTap: _isSpinning ? null : _spinWheel,
+                        borderRadius: BorderRadius.circular(32),
+                        child: Container(
+                          height: 56,
+                          alignment: Alignment.center,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Icon(
+                                Icons.casino,
+                                color: Colors.white,
+                                size: 24,
+                              ),
+                              const SizedBox(width: 12),
+                              Text(
+                                _isSpinning ? 'ĐANG QUAY...' : 'QUAY NGAY',
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w800,
+                                  letterSpacing: 1.5,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    'Nhấn để chọn món ngẫu nhiên',
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: isDark ? Colors.grey[500] : Colors.grey[600],
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 16),
+            // Ad Banner at the bottom
+            Container(
+              margin: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: isDark ? const Color(0xFF2d2418) : Colors.white,
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(
+                  color: isDark ? Colors.grey[800]! : Colors.grey[200]!,
+                  width: 1,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.08),
+                    blurRadius: 10,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: Row(
+                children: [
+                  // Ad Image
+                  Container(
+                    width: 56,
+                    height: 56,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      color: isDark ? Colors.grey[700] : Colors.grey[200],
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(16),
+                      child: Image.network(
+                        'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=400',
+                        fit: BoxFit.cover,
+                        errorBuilder: (context, error, stackTrace) =>
+                            Icon(Icons.fastfood, color: primaryColor, size: 32),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  // Ad Content
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 8,
+                                vertical: 3,
+                              ),
+                              decoration: BoxDecoration(
+                                color: primaryColor.withOpacity(0.15),
+                                borderRadius: BorderRadius.circular(6),
+                              ),
+                              child: Text(
+                                'AD',
+                                style: TextStyle(
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w800,
+                                  color: primaryColor,
+                                  letterSpacing: 0.5,
+                                ),
+                              ),
+                            ),
+                            Icon(
+                              Icons.more_horiz,
+                              size: 20,
+                              color: isDark ? Colors.grey[600] : Colors.grey[400],
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 4),
+                        const Text(
+                          'Combo Gà Rán + Pepsi Chỉ 39k',
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        const SizedBox(height: 2),
+                        Text(
+                          'Ưu đãi độc quyền cho thành viên mới',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: isDark ? Colors.grey[500] : Colors.grey[600],
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
