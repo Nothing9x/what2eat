@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'category_list_screen.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -181,7 +182,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   title: 'Danh sách món ăn',
                   subtitle: 'Thêm/xóa món ăn yêu thích',
                   trailing: const Icon(Icons.chevron_right),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const CategoryListScreen(),
+                      ),
+                    );
+                  },
                 ),
                 Divider(height: 1, color: Colors.grey[300]),
                 _buildSettingTile(

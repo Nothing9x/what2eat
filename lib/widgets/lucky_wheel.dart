@@ -5,11 +5,13 @@ import '../models/food_item.dart';
 class LuckyWheel extends StatelessWidget {
   final AnimationController controller;
   final bool isSpinning;
+  final List<FoodItem> items;
 
   const LuckyWheel({
     super.key,
     required this.controller,
     required this.isSpinning,
+    required this.items,
   });
 
   @override
@@ -87,7 +89,7 @@ class LuckyWheel extends StatelessWidget {
                           CustomPaint(
                             size: const Size(304, 304),
                             painter: WheelDividerPainter(
-                              sections: FoodItem.foodList.length,
+                              sections: items.length,
                               color: isDark
                                   ? Colors.white.withOpacity(0.3)
                                   : Colors.black.withOpacity(0.15),
@@ -95,9 +97,13 @@ class LuckyWheel extends StatelessWidget {
                           ),
                           // Food items
                           ...List.generate(
-                            FoodItem.foodList.length,
+                            items.length,
                             (index) {
-                              final angle = (index * 2 * pi / 6);
+                              final angle = (index * 2 * pi / items.length);
+                              // Dynamic font size based on item count
+                              final fontSize = items.length > 10 ? 24.0 : 32.0;
+                              final nameFontSize = items.length > 10 ? 10.0 : 12.0;
+
                               return Transform.rotate(
                                 angle: angle,
                                 child: Align(
@@ -110,14 +116,14 @@ class LuckyWheel extends StatelessWidget {
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                           Text(
-                                            FoodItem.foodList[index].icon,
-                                            style: const TextStyle(fontSize: 32),
+                                            items[index].icon,
+                                            style: TextStyle(fontSize: fontSize),
                                           ),
                                           const SizedBox(height: 4),
                                           Text(
-                                            FoodItem.foodList[index].name,
+                                            items[index].name,
                                             style: TextStyle(
-                                              fontSize: 12,
+                                              fontSize: nameFontSize,
                                               fontWeight: FontWeight.bold,
                                               color: isDark
                                                   ? Colors.white

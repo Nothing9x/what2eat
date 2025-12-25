@@ -1,17 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'providers/category_provider.dart';
+import 'services/storage_service.dart';
 import 'screens/home_screen.dart';
 
-void main() {
-  runApp(const What2EatApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final prefs = await SharedPreferences.getInstance();
+  final storage = StorageService(prefs);
+
+  runApp(What2EatApp(storage: storage));
 }
 
 class What2EatApp extends StatelessWidget {
-  const What2EatApp({super.key});
+  final StorageService storage;
+
+  const What2EatApp({super.key, required this.storage});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => CategoryProvider(storage)..loadCategories(),
+        ),
+      ],
+      child: MaterialApp(
       title: 'Ăn Gì Đây?',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -34,7 +50,8 @@ class What2EatApp extends StatelessWidget {
           ThemeData.dark().textTheme,
         ),
       ),
-      home: const HomeScreen(),
+        home: const HomeScreen(),
+      ),
     );
   }
 }

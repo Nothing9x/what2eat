@@ -1,17 +1,65 @@
+import 'package:uuid/uuid.dart';
+
 class FoodItem {
+  final String id;
+  final String categoryId;
   final String name;
   final String icon;
   final String description;
   final String imageUrl;
 
-  const FoodItem({
+  FoodItem({
+    String? id,
+    String? categoryId,
     required this.name,
     required this.icon,
     required this.description,
     required this.imageUrl,
-  });
+  })  : id = id ?? const Uuid().v4(),
+        categoryId = categoryId ?? '';
 
-  static const List<FoodItem> foodList = [
+  FoodItem copyWith({
+    String? id,
+    String? categoryId,
+    String? name,
+    String? icon,
+    String? description,
+    String? imageUrl,
+  }) {
+    return FoodItem(
+      id: id ?? this.id,
+      categoryId: categoryId ?? this.categoryId,
+      name: name ?? this.name,
+      icon: icon ?? this.icon,
+      description: description ?? this.description,
+      imageUrl: imageUrl ?? this.imageUrl,
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'categoryId': categoryId,
+      'name': name,
+      'icon': icon,
+      'description': description,
+      'imageUrl': imageUrl,
+    };
+  }
+
+  factory FoodItem.fromJson(Map<String, dynamic> json) {
+    return FoodItem(
+      id: json['id'] as String?,
+      categoryId: json['categoryId'] as String?,
+      name: json['name'] as String,
+      icon: json['icon'] as String,
+      description: json['description'] as String,
+      imageUrl: json['imageUrl'] as String,
+    );
+  }
+
+  // Keep the static list for migration purposes (will be removed later)
+  static final List<FoodItem> foodList = [
     FoodItem(
       name: 'Cơm Tấm',
       icon: '🍚',

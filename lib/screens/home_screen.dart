@@ -1,9 +1,10 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import '../models/food_item.dart';
+import 'package:provider/provider.dart';
+import '../providers/category_provider.dart';
 import '../widgets/lucky_wheel.dart';
-import 'settings_screen.dart';
 import 'result_screen.dart';
+import 'category_list_screen.dart';
 
 // Custom curve with gradual start and very slow 1s stop at end
 class SpinWheelCurve extends Curve {
@@ -57,12 +58,25 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   void _spinWheel() async {
     if (_isSpinning) return;
 
+    final provider = context.read<CategoryProvider>();
+    final items = provider.selectedCategoryItems;
+
+    // Check if there are items to spin
+    if (items.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Danh sách này chưa có món ăn. Vui lòng thêm món!'),
+        ),
+      );
+      return;
+    }
+
     setState(() => _isSpinning = true);
 
     // Random rotation (5-8 full spins + random position)
     final randomSpins = 5 + Random().nextInt(4);
-    final randomIndex = Random().nextInt(FoodItem.foodList.length);
-    final targetRotation = (randomSpins * 2 * pi) + (randomIndex * (2 * pi / 6));
+    final randomIndex = Random().nextInt(items.length);
+    final targetRotation = (randomSpins * 2 * pi) + (randomIndex * (2 * pi / items.length));
 
     _spinController.reset();
     await _spinController.animateTo(
@@ -78,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         context,
         MaterialPageRoute(
           builder: (context) => ResultScreen(
-            foodItem: FoodItem.foodList[randomIndex],
+            foodItem: items[randomIndex],
           ),
         ),
       );
@@ -132,13 +146,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       ),
                     ),
                   ),
-                  // Settings Icon (right)
+                  // Manage Lists Icon (right)
                   InkWell(
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const SettingsScreen(),
+                          builder: (context) => const CategoryListScreen(),
                         ),
                       );
                     },
@@ -149,19 +163,141 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                       ),
-                      child: const Icon(Icons.settings, size: 28),
+                      child: Icon(
+                        Icons.edit_note,
+                        size: 28,
+                        color: primaryColor,
+                      ),
                     ),
                   ),
                 ],
               ),
             ),
+            // Horizontal Category Chips
+            Consumer<CategoryProvider>(
+              builder: (context, provider, _) {
+                final categories = provider.categories;
+                final selectedCategory = provider.selectedCategory;
+
+                if (categories.isEmpty) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                    child: Container(
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: isDark ? const Color(0xFF2d2418) : Colors.white,
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(
+                          color: isDark ? Colors.grey[800]! : Colors.grey[300]!,
+                        ),
+                      ),
+                      child: Row(
+                        children: [
+                          Icon(Icons.info_outline, color: primaryColor, size: 20),
+                          const SizedBox(width: 8),
+                          Expanded(
+                            child: Text(
+                              'Chưa có danh sách món ăn',
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: isDark ? Colors.grey[400] : Colors.grey[600],
+                              ),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const CategoryListScreen(),
+                                ),
+                              );
+                            },
+                            child: const Text('Tạo ngay'),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                }
+
+                return SizedBox(
+                  height: 48,
+                  child: ListView.separated(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
+                    scrollDirection: Axis.horizontal,
+                    itemCount: categories.length,
+                    separatorBuilder: (context, index) => const SizedBox(width: 12),
+                    itemBuilder: (context, index) {
+                      final category = categories[index];
+                      final isSelected = selectedCategory?.id == category.id;
+
+                      return InkWell(
+                        onTap: () => provider.setSelectedCategory(category.id),
+                        borderRadius: BorderRadius.circular(20),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                          decoration: BoxDecoration(
+                            color: isSelected
+                                ? primaryColor
+                                : (isDark ? const Color(0xFF2d2418) : Colors.white),
+                            borderRadius: BorderRadius.circular(20),
+                            border: Border.all(
+                              color: isSelected
+                                  ? primaryColor
+                                  : (isDark ? Colors.grey[800]! : Colors.grey[300]!),
+                            ),
+                            boxShadow: isSelected
+                                ? [
+                                    BoxShadow(
+                                      color: primaryColor.withOpacity(0.3),
+                                      blurRadius: 12,
+                                      offset: const Offset(0, 4),
+                                    ),
+                                  ]
+                                : null,
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                category.icon,
+                                style: const TextStyle(fontSize: 18),
+                              ),
+                              const SizedBox(width: 8),
+                              Text(
+                                category.name,
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: isSelected ? FontWeight.bold : FontWeight.w600,
+                                  color: isSelected
+                                      ? Colors.white
+                                      : (isDark ? Colors.grey[300] : Colors.grey[600]),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                );
+              },
+            ),
             // Lucky Wheel - Takes up available space
             Expanded(
-              child: Center(
-                child: LuckyWheel(
-                  controller: _spinController,
-                  isSpinning: _isSpinning,
-                ),
+              child: Consumer<CategoryProvider>(
+                builder: (context, provider, _) {
+                  final items = provider.selectedCategoryItems;
+
+                  return Center(
+                    child: LuckyWheel(
+                      controller: _spinController,
+                      isSpinning: _isSpinning,
+                      items: items,
+                    ),
+                  );
+                },
               ),
             ),
             // Spin Button Section
