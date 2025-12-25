@@ -82,44 +82,57 @@ class LuckyWheel extends StatelessWidget {
                         ),
                       ),
                       child: Stack(
-                        children: List.generate(
-                          FoodItem.foodList.length,
-                          (index) {
-                            final angle = (index * 2 * pi / 6);
-                            return Transform.rotate(
-                              angle: angle,
-                              child: Align(
-                                alignment: Alignment.topCenter,
-                                child: Padding(
-                                  padding: const EdgeInsets.only(top: 35),
-                                  child: Transform.rotate(
-                                    angle: -rotation - angle,
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        Text(
-                                          FoodItem.foodList[index].icon,
-                                          style: const TextStyle(fontSize: 32),
-                                        ),
-                                        const SizedBox(height: 4),
-                                        Text(
-                                          FoodItem.foodList[index].name,
-                                          style: TextStyle(
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.bold,
-                                            color: isDark
-                                                ? Colors.white
-                                                : Colors.grey[800],
+                        children: [
+                          // Divider lines between sections (positioned at the boundary)
+                          CustomPaint(
+                            size: const Size(304, 304),
+                            painter: WheelDividerPainter(
+                              sections: FoodItem.foodList.length,
+                              color: isDark
+                                  ? Colors.white.withOpacity(0.3)
+                                  : Colors.black.withOpacity(0.15),
+                            ),
+                          ),
+                          // Food items
+                          ...List.generate(
+                            FoodItem.foodList.length,
+                            (index) {
+                              final angle = (index * 2 * pi / 6);
+                              return Transform.rotate(
+                                angle: angle,
+                                child: Align(
+                                  alignment: Alignment.topCenter,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(top: 35),
+                                    child: Transform.rotate(
+                                      angle: -rotation - angle,
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Text(
+                                            FoodItem.foodList[index].icon,
+                                            style: const TextStyle(fontSize: 32),
                                           ),
-                                        ),
-                                      ],
+                                          const SizedBox(height: 4),
+                                          Text(
+                                            FoodItem.foodList[index].name,
+                                            style: TextStyle(
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.bold,
+                                              color: isDark
+                                                  ? Colors.white
+                                                  : Colors.grey[800],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            );
-                          },
-                        ),
+                              );
+                            },
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -191,6 +204,36 @@ class TrianglePainter extends CustomPainter {
     path.close();
 
     canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+}
+
+class WheelDividerPainter extends CustomPainter {
+  final int sections;
+  final Color color;
+
+  WheelDividerPainter({required this.sections, required this.color});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = color
+      ..strokeWidth = 2
+      ..style = PaintingStyle.stroke;
+
+    final center = Offset(size.width / 2, size.height / 2);
+    final radius = size.width / 2;
+
+    // Draw radial lines from center to edge, positioned between sections
+    for (int i = 0; i < sections; i++) {
+      final angle = (i * 2 * pi / sections) - (pi / sections);
+      final x = center.dx + radius * sin(angle);
+      final y = center.dy - radius * cos(angle);
+
+      canvas.drawLine(center, Offset(x, y), paint);
+    }
   }
 
   @override

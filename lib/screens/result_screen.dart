@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 import '../models/food_item.dart';
 
@@ -14,20 +15,30 @@ class ResultScreen extends StatefulWidget {
 }
 
 class _ResultScreenState extends State<ResultScreen>
-    with SingleTickerProviderStateMixin {
+    with TickerProviderStateMixin {
   late AnimationController _animationController;
+  late AnimationController _confettiController;
   late Animation<double> _scaleAnimation;
   late Animation<double> _fadeAnimation;
+  final List<ConfettiParticle> _confettiParticles = [];
 
   @override
   void initState() {
     super.initState();
+
+    // Main entrance animation
     _animationController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 800),
+      duration: const Duration(milliseconds: 1500),
     );
 
-    _scaleAnimation = Tween<double>(begin: 0.5, end: 1.0).animate(
+    // Confetti animation - 6 seconds for more natural fall
+    _confettiController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 6000),
+    );
+
+    _scaleAnimation = Tween<double>(begin: 0.3, end: 1.0).animate(
       CurvedAnimation(
         parent: _animationController,
         curve: Curves.elasticOut,
@@ -37,16 +48,54 @@ class _ResultScreenState extends State<ResultScreen>
     _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
         parent: _animationController,
-        curve: Curves.easeIn,
+        curve: const Interval(0.0, 0.5, curve: Curves.easeIn),
       ),
     );
 
+    // Generate confetti particles
+    _generateConfetti();
+
+    // Start animations
     _animationController.forward();
+    Future.delayed(const Duration(milliseconds: 300), () {
+      if (mounted) _confettiController.forward();
+    });
+  }
+
+  void _generateConfetti() {
+    final random = Random();
+    for (int i = 0; i < 60; i++) {
+      _confettiParticles.add(
+        ConfettiParticle(
+          x: random.nextDouble(),
+          y: -0.1 - random.nextDouble() * 0.2,
+          color: _getRandomColor(random),
+          size: 6 + random.nextDouble() * 8,
+          rotation: random.nextDouble() * 2 * pi,
+          rotationSpeed: (random.nextDouble() - 0.5) * 3,
+          velocity: 0.8 + random.nextDouble() * 0.4,
+          drift: (random.nextDouble() - 0.5) * 0.4,
+        ),
+      );
+    }
+  }
+
+  Color _getRandomColor(Random random) {
+    final colors = [
+      const Color(0xFFEC9213),
+      const Color(0xFFe94560),
+      const Color(0xFF10b981),
+      const Color(0xFFf59e0b),
+      const Color(0xFF8b5cf6),
+      const Color(0xFF06b6d4),
+    ];
+    return colors[random.nextInt(colors.length)];
   }
 
   @override
   void dispose() {
     _animationController.dispose();
+    _confettiController.dispose();
     super.dispose();
   }
 
@@ -61,8 +110,20 @@ class _ResultScreenState extends State<ResultScreen>
       backgroundColor: bgColor,
       body: Stack(
         children: [
-          // Floating decorations
-          ..._buildFloatingDecorations(isDark, primaryColor),
+          // Confetti animation
+          AnimatedBuilder(
+            animation: _confettiController,
+            builder: (context, child) {
+              return CustomPaint(
+                size: MediaQuery.of(context).size,
+                painter: ConfettiPainter(
+                  particles: _confettiParticles,
+                  progress: _confettiController.value,
+                ),
+              );
+            },
+          ),
+          // Main content
           SafeArea(
             child: Column(
               children: [
@@ -121,32 +182,66 @@ class _ResultScreenState extends State<ResultScreen>
                             ),
                           ),
                         ),
-                        const SizedBox(height: 32),
-                        // Food image
+                        const SizedBox(height: 24),
+                        // Food image with sparkle effect
                         ScaleTransition(
                           scale: _scaleAnimation,
                           child: Stack(
                             alignment: Alignment.center,
                             children: [
+                              // Animated sparkles - slower and more natural
+                              ...List.generate(8, (index) {
+                                final angle = (index * pi / 4);
+                                return AnimatedBuilder(
+                                  animation: _confettiController,
+                                  builder: (context, child) {
+                                    final progress = _confettiController.value;
+                                    // Slower burst out (0-50%) and slower fade (50-100%)
+                                    final distance = progress < 0.5
+                                        ? (progress / 0.5) * 70
+                                        : 70 - ((progress - 0.5) / 0.5) * 70;
+                                    final opacity = progress < 0.4
+                                        ? (progress / 0.4)
+                                        : progress < 0.7
+                                            ? 1.0
+                                            : 1 - ((progress - 0.7) / 0.3);
+
+                                    return Transform.translate(
+                                      offset: Offset(
+                                        cos(angle) * distance,
+                                        sin(angle) * distance,
+                                      ),
+                                      child: Opacity(
+                                        opacity: opacity.clamp(0.0, 1.0),
+                                        child: Icon(
+                                          Icons.star,
+                                          color: primaryColor,
+                                          size: 20,
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                );
+                              }),
                               // Glow effect
                               Container(
-                                width: 280,
-                                height: 280,
+                                width: 220,
+                                height: 220,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   boxShadow: [
                                     BoxShadow(
-                                      color: primaryColor.withOpacity(0.2),
-                                      blurRadius: 60,
-                                      spreadRadius: 30,
+                                      color: primaryColor.withOpacity(0.3),
+                                      blurRadius: 50,
+                                      spreadRadius: 15,
                                     ),
                                   ],
                                 ),
                               ),
                               // Image container
                               Container(
-                                width: 256,
-                                height: 256,
+                                width: 200,
+                                height: 200,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   border: Border.all(
@@ -165,62 +260,15 @@ class _ResultScreenState extends State<ResultScreen>
                                   child: Image.network(
                                     widget.foodItem.imageUrl,
                                     fit: BoxFit.cover,
-                                    errorBuilder:
-                                        (context, error, stackTrace) =>
-                                            Container(
+                                    errorBuilder: (context, error, stackTrace) =>
+                                        Container(
                                       color: Colors.grey[300],
                                       child: Center(
                                         child: Text(
                                           widget.foodItem.icon,
-                                          style: const TextStyle(fontSize: 80),
+                                          style: const TextStyle(fontSize: 60),
                                         ),
                                       ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              // Yummy badge
-                              Positioned(
-                                bottom: -10,
-                                right: 40,
-                                child: Transform.rotate(
-                                  angle: -0.1,
-                                  child: Container(
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 16,
-                                      vertical: 8,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      color: surfaceColor,
-                                      borderRadius: BorderRadius.circular(12),
-                                      border: Border.all(
-                                        color: primaryColor.withOpacity(0.2),
-                                      ),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withOpacity(0.1),
-                                          blurRadius: 8,
-                                        ),
-                                      ],
-                                    ),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        Icon(
-                                          Icons.thumb_up,
-                                          size: 16,
-                                          color: primaryColor,
-                                        ),
-                                        const SizedBox(width: 4),
-                                        Text(
-                                          'Yummy!',
-                                          style: TextStyle(
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.bold,
-                                            color: primaryColor,
-                                          ),
-                                        ),
-                                      ],
                                     ),
                                   ),
                                 ),
@@ -228,7 +276,7 @@ class _ResultScreenState extends State<ResultScreen>
                             ],
                           ),
                         ),
-                        const SizedBox(height: 32),
+                        const SizedBox(height: 24),
                         // Food name and description
                         FadeTransition(
                           opacity: _fadeAnimation,
@@ -237,17 +285,17 @@ class _ResultScreenState extends State<ResultScreen>
                               Text(
                                 widget.foodItem.name,
                                 style: const TextStyle(
-                                  fontSize: 36,
+                                  fontSize: 28,
                                   fontWeight: FontWeight.w900,
                                   height: 1.2,
                                 ),
                                 textAlign: TextAlign.center,
                               ),
-                              const SizedBox(height: 12),
+                              const SizedBox(height: 8),
                               Text(
                                 widget.foodItem.description,
                                 style: TextStyle(
-                                  fontSize: 16,
+                                  fontSize: 14,
                                   color: isDark
                                       ? Colors.white.withOpacity(0.7)
                                       : Colors.black.withOpacity(0.7),
@@ -258,7 +306,7 @@ class _ResultScreenState extends State<ResultScreen>
                             ],
                           ),
                         ),
-                        const SizedBox(height: 40),
+                        const SizedBox(height: 20),
                       ],
                     ),
                   ),
@@ -290,8 +338,7 @@ class _ResultScreenState extends State<ResultScreen>
                             borderRadius: BorderRadius.circular(28),
                           ),
                           elevation: 8,
-                          shadowColor:
-                              const Color(0xFFEE4D2D).withOpacity(0.3),
+                          shadowColor: const Color(0xFFEE4D2D).withOpacity(0.3),
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -320,8 +367,7 @@ class _ResultScreenState extends State<ResultScreen>
                             borderRadius: BorderRadius.circular(28),
                           ),
                           elevation: 8,
-                          shadowColor:
-                              const Color(0xFF00B14F).withOpacity(0.3),
+                          shadowColor: const Color(0xFF00B14F).withOpacity(0.3),
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -373,66 +419,74 @@ class _ResultScreenState extends State<ResultScreen>
       ),
     );
   }
+}
 
-  List<Widget> _buildFloatingDecorations(bool isDark, Color primaryColor) {
-    return [
-      _buildFloatingIcon(
-        icon: Icons.celebration,
-        color: primaryColor,
-        top: 80,
-        left: 40,
-        size: 40,
-        delay: 0,
-      ),
-      _buildFloatingIcon(
-        icon: Icons.star,
-        color: const Color(0xFFe94560),
-        top: 100,
-        right: 60,
-        size: 30,
-        delay: 1,
-      ),
-      _buildFloatingIcon(
-        icon: Icons.favorite,
-        color: const Color(0xFF10b981),
-        bottom: 200,
-        left: 80,
-        size: 40,
-        delay: 2,
-      ),
-    ];
+class ConfettiParticle {
+  final double x;
+  final double y;
+  final Color color;
+  final double size;
+  final double rotation;
+  final double rotationSpeed;
+  final double velocity;
+  final double drift;
+
+  ConfettiParticle({
+    required this.x,
+    required this.y,
+    required this.color,
+    required this.size,
+    required this.rotation,
+    required this.rotationSpeed,
+    required this.velocity,
+    required this.drift,
+  });
+}
+
+class ConfettiPainter extends CustomPainter {
+  final List<ConfettiParticle> particles;
+  final double progress;
+
+  ConfettiPainter({required this.particles, required this.progress});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    for (final particle in particles) {
+      // Natural gravity-like fall with acceleration
+      final currentY = particle.y + (progress * progress * particle.velocity * 0.8);
+      // Gentle side-to-side drift
+      final currentX = particle.x + (sin(progress * pi * 3) * particle.drift * 0.15);
+      // Slower, more natural rotation
+      final currentRotation = particle.rotation + (progress * particle.rotationSpeed * 0.7);
+
+      if (currentY > 1.3) continue; // Don't draw particles that have fallen off screen
+
+      // Fade out more gradually
+      final opacity = progress < 0.8 ? 1.0 : 1.0 - ((progress - 0.8) / 0.2);
+
+      final paint = Paint()
+        ..color = particle.color.withOpacity(opacity.clamp(0.0, 1.0))
+        ..style = PaintingStyle.fill;
+
+      canvas.save();
+      canvas.translate(
+        currentX * size.width,
+        currentY * size.height,
+      );
+      canvas.rotate(currentRotation);
+
+      // Draw confetti as rectangles
+      final rect = Rect.fromCenter(
+        center: Offset.zero,
+        width: particle.size,
+        height: particle.size * 1.5,
+      );
+      canvas.drawRect(rect, paint);
+
+      canvas.restore();
+    }
   }
 
-  Widget _buildFloatingIcon({
-    required IconData icon,
-    required Color color,
-    double? top,
-    double? bottom,
-    double? left,
-    double? right,
-    required double size,
-    required int delay,
-  }) {
-    return Positioned(
-      top: top,
-      bottom: bottom,
-      left: left,
-      right: right,
-      child: TweenAnimationBuilder<double>(
-        tween: Tween(begin: 0, end: 10),
-        duration: const Duration(seconds: 3),
-        builder: (context, value, child) {
-          return Transform.translate(
-            offset: Offset(0, value),
-            child: child,
-          );
-        },
-        child: Icon(
-          icon,
-          size: size,
-          color: color.withOpacity(0.3),
-        ),
-      ),
-    );
-  }
+  @override
+  bool shouldRepaint(ConfettiPainter oldDelegate) => true;
 }

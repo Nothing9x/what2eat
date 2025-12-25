@@ -5,6 +5,29 @@ import '../widgets/lucky_wheel.dart';
 import 'settings_screen.dart';
 import 'result_screen.dart';
 
+// Custom curve with gradual start and very slow 1s stop at end
+class SpinWheelCurve extends Curve {
+  const SpinWheelCurve();
+
+  @override
+  double transformInternal(double t) {
+    // For 20s total: slow start, fast middle, 1s (5%) extremely slow stop
+    if (t < 0.05) {
+      // Gradual acceleration at start (first 1 second)
+      return (t / 0.05) * (t / 0.05) * 0.01;
+    } else if (t < 0.95) {
+      // Fast middle section (seconds 1-19)
+      final adjusted = (t - 0.05) / 0.9;
+      return 0.01 + (adjusted * adjusted * (3 - 2 * adjusted)) * 0.94;
+    } else {
+      // Extremely slow deceleration at end (last 1 second = 5%)
+      final adjusted = (t - 0.95) / 0.05;
+      // Ultra-extreme exponential decay - crawls to a stop
+      return 0.95 + (1 - pow(1 - adjusted, 10.0)) * 0.05;
+    }
+  }
+}
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -21,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     super.initState();
     _spinController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 3000),
+      duration: const Duration(milliseconds: 20000),
     );
   }
 
@@ -44,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     _spinController.reset();
     await _spinController.animateTo(
       1.0,
-      curve: Curves.easeOutQuint,
+      curve: const SpinWheelCurve(),
     );
 
     setState(() => _isSpinning = false);
