@@ -7,26 +7,14 @@ import 'result_screen.dart';
 import 'category_list_screen.dart';
 import 'notification_settings_screen.dart';
 
-// Custom curve with gradual start and very slow 1s stop at end
+// Custom curve for natural spin with slow deceleration
 class SpinWheelCurve extends Curve {
   const SpinWheelCurve();
 
   @override
   double transformInternal(double t) {
-    // For 20s total: slow start, fast middle, 1s (5%) extremely slow stop
-    if (t < 0.05) {
-      // Gradual acceleration at start (first 1 second)
-      return (t / 0.05) * (t / 0.05) * 0.01;
-    } else if (t < 0.95) {
-      // Fast middle section (seconds 1-19)
-      final adjusted = (t - 0.05) / 0.9;
-      return 0.01 + (adjusted * adjusted * (3 - 2 * adjusted)) * 0.94;
-    } else {
-      // Extremely slow deceleration at end (last 1 second = 5%)
-      final adjusted = (t - 0.95) / 0.05;
-      // Ultra-extreme exponential decay - crawls to a stop
-      return 0.95 + (1 - pow(1 - adjusted, 10.0)) * 0.05;
-    }
+    // Easing out cubic curve for natural deceleration
+    return 1 - pow(1 - t, 3).toDouble();
   }
 }
 
@@ -40,13 +28,14 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   late AnimationController _spinController;
   bool _isSpinning = false;
+  double _targetRotation = 0;
 
   @override
   void initState() {
     super.initState();
     _spinController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 20000),
+      duration: const Duration(milliseconds: 4000), // 4 seconds for natural spin
     );
   }
 
@@ -72,12 +61,25 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       return;
     }
 
-    setState(() => _isSpinning = true);
-
-    // Random rotation (5-8 full spins + random position)
-    final randomSpins = 5 + Random().nextInt(4);
+    // Select random item
     final randomIndex = Random().nextInt(items.length);
-    final targetRotation = (randomSpins * 2 * pi) + (randomIndex * (2 * pi / items.length));
+
+    // Calculate rotation to land on selected item
+    // Items are positioned starting from top (index 0) going clockwise
+    // We want to rotate so the selected item ends up at the top (under the pointer)
+    final itemAngle = 2 * pi / items.length;
+    const baseSpins = 5; // Number of full rotations for visual effect
+
+    // Calculate target rotation:
+    // - baseSpins * 2 * pi: several full rotations
+    // - randomIndex * itemAngle: rotate to position the selected item at top
+    // We rotate clockwise, so we need to rotate to align item to top
+    final targetRotation = (baseSpins * 2 * pi) - (randomIndex * itemAngle);
+
+    setState(() {
+      _isSpinning = true;
+      _targetRotation = targetRotation;
+    });
 
     _spinController.reset();
     await _spinController.animateTo(
@@ -86,6 +88,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     );
 
     setState(() => _isSpinning = false);
+
+    // Small delay before showing result
+    await Future.delayed(const Duration(milliseconds: 300));
 
     // Navigate to result screen
     if (mounted) {
@@ -337,6 +342,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       controller: _spinController,
                       isSpinning: _isSpinning,
                       items: items,
+                      targetRotation: _targetRotation,
                     ),
                   );
                 },

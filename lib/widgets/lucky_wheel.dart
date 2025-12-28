@@ -6,12 +6,14 @@ class LuckyWheel extends StatelessWidget {
   final AnimationController controller;
   final bool isSpinning;
   final List<FoodItem> items;
+  final double targetRotation;
 
   const LuckyWheel({
     super.key,
     required this.controller,
     required this.isSpinning,
     required this.items,
+    this.targetRotation = 0,
   });
 
   @override
@@ -22,7 +24,8 @@ class LuckyWheel extends StatelessWidget {
     return AnimatedBuilder(
       animation: controller,
       builder: (context, child) {
-        final rotation = controller.value * 2 * pi * 7; // 7 full rotations
+        // Use targetRotation if spinning, otherwise no rotation
+        final rotation = controller.value * targetRotation;
         return Stack(
           alignment: Alignment.center,
           clipBehavior: Clip.none,
@@ -100,16 +103,25 @@ class LuckyWheel extends StatelessWidget {
                             items.length,
                             (index) {
                               final angle = (index * 2 * pi / items.length);
-                              // Dynamic font size based on item count
-                              final fontSize = items.length > 10 ? 24.0 : 32.0;
-                              final nameFontSize = items.length > 10 ? 10.0 : 12.0;
+                              // Dynamic sizing based on item count
+                              final fontSize = items.length <= 6 ? 32.0
+                                  : items.length <= 8 ? 26.0
+                                  : items.length <= 10 ? 22.0
+                                  : 18.0;
+                              final nameFontSize = items.length <= 6 ? 12.0
+                                  : items.length <= 8 ? 10.0
+                                  : items.length <= 10 ? 9.0
+                                  : 8.0;
+                              final topPadding = items.length <= 6 ? 35.0
+                                  : items.length <= 8 ? 40.0
+                                  : 45.0;
 
                               return Transform.rotate(
                                 angle: angle,
                                 child: Align(
                                   alignment: Alignment.topCenter,
                                   child: Padding(
-                                    padding: const EdgeInsets.only(top: 35),
+                                    padding: EdgeInsets.only(top: topPadding),
                                     child: Transform.rotate(
                                       angle: -rotation - angle,
                                       child: Column(
@@ -119,15 +131,21 @@ class LuckyWheel extends StatelessWidget {
                                             items[index].icon,
                                             style: TextStyle(fontSize: fontSize),
                                           ),
-                                          const SizedBox(height: 4),
-                                          Text(
-                                            items[index].name,
-                                            style: TextStyle(
-                                              fontSize: nameFontSize,
-                                              fontWeight: FontWeight.bold,
-                                              color: isDark
-                                                  ? Colors.white
-                                                  : Colors.grey[800],
+                                          SizedBox(height: items.length <= 6 ? 4 : 2),
+                                          SizedBox(
+                                            width: items.length <= 6 ? 60 : 50,
+                                            child: Text(
+                                              items[index].name,
+                                              style: TextStyle(
+                                                fontSize: nameFontSize,
+                                                fontWeight: FontWeight.bold,
+                                                color: isDark
+                                                    ? Colors.white
+                                                    : Colors.grey[800],
+                                              ),
+                                              textAlign: TextAlign.center,
+                                              maxLines: 1,
+                                              overflow: TextOverflow.ellipsis,
                                             ),
                                           ),
                                         ],
