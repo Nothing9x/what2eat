@@ -350,7 +350,7 @@ class _NotificationSettingsScreenState extends State<NotificationSettingsScreen>
                                     const SizedBox(width: 8),
                                     Expanded(
                                       child: Text(
-                                        'Chỉ nhắc 1 lần vào ngày mai',
+                                        'Chỉ nhắc 1 lần',
                                         style: TextStyle(
                                           fontSize: 14,
                                           fontWeight: FontWeight.w600,
