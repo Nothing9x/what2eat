@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:uuid/uuid.dart';
 import 'food_item.dart';
+import 'notification_settings.dart';
 
 class FoodCategory {
   final String id;
@@ -8,6 +9,7 @@ class FoodCategory {
   final String icon;
   final Color color;
   final List<FoodItem> items;
+  final NotificationSettings? notificationSettings;
   final DateTime createdAt;
   final DateTime updatedAt;
 
@@ -17,6 +19,7 @@ class FoodCategory {
     required this.icon,
     required this.color,
     List<FoodItem>? items,
+    this.notificationSettings,
     DateTime? createdAt,
     DateTime? updatedAt,
   })  : id = id ?? const Uuid().v4(),
@@ -32,6 +35,7 @@ class FoodCategory {
     String? icon,
     Color? color,
     List<FoodItem>? items,
+    NotificationSettings? notificationSettings,
     DateTime? createdAt,
     DateTime? updatedAt,
   }) {
@@ -41,6 +45,7 @@ class FoodCategory {
       icon: icon ?? this.icon,
       color: color ?? this.color,
       items: items ?? this.items,
+      notificationSettings: notificationSettings ?? this.notificationSettings,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
     );
@@ -53,6 +58,7 @@ class FoodCategory {
       'icon': icon,
       'color': color.toARGB32(),
       'items': items.map((item) => item.toJson()).toList(),
+      'notificationSettings': notificationSettings?.toJson(),
       'createdAt': createdAt.toIso8601String(),
       'updatedAt': updatedAt.toIso8601String(),
     };
@@ -68,6 +74,9 @@ class FoodCategory {
               ?.map((item) => FoodItem.fromJson(item as Map<String, dynamic>))
               .toList() ??
           [],
+      notificationSettings: json['notificationSettings'] != null
+          ? NotificationSettings.fromJson(json['notificationSettings'] as Map<String, dynamic>)
+          : null,
       createdAt: DateTime.parse(json['createdAt'] as String),
       updatedAt: DateTime.parse(json['updatedAt'] as String),
     );

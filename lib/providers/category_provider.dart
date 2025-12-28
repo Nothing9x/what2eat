@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import '../models/food_category.dart';
 import '../models/food_item.dart';
+import '../models/notification_settings.dart';
 import '../services/storage_service.dart';
 
 class CategoryProvider extends ChangeNotifier {
@@ -222,6 +223,31 @@ class CategoryProvider extends ChangeNotifier {
       return _categories.firstWhere((cat) => cat.id == id);
     } catch (e) {
       return null;
+    }
+  }
+
+  /// Update notification settings for a category
+  Future<void> updateCategoryNotificationSettings(
+    String categoryId,
+    NotificationSettings settings,
+  ) async {
+    try {
+      final categoryIndex = _categories.indexWhere((cat) => cat.id == categoryId);
+      if (categoryIndex == -1) {
+        throw Exception('Category not found');
+      }
+
+      _categories[categoryIndex] = _categories[categoryIndex].copyWith(
+        notificationSettings: settings,
+        updatedAt: DateTime.now(),
+      );
+
+      await _storage.saveCategories(_categories);
+      notifyListeners();
+    } catch (e) {
+      _error = 'Không thể cập nhật cài đặt: ${e.toString()}';
+      notifyListeners();
+      rethrow;
     }
   }
 

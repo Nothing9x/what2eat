@@ -5,6 +5,7 @@ import '../providers/category_provider.dart';
 import '../widgets/lucky_wheel.dart';
 import 'result_screen.dart';
 import 'category_list_screen.dart';
+import 'notification_settings_screen.dart';
 
 // Custom curve with gradual start and very slow 1s stop at end
 class SpinWheelCurve extends Curve {
@@ -116,10 +117,24 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  // Menu Icon (left)
+                  // Notification Settings Icon (left)
                   InkWell(
                     onTap: () {
-                      // Open menu/drawer
+                      final provider = context.read<CategoryProvider>();
+                      if (provider.selectedCategory == null) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text('Vui lòng chọn danh sách trước'),
+                          ),
+                        );
+                        return;
+                      }
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const NotificationSettingsScreen(),
+                        ),
+                      );
                     },
                     borderRadius: BorderRadius.circular(12),
                     child: Container(
@@ -128,10 +143,37 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                       ),
-                      child: Icon(
-                        Icons.menu,
-                        color: primaryColor,
-                        size: 28,
+                      child: Consumer<CategoryProvider>(
+                        builder: (context, provider, _) {
+                          final hasNotification = provider.selectedCategory?.notificationSettings?.enabled ?? false;
+                          return Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              Icon(
+                                Icons.notifications_outlined,
+                                color: primaryColor,
+                                size: 28,
+                              ),
+                              if (hasNotification)
+                                Positioned(
+                                  right: 8,
+                                  top: 8,
+                                  child: Container(
+                                    width: 10,
+                                    height: 10,
+                                    decoration: BoxDecoration(
+                                      color: Colors.red,
+                                      shape: BoxShape.circle,
+                                      border: Border.all(
+                                        color: isDark ? const Color(0xFF221a10) : const Color(0xFFFFFDF5),
+                                        width: 2,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                            ],
+                          );
+                        },
                       ),
                     ),
                   ),
