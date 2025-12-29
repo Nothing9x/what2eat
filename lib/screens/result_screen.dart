@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../models/food_item.dart';
+import '../models/food_delivery_platform.dart';
 
 class ResultScreen extends StatefulWidget {
   final FoodItem foodItem;
@@ -22,10 +23,14 @@ class _ResultScreenState extends State<ResultScreen>
   late Animation<double> _scaleAnimation;
   late Animation<double> _fadeAnimation;
   final List<ConfettiParticle> _confettiParticles = [];
+  List<FoodDeliveryPlatform> _platforms = [];
 
   @override
   void initState() {
     super.initState();
+
+    // Detect country and set platforms
+    _detectCountryAndSetPlatforms();
 
     // Main entrance animation - faster
     _animationController = AnimationController(
@@ -59,6 +64,20 @@ class _ResultScreenState extends State<ResultScreen>
     // Start animations
     _animationController.forward();
     _confettiController.forward();
+  }
+
+  void _detectCountryAndSetPlatforms() {
+    // Try to get country from locale
+    final locale = WidgetsBinding.instance.platformDispatcher.locale;
+    String countryCode = locale.countryCode ?? 'US';
+
+    // Get platforms for the detected country
+    _platforms = FoodDeliveryConfig.getPlatformsByCountry(countryCode);
+
+    // If no platforms found, use default
+    if (_platforms.isEmpty) {
+      _platforms = FoodDeliveryConfig.getPlatformsByCountry('US');
+    }
   }
 
   void _generateConfetti() {
@@ -98,50 +117,23 @@ class _ResultScreenState extends State<ResultScreen>
     super.dispose();
   }
 
-  // Open ShopeeFood app with search query
-  Future<void> _openShopeeFood() async {
+  // Open delivery platform app with search query
+  Future<void> _openPlatform(FoodDeliveryPlatform platform) async {
     final foodName = widget.foodItem.name;
-    // Try to open ShopeeFood app with deep link
-    final shopeeAppUrl = Uri.parse('shopeefood://search?keyword=$foodName');
-    // Fallback to web URL if app is not installed
-    final shopeeWebUrl = Uri.parse('https://shopeefood.vn/search?keyword=$foodName');
+    final appUrl = platform.getAppUri(foodName);
+    final webUrl = Uri.parse(platform.getSearchUrl(foodName));
 
     try {
-      if (await canLaunchUrl(shopeeAppUrl)) {
-        await launchUrl(shopeeAppUrl, mode: LaunchMode.externalApplication);
+      if (await canLaunchUrl(appUrl)) {
+        await launchUrl(appUrl, mode: LaunchMode.externalApplication);
       } else {
-        await launchUrl(shopeeWebUrl, mode: LaunchMode.externalApplication);
+        await launchUrl(webUrl, mode: LaunchMode.externalApplication);
       }
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Không thể mở ShopeeFood'),
-          ),
-        );
-      }
-    }
-  }
-
-  // Open GrabFood app with search query
-  Future<void> _openGrabFood() async {
-    final foodName = widget.foodItem.name;
-    // Try to open GrabFood app with deep link
-    final grabAppUrl = Uri.parse('grab://food?screen=search&keyword=$foodName');
-    // Fallback to web URL if app is not installed
-    final grabWebUrl = Uri.parse('https://food.grab.com/vn/vi/search?keyword=$foodName');
-
-    try {
-      if (await canLaunchUrl(grabAppUrl)) {
-        await launchUrl(grabAppUrl, mode: LaunchMode.externalApplication);
-      } else {
-        await launchUrl(grabWebUrl, mode: LaunchMode.externalApplication);
-      }
-    } catch (e) {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Không thể mở GrabFood'),
+          SnackBar(
+            content: Text('Không thể mở ${platform.name}'),
           ),
         );
       }
@@ -376,62 +368,45 @@ class _ResultScreenState extends State<ResultScreen>
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      // ShopeeFood button
-                      ElevatedButton(
-                        onPressed: _openShopeeFood,
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFFEE4D2D),
-                          foregroundColor: Colors.white,
-                          minimumSize: const Size(double.infinity, 56),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(28),
-                          ),
-                          elevation: 8,
-                          shadowColor: const Color(0xFFEE4D2D).withOpacity(0.3),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Icon(Icons.shopping_bag, size: 24),
-                            SizedBox(width: 12),
-                            Text(
-                              'Đặt ngay trên ShopeeFood',
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
+                      // Dynamic delivery platform buttons
+                      ...List.generate(
+                        _platforms.length > 2 ? 2 : _platforms.length,
+                        (index) {
+                          final platform = _platforms[index];
+                          return Padding(
+                            padding: EdgeInsets.only(bottom: index < 1 ? 12 : 0),
+                            child: ElevatedButton(
+                              onPressed: () => _openPlatform(platform),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: platform.color,
+                                foregroundColor: Colors.white,
+                                minimumSize: const Size(double.infinity, 56),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(28),
+                                ),
+                                elevation: 8,
+                                shadowColor: platform.color.withOpacity(0.3),
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(platform.icon, size: 24),
+                                  const SizedBox(width: 12),
+                                  Flexible(
+                                    child: Text(
+                                      'Đặt ngay trên ${platform.name}',
+                                      style: const TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(height: 12),
-                      // GrabFood button
-                      ElevatedButton(
-                        onPressed: _openGrabFood,
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFF00B14F),
-                          foregroundColor: Colors.white,
-                          minimumSize: const Size(double.infinity, 56),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(28),
-                          ),
-                          elevation: 8,
-                          shadowColor: const Color(0xFF00B14F).withOpacity(0.3),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Icon(Icons.two_wheeler, size: 24),
-                            SizedBox(width: 12),
-                            Text(
-                              'Đặt ngay trên GrabFood',
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
+                          );
+                        },
                       ),
                       const SizedBox(height: 12),
                       // Back button
