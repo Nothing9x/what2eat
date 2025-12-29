@@ -269,12 +269,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 }
 
                 return SizedBox(
-                  height: 48,
+                  height: 44,
                   child: ListView.separated(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
                     scrollDirection: Axis.horizontal,
                     itemCount: categories.length,
-                    separatorBuilder: (context, index) => const SizedBox(width: 12),
+                    separatorBuilder: (context, index) => const SizedBox(width: 10),
                     itemBuilder: (context, index) {
                       final category = categories[index];
                       final isSelected = selectedCategory?.id == category.id;
@@ -283,7 +283,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                         onTap: () => provider.setSelectedCategory(category.id),
                         borderRadius: BorderRadius.circular(20),
                         child: Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                           decoration: BoxDecoration(
                             color: isSelected
                                 ? primaryColor
@@ -309,13 +309,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                             children: [
                               Text(
                                 category.icon,
-                                style: const TextStyle(fontSize: 18),
+                                style: const TextStyle(fontSize: 16),
                               ),
-                              const SizedBox(width: 8),
+                              const SizedBox(width: 6),
                               Text(
                                 category.name,
                                 style: TextStyle(
-                                  fontSize: 14,
+                                  fontSize: 13,
                                   fontWeight: isSelected ? FontWeight.bold : FontWeight.w600,
                                   color: isSelected
                                       ? Colors.white
@@ -430,7 +430,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.08),
+                    color: Colors.black.withValues(alpha: 0.08),
                     blurRadius: 10,
                     offset: const Offset(0, 2),
                   ),
@@ -451,8 +451,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       child: Image.network(
                         'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=400',
                         fit: BoxFit.cover,
-                        errorBuilder: (context, error, stackTrace) =>
-                            Icon(Icons.fastfood, color: primaryColor, size: 32),
+                        errorBuilder: (context, error, stackTrace) => const Icon(
+                          Icons.fastfood,
+                          color: Color(0xFFEC9213),
+                          size: 32,
+                        ),
                       ),
                     ),
                   ),
@@ -472,15 +475,15 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                 vertical: 3,
                               ),
                               decoration: BoxDecoration(
-                                color: primaryColor.withOpacity(0.15),
+                                color: const Color(0xFFEC9213).withValues(alpha: 0.15),
                                 borderRadius: BorderRadius.circular(6),
                               ),
-                              child: Text(
+                              child: const Text(
                                 'AD',
                                 style: TextStyle(
                                   fontSize: 10,
                                   fontWeight: FontWeight.w800,
-                                  color: primaryColor,
+                                  color: Color(0xFFEC9213),
                                   letterSpacing: 0.5,
                                 ),
                               ),

@@ -1,4 +1,4 @@
-package com.example.what2eat
+package com.toinx.what2eat
 
 import io.flutter.embedding.android.FlutterActivity
 

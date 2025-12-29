@@ -1,0 +1,76 @@
+==============================================================
+  HOW TO CREATE APP ICON FROM YOUR SPIN WHEEL
+==============================================================
+
+STEP 1: Take Screenshot of Spin Wheel
+--------------------------------------------------------------
+1. Open the HTML file you provided in a web browser
+2. Zoom in so the wheel fills most of the screen
+3. Take a screenshot of JUST the circular wheel (not the whole page)
+4. Crop the image to be perfectly square with the wheel centered
+5. The wheel should have some padding around it (like 10-15% margin)
+
+STEP 2: Prepare the Icon Image
+--------------------------------------------------------------
+1. Open your cropped wheel image in an image editor (Photoshop, GIMP, or online tool)
+2. Resize to 1024x1024 pixels (high quality)
+3. Make sure the wheel is centered
+4. Background options:
+   - Option A: Keep the warm cream color (#FFFDF5)
+   - Option B: Make background transparent (better for Android adaptive icons)
+5. Save as "app_icon.png" in the assets/icon/ folder
+
+STEP 3: Create Foreground Version (for Android Adaptive Icon)
+--------------------------------------------------------------
+1. Create a copy of your icon
+2. Make the background completely transparent
+3. Keep only the wheel circle itself
+4. Save as "app_icon_foreground.png" in assets/icon/
+
+STEP 4: Generate All Icon Sizes
+--------------------------------------------------------------
+Run these commands in your terminal:
+
+cd /home/toinx/WORKSPACE/PROJECTS/what2eat
+flutter pub get
+flutter pub run flutter_launcher_icons
+
+This will automatically create all required icon sizes for both Android and iOS!
+
+STEP 5: Verify Icons
+--------------------------------------------------------------
+flutter clean
+flutter run
+
+Check the app icon on your device!
+
+==============================================================
+  QUICK ALTERNATIVE: Use an Online Tool
+==============================================================
+
+If you prefer not to manually create icons:
+
+1. Go to https://icon.kitchen or https://www.appicon.co/
+2. Upload your 1024x1024 wheel screenshot
+3. Customize:
+   - Set background to #FFFDF5 (warm cream)
+   - Adjust padding if needed
+4. Download the icon pack
+5. Extract and copy:
+   - Android icons to: android/app/src/main/res/mipmap-*/
+   - iOS icons to: ios/Runner/Assets.xcassets/AppIcon.appiconset/
+
+==============================================================
+  DESIGN TIPS
+==============================================================
+
+✓ The wheel circle is already a great icon shape
+✓ Make sure the orange color (#EC9213) is vivid and stands out
+✓ Test at 48x48 pixels to ensure it's recognizable when small
+✓ The alternating wheel segments should be visible
+✓ Keep the white center circle visible
+
+==============================================================
+
+Current Package Name: com.toinx.what2eat ✅
+Ready for icons! Just add your images to assets/icon/

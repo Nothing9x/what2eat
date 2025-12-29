@@ -26,29 +26,29 @@ class _ResultScreenState extends State<ResultScreen>
   void initState() {
     super.initState();
 
-    // Main entrance animation
+    // Main entrance animation - faster
     _animationController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1500),
+      duration: const Duration(milliseconds: 800),
     );
 
-    // Confetti animation - 6 seconds for more natural fall
+    // Confetti animation - shorter for better effect
     _confettiController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 6000),
+      duration: const Duration(milliseconds: 2500),
     );
 
-    _scaleAnimation = Tween<double>(begin: 0.3, end: 1.0).animate(
+    _scaleAnimation = Tween<double>(begin: 0.5, end: 1.0).animate(
       CurvedAnimation(
         parent: _animationController,
-        curve: Curves.elasticOut,
+        curve: Curves.easeOutBack,
       ),
     );
 
     _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
         parent: _animationController,
-        curve: const Interval(0.0, 0.5, curve: Curves.easeIn),
+        curve: const Interval(0.0, 0.6, curve: Curves.easeOut),
       ),
     );
 
@@ -57,9 +57,7 @@ class _ResultScreenState extends State<ResultScreen>
 
     // Start animations
     _animationController.forward();
-    Future.delayed(const Duration(milliseconds: 300), () {
-      if (mounted) _confettiController.forward();
-    });
+    _confettiController.forward();
   }
 
   void _generateConfetti() {
@@ -189,22 +187,22 @@ class _ResultScreenState extends State<ResultScreen>
                           child: Stack(
                             alignment: Alignment.center,
                             children: [
-                              // Animated sparkles - slower and more natural
+                              // Animated sparkles - quick burst
                               ...List.generate(8, (index) {
                                 final angle = (index * pi / 4);
                                 return AnimatedBuilder(
-                                  animation: _confettiController,
+                                  animation: _animationController,
                                   builder: (context, child) {
-                                    final progress = _confettiController.value;
-                                    // Slower burst out (0-50%) and slower fade (50-100%)
-                                    final distance = progress < 0.5
-                                        ? (progress / 0.5) * 70
-                                        : 70 - ((progress - 0.5) / 0.5) * 70;
-                                    final opacity = progress < 0.4
-                                        ? (progress / 0.4)
-                                        : progress < 0.7
+                                    final progress = _animationController.value;
+                                    // Quick burst out and fade
+                                    final distance = progress < 0.6
+                                        ? (progress / 0.6) * 60
+                                        : 60 - ((progress - 0.6) / 0.4) * 60;
+                                    final opacity = progress < 0.3
+                                        ? (progress / 0.3)
+                                        : progress < 0.6
                                             ? 1.0
-                                            : 1 - ((progress - 0.7) / 0.3);
+                                            : 1 - ((progress - 0.6) / 0.4);
 
                                     return Transform.translate(
                                       offset: Offset(
@@ -216,7 +214,7 @@ class _ResultScreenState extends State<ResultScreen>
                                         child: Icon(
                                           Icons.star,
                                           color: primaryColor,
-                                          size: 20,
+                                          size: 16,
                                         ),
                                       ),
                                     );

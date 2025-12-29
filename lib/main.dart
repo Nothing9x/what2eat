@@ -8,6 +8,8 @@ import 'screens/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize services
   final prefs = await SharedPreferences.getInstance();
   final storage = StorageService(prefs);
 
