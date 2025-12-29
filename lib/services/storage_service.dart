@@ -81,9 +81,9 @@ class StorageService {
           items: [
             FoodItem(name: 'Bánh Mì', icon: '🥖', description: 'Bánh mì Việt Nam', imageUrl: 'https://images.unsplash.com/photo-1598511726623-d2e9996892f0?w=800'),
             FoodItem(name: 'Phở', icon: '🍜', description: 'Phở bò tái', imageUrl: 'https://images.unsplash.com/photo-1591814468924-caf88d1232e1?w=800'),
-            FoodItem(name: 'Xôi', icon: '🍚', description: 'Xôi xéo', imageUrl: 'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=800'),
+            FoodItem(name: 'Xôi', icon: '🍙', description: 'Xôi xéo', imageUrl: 'https://images.unsplash.com/photo-1617093727343-374698b1b08d?w=800'),
             FoodItem(name: 'Cháo', icon: '🥣', description: 'Cháo gà', imageUrl: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800'),
-            FoodItem(name: 'Bún Bò', icon: '🍲', description: 'Bún bò Huế', imageUrl: 'https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=800'),
+            FoodItem(name: 'Bún Bò', icon: '🍜', description: 'Bún bò Huế', imageUrl: 'https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=800'),
             FoodItem(name: 'Hủ Tiếu', icon: '🍜', description: 'Hủ tiếu Nam Vang', imageUrl: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800'),
           ],
         ),
@@ -94,8 +94,8 @@ class StorageService {
           icon: '☀️',
           color: const Color(0xFFEF5350), // Red 400
           items: [
-            FoodItem(name: 'Cơm Tấm', icon: '🍖', description: 'Cơm tấm sườn bì', imageUrl: 'https://images.unsplash.com/photo-1569562211093-4ed0d0758f12?w=800'),
-            FoodItem(name: 'Bún Bò', icon: '🍲', description: 'Bún bò Huế', imageUrl: 'https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=800'),
+            FoodItem(name: 'Cơm Tấm', icon: '🍚', description: 'Cơm tấm sườn bì', imageUrl: 'https://images.unsplash.com/photo-1569562211093-4ed0d0758f12?w=800'),
+            FoodItem(name: 'Bún Bò', icon: '🍜', description: 'Bún bò Huế', imageUrl: 'https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=800'),
             FoodItem(name: 'Mì Quảng', icon: '🍜', description: 'Mì Quảng tôm thịt', imageUrl: 'https://images.unsplash.com/photo-1617093727343-374698b1b08d?w=800'),
             FoodItem(name: 'Cơm Rang', icon: '🍛', description: 'Cơm rang dương châu', imageUrl: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=800'),
             FoodItem(name: 'Bún Chả', icon: '🍢', description: 'Bún chả Hà Nội', imageUrl: 'https://images.unsplash.com/photo-1559314809-0d155014e29e?w=800'),
@@ -110,7 +110,7 @@ class StorageService {
           color: const Color(0xFF5C6BC0), // Indigo 400
           items: [
             FoodItem(name: 'Lẩu', icon: '🍲', description: 'Lẩu Thái', imageUrl: 'https://images.unsplash.com/photo-1622973536968-3ead9e780960?w=800'),
-            FoodItem(name: 'Nướng', icon: '🍖', description: 'Thịt nướng BBQ', imageUrl: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800'),
+            FoodItem(name: 'Nướng', icon: '🥩', description: 'Thịt nướng BBQ', imageUrl: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800'),
             FoodItem(name: 'Gà Rán', icon: '🍗', description: 'Gà rán giòn', imageUrl: 'https://images.unsplash.com/photo-1562967914-608f82629710?w=800'),
             FoodItem(name: 'Pizza', icon: '🍕', description: 'Pizza Hải Sản', imageUrl: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800'),
             FoodItem(name: 'Burger', icon: '🍔', description: 'Burger bò phô mai', imageUrl: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800'),
