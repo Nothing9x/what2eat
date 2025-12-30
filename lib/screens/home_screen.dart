@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../l10n/app_localizations.dart';
 import '../providers/category_provider.dart';
 import '../widgets/lucky_wheel.dart';
 import 'result_screen.dart';
@@ -53,9 +54,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
     // Check if there are items to spin
     if (items.isEmpty) {
+      final l10n = AppLocalizations.of(context)!;
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Danh sách này chưa có món ăn. Vui lòng thêm món!'),
+        SnackBar(
+          content: Text(l10n.noItemsInCategory),
         ),
       );
       return;
@@ -107,6 +109,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bgColor = isDark ? const Color(0xFF221a10) : const Color(0xFFFFFDF5);
     final primaryColor = const Color(0xFFEC9213);
@@ -128,8 +131,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       final provider = context.read<CategoryProvider>();
                       if (provider.selectedCategory == null) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text('Vui lòng chọn danh sách trước'),
+                          SnackBar(
+                            content: Text(l10n.selectCategoryFirst),
                           ),
                         );
                         return;
@@ -183,11 +186,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     ),
                   ),
                   // Title (center)
-                  const Expanded(
+                  Expanded(
                     child: Text(
-                      'Hôm nay ăn gì nhỉ? 🤔',
+                      l10n.homeTitle,
                       textAlign: TextAlign.center,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
@@ -244,7 +247,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                           const SizedBox(width: 8),
                           Expanded(
                             child: Text(
-                              'Chưa có danh sách món ăn',
+                              l10n.noCategoryTitle,
                               style: TextStyle(
                                 fontSize: 14,
                                 color: isDark ? Colors.grey[400] : Colors.grey[600],
@@ -260,7 +263,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                 ),
                               );
                             },
-                            child: const Text('Tạo ngay'),
+                            child: Text(l10n.noCategoryButton),
                           ),
                         ],
                       ),
@@ -390,7 +393,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                               ),
                               const SizedBox(width: 12),
                               Text(
-                                _isSpinning ? 'ĐANG QUAY...' : 'QUAY NGAY',
+                                _isSpinning ? l10n.spinning : l10n.spinButton,
                                 style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 18,
@@ -406,7 +409,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    'Nhấn để chọn món ngẫu nhiên',
+                    l10n.spinHint,
                     style: TextStyle(
                       fontSize: 12,
                       color: isDark ? Colors.grey[500] : Colors.grey[600],

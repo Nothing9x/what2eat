@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'l10n/app_localizations.dart';
 import 'providers/category_provider.dart';
 import 'services/storage_service.dart';
 import 'screens/home_screen.dart';
@@ -30,28 +32,45 @@ class What2EatApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-      title: 'Ăn Gì Đây?',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: true,
-        brightness: Brightness.light,
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFFEC9213),
+        title: 'What to Eat?',
+        debugShowCheckedModeBanner: false,
+        localizationsDelegates: const [
+          AppLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: const [
+          Locale('en'), // English
+          Locale('vi'), // Vietnamese
+          Locale('zh'), // Chinese
+          Locale('ja'), // Japanese
+          Locale('ko'), // Korean
+          Locale('es'), // Spanish
+          Locale('fr'), // French
+          Locale('de'), // German
+          Locale('th'), // Thai
+        ],
+        theme: ThemeData(
+          useMaterial3: true,
           brightness: Brightness.light,
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color(0xFFEC9213),
+            brightness: Brightness.light,
+          ),
+          textTheme: GoogleFonts.plusJakartaSansTextTheme(),
         ),
-        textTheme: GoogleFonts.plusJakartaSansTextTheme(),
-      ),
-      darkTheme: ThemeData(
-        useMaterial3: true,
-        brightness: Brightness.dark,
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFFEC9213),
+        darkTheme: ThemeData(
+          useMaterial3: true,
           brightness: Brightness.dark,
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color(0xFFEC9213),
+            brightness: Brightness.dark,
+          ),
+          textTheme: GoogleFonts.plusJakartaSansTextTheme(
+            ThemeData.dark().textTheme,
+          ),
         ),
-        textTheme: GoogleFonts.plusJakartaSansTextTheme(
-          ThemeData.dark().textTheme,
-        ),
-      ),
         home: const HomeScreen(),
       ),
     );

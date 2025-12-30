@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../l10n/app_localizations.dart';
 import '../models/food_item.dart';
 import '../models/food_delivery_platform.dart';
 
@@ -142,6 +143,7 @@ class _ResultScreenState extends State<ResultScreen>
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bgColor = isDark ? const Color(0xFF221a10) : const Color(0xFFF8F7F6);
     final surfaceColor = isDark ? const Color(0xFF3a2d1e) : Colors.white;
@@ -189,11 +191,11 @@ class _ResultScreenState extends State<ResultScreen>
                           child: const Icon(Icons.close, size: 24),
                         ),
                       ),
-                      const Expanded(
+                      Expanded(
                         child: Text(
-                          'Kết quả',
+                          l10n.resultTitle,
                           textAlign: TextAlign.center,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),
@@ -214,7 +216,7 @@ class _ResultScreenState extends State<ResultScreen>
                         FadeTransition(
                           opacity: _fadeAnimation,
                           child: Text(
-                            'CHÚC MỪNG! BẠN SẼ ĂN:',
+                            l10n.resultSubtitle.toUpperCase(),
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
@@ -394,7 +396,7 @@ class _ResultScreenState extends State<ResultScreen>
                                   const SizedBox(width: 12),
                                   Flexible(
                                     child: Text(
-                                      'Đặt ngay trên ${platform.name}',
+                                      l10n.orderOn(platform.name),
                                       style: const TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold,
@@ -420,12 +422,12 @@ class _ResultScreenState extends State<ResultScreen>
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Icon(Icons.refresh, size: 20),
-                            SizedBox(width: 8),
+                          children: [
+                            const Icon(Icons.refresh, size: 20),
+                            const SizedBox(width: 8),
                             Text(
-                              'Quay lại vòng quay',
-                              style: TextStyle(
+                              l10n.spinAgain,
+                              style: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600,
                               ),
