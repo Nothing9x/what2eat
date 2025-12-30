@@ -1,0 +1,87 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1024" height="1024" fill="#FFFDF5" rx="180"/>
+  
+  <!-- Outer decorative circle -->
+  <circle cx="512" cy="512" r="440" fill="none" stroke="#FFF5E6" stroke-width="8"/>
+  
+  <!-- Main wheel circle with gradient -->
+  <defs>
+    <linearGradient id="wheelGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFB84D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#EC9213;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="centerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFC670;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF9F1C;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Shadow filter -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="0" dy="4" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Wheel sections with dividers (8 sections) -->
+  <g filter="url(#shadow)">
+    <!-- Section backgrounds -->
+    <circle cx="512" cy="512" r="380" fill="url(#wheelGradient)"/>
+    
+    <!-- Divider lines (8 lines creating 8 sections) -->
+    <g stroke="#FFFFFF" stroke-width="6" opacity="0.7">
+      <line x1="512" y1="132" x2="512" y2="892"/>
+      <line x1="892" y1="512" x2="132" y2="512"/>
+      <line x1="780" y1="244" x2="244" y2="780"/>
+      <line x1="244" y1="244" x2="780" y2="780"/>
+    </g>
+    
+    <!-- Food emojis positioned around the wheel -->
+    <g font-size="80" text-anchor="middle">
+      <!-- Top -->
+      <text x="512" y="220" dominant-baseline="middle">🍕</text>
+      <!-- Top-right -->
+      <text x="710" y="314" dominant-baseline="middle">🍔</text>
+      <!-- Right -->
+      <text x="804" y="532" dominant-baseline="middle">🍜</text>
+      <!-- Bottom-right -->
+      <text x="710" y="730" dominant-baseline="middle">🍱</text>
+      <!-- Bottom -->
+      <text x="512" y="824" dominant-baseline="middle">🍰</text>
+      <!-- Bottom-left -->
+      <text x="314" y="730" dominant-baseline="middle">☕</text>
+      <!-- Left -->
+      <text x="220" y="532" dominant-baseline="middle">🍲</text>
+      <!-- Top-left -->
+      <text x="314" y="314" dominant-baseline="middle">🥗</text>
+    </g>
+  </g>
+  
+  <!-- Center circle (spinner hub) -->
+  <circle cx="512" cy="512" r="120" fill="url(#centerGradient)" filter="url(#shadow)"/>
+  <circle cx="512" cy="512" r="120" fill="none" stroke="#FFFFFF" stroke-width="8"/>
+  
+  <!-- Center question mark -->
+  <text x="512" y="545" font-size="100" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">?</text>
+  
+  <!-- Decorative dots around center -->
+  <g fill="#FFFFFF" opacity="0.8">
+    <circle cx="512" cy="362" r="8"/>
+    <circle cx="597" cy="427" r="8"/>
+    <circle cx="597" cy="597" r="8"/>
+    <circle cx="512" cy="662" r="8"/>
+    <circle cx="427" cy="597" r="8"/>
+    <circle cx="427" cy="427" r="8"/>
+  </g>
+  
+  <!-- Outer white border for iOS style -->
+  <rect width="1024" height="1024" fill="none" stroke="#FFFFFF" stroke-width="2" rx="180"/>
+</svg>

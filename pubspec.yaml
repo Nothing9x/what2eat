@@ -37,6 +37,5 @@ flutter:
   uses-material-design: true
   generate: true
 
-  # Uncomment after adding icon images to assets/icon/
-  # assets:
-  #   - assets/icon/
+  assets:
+    - assets/icon/
