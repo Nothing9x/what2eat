@@ -50,6 +50,16 @@ class What2EatApp extends StatelessWidget {
           Locale('fr'), // French
           Locale('de'), // German
           Locale('th'), // Thai
+          Locale('it'), // Italian
+          Locale('pt'), // Portuguese
+          Locale('ru'), // Russian
+          Locale('hi'), // Hindi
+          Locale('id'), // Indonesian
+          Locale('ar'), // Arabic
+          Locale('tr'), // Turkish
+          Locale('pl'), // Polish
+          Locale('nl'), // Dutch
+          Locale('sv'), // Swedish
         ],
         theme: ThemeData(
           useMaterial3: true,
