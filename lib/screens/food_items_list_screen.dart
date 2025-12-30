@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../l10n/app_localizations.dart';
 import '../models/food_category.dart';
 import '../models/food_item.dart';
 import '../providers/category_provider.dart';
@@ -17,6 +18,7 @@ class FoodItemsListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bgColor = isDark ? const Color(0xFF221a10) : const Color(0xFFF8F7F6);
 
@@ -45,9 +47,9 @@ class FoodItemsListScreen extends StatelessWidget {
           if (items.isEmpty) {
             return EmptyState(
               icon: Icons.restaurant_menu,
-              title: 'Chưa có món ăn nào',
-              subtitle: 'Thêm món ăn vào danh sách để bắt đầu',
-              actionLabel: 'Thêm món ngay',
+              title: l10n.noFoodItems,
+              subtitle: l10n.noFoodItemsSubtitle,
+              actionLabel: l10n.addFoodItem,
               onAction: () => _navigateToAddItem(context),
             );
           }
@@ -80,11 +82,13 @@ class FoodItemsListScreen extends StatelessWidget {
         child: const Icon(Icons.delete, color: Colors.white),
       ),
       confirmDismiss: (direction) async {
+        final l10n = AppLocalizations.of(context)!;
         return await ConfirmDialog.show(
           context: context,
-          title: 'Xóa món ăn',
-          message: 'Bạn có chắc muốn xóa "${item.name}"?',
-          confirmText: 'Xóa',
+          title: l10n.delete,
+          message: '${l10n.confirmDelete}\n"${item.name}"?',
+          confirmText: l10n.delete,
+          cancelText: l10n.cancel,
           isDestructive: true,
         );
       },
@@ -205,11 +209,13 @@ class FoodItemsListScreen extends StatelessWidget {
   }
 
   Future<void> _handleDeleteItemWithConfirmation(BuildContext context, FoodItem item) async {
+    final l10n = AppLocalizations.of(context)!;
     final confirmed = await ConfirmDialog.show(
       context: context,
-      title: 'Xóa món ăn',
-      message: 'Bạn có chắc muốn xóa "${item.name}"?',
-      confirmText: 'Xóa',
+      title: l10n.delete,
+      message: '${l10n.confirmDelete}\n"${item.name}"?',
+      confirmText: l10n.delete,
+      cancelText: l10n.cancel,
       isDestructive: true,
     );
 
@@ -222,14 +228,15 @@ class FoodItemsListScreen extends StatelessWidget {
     try {
       await context.read<CategoryProvider>().deleteFoodItem(category.id, item.id);
       if (context.mounted) {
+        final l10n = AppLocalizations.of(context)!;
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Đã xóa "${item.name}"')),
+          SnackBar(content: Text('${l10n.delete} - "${item.name}"')),
         );
       }
     } catch (e) {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Lỗi: ${e.toString()}')),
+          SnackBar(content: Text('Error: ${e.toString()}')),
         );
       }
     }

@@ -649,7 +649,7 @@ abstract class AppLocalizations {
   /// No description provided for @manageLists.
   ///
   /// In en, this message translates to:
-  /// **'Manage Lists'**
+  /// **'Spin Lists'**
   String get manageLists;
 
   /// No description provided for @addNewList.
@@ -657,6 +657,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Add New List'**
   String get addNewList;
+
+  /// No description provided for @createList.
+  ///
+  /// In en, this message translates to:
+  /// **'Create List'**
+  String get createList;
+
+  /// No description provided for @noListsYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No lists yet'**
+  String get noListsYet;
+
+  /// No description provided for @noListsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Create a new list to\nserve your food preferences!'**
+  String get noListsSubtitle;
 
   /// No description provided for @listName.
   ///
@@ -741,6 +759,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No items yet'**
   String get noItems;
+
+  /// No description provided for @itemsCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} suggested items'**
+  String itemsCount(int count);
+
+  /// No description provided for @foodItems.
+  ///
+  /// In en, this message translates to:
+  /// **'Food Items'**
+  String get foodItems;
+
+  /// No description provided for @addFoodItem.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Food Item'**
+  String get addFoodItem;
+
+  /// No description provided for @noFoodItems.
+  ///
+  /// In en, this message translates to:
+  /// **'No food items yet'**
+  String get noFoodItems;
+
+  /// No description provided for @noFoodItemsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Add food items to this list'**
+  String get noFoodItemsSubtitle;
+
+  /// No description provided for @enterListName.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter list name'**
+  String get enterListName;
+
+  /// No description provided for @enterItemName.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter item name'**
+  String get enterItemName;
+
+  /// No description provided for @enterDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter description'**
+  String get enterDescription;
+
+  /// No description provided for @enterImageUrl.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter image URL'**
+  String get enterImageUrl;
 }
 
 class _AppLocalizationsDelegate

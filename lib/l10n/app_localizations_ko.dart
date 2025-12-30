@@ -284,6 +284,15 @@ class AppLocalizationsKo extends AppLocalizations {
   String get addNewList => '새 목록 추가';
 
   @override
+  String get createList => '목록 만들기';
+
+  @override
+  String get noListsYet => '아직 목록이 없습니다';
+
+  @override
+  String get noListsSubtitle => '새 목록을 만들어\n음식 선호도를 설정하세요!';
+
+  @override
   String get listName => '목록 이름';
 
   @override
@@ -324,4 +333,33 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get noItems => '아직 항목이 없습니다';
+
+  @override
+  String itemsCount(int count) {
+    return '$count개 제안';
+  }
+
+  @override
+  String get foodItems => '음식 항목';
+
+  @override
+  String get addFoodItem => '음식 추가';
+
+  @override
+  String get noFoodItems => '아직 음식이 없습니다';
+
+  @override
+  String get noFoodItemsSubtitle => '이 목록에 음식 추가';
+
+  @override
+  String get enterListName => '목록 이름 입력';
+
+  @override
+  String get enterItemName => '항목 이름 입력';
+
+  @override
+  String get enterDescription => '설명 입력';
+
+  @override
+  String get enterImageUrl => '이미지 URL 입력';
 }

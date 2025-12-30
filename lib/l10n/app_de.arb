@@ -115,5 +115,17 @@
   "confirmDelete": "Sind Sie sicher, dass Sie diese Liste löschen möchten?",
   "delete": "Löschen",
   "edit": "Bearbeiten",
-  "noItems": "Noch keine Elemente"
+  "noItems": "Noch keine Elemente",
+  "createList": "Liste erstellen",
+  "noListsYet": "Noch keine Listen",
+  "noListsSubtitle": "Erstellen Sie eine neue Liste\num Ihre Essenspräferenzen zu bedienen!",
+  "itemsCount": "{count} vorgeschlagene Artikel",
+  "foodItems": "Essensartikel",
+  "addFoodItem": "Essen hinzufügen",
+  "noFoodItems": "Noch kein Essen",
+  "noFoodItemsSubtitle": "Fügen Sie Essen zu dieser Liste hinzu",
+  "enterListName": "Listennamen eingeben",
+  "enterItemName": "Elementnamen eingeben",
+  "enterDescription": "Beschreibung eingeben",
+  "enterImageUrl": "Bild-URL eingeben"
 }

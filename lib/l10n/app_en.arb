@@ -107,8 +107,11 @@
   "save": "Save",
   "cancel": "Cancel",
 
-  "manageLists": "Manage Lists",
+  "manageLists": "Spin Lists",
   "addNewList": "Add New List",
+  "createList": "Create List",
+  "noListsYet": "No lists yet",
+  "noListsSubtitle": "Create a new list to\nserve your food preferences!",
   "listName": "List Name",
   "selectIcon": "Select Icon",
   "selectColor": "Select Color",
@@ -122,5 +125,21 @@
   "confirmDelete": "Are you sure you want to delete this list?",
   "delete": "Delete",
   "edit": "Edit",
-  "noItems": "No items yet"
+  "noItems": "No items yet",
+  "itemsCount": "{count} suggested items",
+  "@itemsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "foodItems": "Food Items",
+  "addFoodItem": "Add Food Item",
+  "noFoodItems": "No food items yet",
+  "noFoodItemsSubtitle": "Add food items to this list",
+  "enterListName": "Enter list name",
+  "enterItemName": "Enter item name",
+  "enterDescription": "Enter description",
+  "enterImageUrl": "Enter image URL"
 }

@@ -279,10 +279,20 @@ class AppLocalizationsEn extends AppLocalizations {
   String get cancel => 'Cancel';
 
   @override
-  String get manageLists => 'Manage Lists';
+  String get manageLists => 'Spin Lists';
 
   @override
   String get addNewList => 'Add New List';
+
+  @override
+  String get createList => 'Create List';
+
+  @override
+  String get noListsYet => 'No lists yet';
+
+  @override
+  String get noListsSubtitle =>
+      'Create a new list to\nserve your food preferences!';
 
   @override
   String get listName => 'List Name';
@@ -325,4 +335,33 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get noItems => 'No items yet';
+
+  @override
+  String itemsCount(int count) {
+    return '$count suggested items';
+  }
+
+  @override
+  String get foodItems => 'Food Items';
+
+  @override
+  String get addFoodItem => 'Add Food Item';
+
+  @override
+  String get noFoodItems => 'No food items yet';
+
+  @override
+  String get noFoodItemsSubtitle => 'Add food items to this list';
+
+  @override
+  String get enterListName => 'Enter list name';
+
+  @override
+  String get enterItemName => 'Enter item name';
+
+  @override
+  String get enterDescription => 'Enter description';
+
+  @override
+  String get enterImageUrl => 'Enter image URL';
 }

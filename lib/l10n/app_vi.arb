@@ -100,8 +100,11 @@
   "save": "Lưu",
   "cancel": "Hủy",
 
-  "manageLists": "Quản Lý Danh Sách",
+  "manageLists": "Danh Sách Quay",
   "addNewList": "Thêm Danh Sách Mới",
+  "createList": "Tạo Danh Sách",
+  "noListsYet": "Chưa có danh sách nào",
+  "noListsSubtitle": "Tạo danh sách mới để\nphục vụ sở thích ăn uống của bạn!",
   "listName": "Tên Danh Sách",
   "selectIcon": "Chọn Biểu Tượng",
   "selectColor": "Chọn Màu",
@@ -115,5 +118,14 @@
   "confirmDelete": "Bạn có chắc muốn xóa danh sách này?",
   "delete": "Xóa",
   "edit": "Sửa",
-  "noItems": "Chưa có món nào"
+  "noItems": "Chưa có món nào",
+  "itemsCount": "{count} món gợi ý",
+  "foodItems": "Món Ăn",
+  "addFoodItem": "Thêm Món Ăn",
+  "noFoodItems": "Chưa có món ăn",
+  "noFoodItemsSubtitle": "Thêm món ăn vào danh sách này",
+  "enterListName": "Nhập tên danh sách",
+  "enterItemName": "Nhập tên món",
+  "enterDescription": "Nhập mô tả",
+  "enterImageUrl": "Nhập URL hình ảnh"
 }

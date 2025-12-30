@@ -284,6 +284,15 @@ class AppLocalizationsJa extends AppLocalizations {
   String get addNewList => '新しいリストを追加';
 
   @override
+  String get createList => 'リストを作成';
+
+  @override
+  String get noListsYet => 'まだリストがありません';
+
+  @override
+  String get noListsSubtitle => '新しいリストを作成して\n食事の好みに合わせましょう!';
+
+  @override
   String get listName => 'リスト名';
 
   @override
@@ -324,4 +333,33 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get noItems => 'まだ項目がありません';
+
+  @override
+  String itemsCount(int count) {
+    return '$count件の提案';
+  }
+
+  @override
+  String get foodItems => '食品項目';
+
+  @override
+  String get addFoodItem => '食品を追加';
+
+  @override
+  String get noFoodItems => 'まだ食品がありません';
+
+  @override
+  String get noFoodItemsSubtitle => 'このリストに食品を追加';
+
+  @override
+  String get enterListName => 'リスト名を入力';
+
+  @override
+  String get enterItemName => '項目名を入力';
+
+  @override
+  String get enterDescription => '説明を入力';
+
+  @override
+  String get enterImageUrl => '画像URLを入力';
 }

@@ -115,5 +115,17 @@
   "confirmDelete": "¿Estás seguro de que quieres eliminar esta lista?",
   "delete": "Eliminar",
   "edit": "Editar",
-  "noItems": "Aún no hay elementos"
+  "noItems": "Aún no hay elementos",
+  "createList": "Crear lista",
+  "noListsYet": "Aún no hay listas",
+  "noListsSubtitle": "Crea una nueva lista para\nservir tus preferencias de comida!",
+  "itemsCount": "{count} elementos sugeridos",
+  "foodItems": "Elementos de comida",
+  "addFoodItem": "Añadir comida",
+  "noFoodItems": "Aún no hay comida",
+  "noFoodItemsSubtitle": "Añade comida a esta lista",
+  "enterListName": "Ingresa el nombre de la lista",
+  "enterItemName": "Ingresa el nombre del elemento",
+  "enterDescription": "Ingresa la descripción",
+  "enterImageUrl": "Ingresa la URL de la imagen"
 }

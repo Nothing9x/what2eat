@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart' hide TimeOfDay;
 import 'package:flutter/material.dart' as material show TimeOfDay;
 import 'package:provider/provider.dart';
+import '../l10n/app_localizations.dart';
 import '../models/notification_settings.dart' as model;
 import '../providers/category_provider.dart';
 
@@ -66,12 +67,13 @@ class _NotificationSettingsScreenState extends State<NotificationSettingsScreen>
   }
 
   void _saveSettings() {
+    final l10n = AppLocalizations.of(context)!;
     final provider = context.read<CategoryProvider>();
     final category = provider.selectedCategory;
 
     if (category == null) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Vui lòng chọn danh sách trước')),
+        SnackBar(content: Text(l10n.selectCategoryFirst)),
       );
       return;
     }
@@ -87,7 +89,7 @@ class _NotificationSettingsScreenState extends State<NotificationSettingsScreen>
     provider.updateCategoryNotificationSettings(category.id, settings);
 
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Đã lưu cài đặt thành công!')),
+      SnackBar(content: Text(l10n.save)),
     );
 
     Navigator.pop(context);
@@ -95,6 +97,7 @@ class _NotificationSettingsScreenState extends State<NotificationSettingsScreen>
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bgColor = isDark ? const Color(0xFF221a10) : const Color(0xFFFFFDF5);
     final surfaceColor = isDark ? const Color(0xFF2d2418) : Colors.white;
@@ -150,11 +153,11 @@ class _NotificationSettingsScreenState extends State<NotificationSettingsScreen>
                         icon: const Icon(Icons.arrow_back_ios_new),
                         onPressed: () => Navigator.pop(context),
                       ),
-                      const Expanded(
+                      Expanded(
                         child: Text(
-                          'CÀI ĐẶT & THÔNG BÁO',
+                          l10n.notificationSettings.toUpperCase(),
                           textAlign: TextAlign.center,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                             letterSpacing: 1.2,
@@ -210,15 +213,15 @@ class _NotificationSettingsScreenState extends State<NotificationSettingsScreen>
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        const Text(
-                                          'Lịch trình tự động',
-                                          style: TextStyle(
+                                        Text(
+                                          l10n.enableNotifications,
+                                          style: const TextStyle(
                                             fontSize: 16,
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
                                         Text(
-                                          'Hẹn giờ quay và thông báo',
+                                          l10n.selectTime,
                                           style: TextStyle(
                                             fontSize: 12,
                                             color: Colors.grey[600],
@@ -255,7 +258,7 @@ class _NotificationSettingsScreenState extends State<NotificationSettingsScreen>
                                   child: Column(
                                     children: [
                                       Text(
-                                        'THỜI GIAN',
+                                        l10n.selectTime.toUpperCase(),
                                         style: TextStyle(
                                           fontSize: 12,
                                           fontWeight: FontWeight.bold,
@@ -307,7 +310,7 @@ class _NotificationSettingsScreenState extends State<NotificationSettingsScreen>
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Lặp lại vào:',
+                                    l10n.selectDays,
                                     style: TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.w600,
@@ -318,13 +321,13 @@ class _NotificationSettingsScreenState extends State<NotificationSettingsScreen>
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
-                                      _buildWeekdayButton('T2', 1),
-                                      _buildWeekdayButton('T3', 2),
-                                      _buildWeekdayButton('T4', 3),
-                                      _buildWeekdayButton('T5', 4),
-                                      _buildWeekdayButton('T6', 5),
-                                      _buildWeekdayButton('T7', 6),
-                                      _buildWeekdayButton('CN', 7),
+                                      _buildWeekdayButton(l10n.monday.substring(0, 2), 1),
+                                      _buildWeekdayButton(l10n.tuesday.substring(0, 2), 2),
+                                      _buildWeekdayButton(l10n.wednesday.substring(0, 2), 3),
+                                      _buildWeekdayButton(l10n.thursday.substring(0, 2), 4),
+                                      _buildWeekdayButton(l10n.friday.substring(0, 2), 5),
+                                      _buildWeekdayButton(l10n.saturday.substring(0, 2), 6),
+                                      _buildWeekdayButton(l10n.sunday.substring(0, 2), 7),
                                     ],
                                   ),
                                 ],
@@ -350,7 +353,7 @@ class _NotificationSettingsScreenState extends State<NotificationSettingsScreen>
                                     const SizedBox(width: 8),
                                     Expanded(
                                       child: Text(
-                                        'Chỉ nhắc 1 lần',
+                                        l10n.notifyOnceOnly,
                                         style: TextStyle(
                                           fontSize: 14,
                                           fontWeight: FontWeight.w600,
@@ -374,7 +377,7 @@ class _NotificationSettingsScreenState extends State<NotificationSettingsScreen>
                         const SizedBox(height: 24),
                         // Operation Mode Section
                         Text(
-                          'CHẾ ĐỘ HOẠT ĐỘNG',
+                          l10n.notificationSettings.toUpperCase(),
                           style: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
@@ -387,16 +390,16 @@ class _NotificationSettingsScreenState extends State<NotificationSettingsScreen>
                         _buildModeOption(
                           mode: model.OperationMode.notifyOnly,
                           icon: Icons.notifications_active,
-                          title: 'Chỉ thông báo Quay',
-                          description: 'Ứng dụng sẽ gửi thông báo nhắc bạn vào quay món ăn vào giờ đã chọn.',
+                          title: l10n.enableNotifications,
+                          description: l10n.spinHint,
                         ),
                         const SizedBox(height: 12),
                         // Auto Spin Option
                         _buildModeOption(
                           mode: model.OperationMode.autoSpin,
                           icon: Icons.autorenew,
-                          title: 'Tự động quay & Thông báo',
-                          description: 'Hệ thống tự động quay ngẫu nhiên và gửi kết quả món ăn qua thông báo.',
+                          title: l10n.spinButton,
+                          description: l10n.spinning,
                         ),
                         const SizedBox(height: 100),
                       ],
@@ -438,12 +441,12 @@ class _NotificationSettingsScreenState extends State<NotificationSettingsScreen>
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Icon(Icons.save, size: 24),
-                    SizedBox(width: 12),
+                  children: [
+                    const Icon(Icons.save, size: 24),
+                    const SizedBox(width: 12),
                     Text(
-                      'Lưu cài đặt',
-                      style: TextStyle(
+                      l10n.save,
+                      style: const TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),

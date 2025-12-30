@@ -115,5 +115,17 @@
   "confirmDelete": "您确定要删除此列表吗？",
   "delete": "删除",
   "edit": "编辑",
-  "noItems": "还没有项目"
+  "noItems": "还没有项目",
+  "createList": "创建列表",
+  "noListsYet": "还没有列表",
+  "noListsSubtitle": "创建新列表以\n满足您的食物偏好!",
+  "itemsCount": "{count}个建议",
+  "foodItems": "食物项目",
+  "addFoodItem": "添加食物",
+  "noFoodItems": "还没有食物",
+  "noFoodItemsSubtitle": "向此列表添加食物",
+  "enterListName": "输入列表名称",
+  "enterItemName": "输入项目名称",
+  "enterDescription": "输入描述",
+  "enterImageUrl": "输入图片网址"
 }

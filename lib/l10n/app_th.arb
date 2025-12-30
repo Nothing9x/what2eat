@@ -115,5 +115,17 @@
   "confirmDelete": "คุณแน่ใจหรือไม่ว่าต้องการลบรายการนี้?",
   "delete": "ลบ",
   "edit": "แก้ไข",
-  "noItems": "ยังไม่มีรายการ"
+  "noItems": "ยังไม่มีรายการ",
+  "createList": "สร้างรายการ",
+  "noListsYet": "ยังไม่มีรายการ",
+  "noListsSubtitle": "สร้างรายการใหม่เพื่อ\nตอบสนองความชอบอาหารของคุณ!",
+  "itemsCount": "{count} รายการแนะนำ",
+  "foodItems": "รายการอาหาร",
+  "addFoodItem": "เพิ่มอาหาร",
+  "noFoodItems": "ยังไม่มีอาหาร",
+  "noFoodItemsSubtitle": "เพิ่มอาหารในรายการนี้",
+  "enterListName": "ป้อนชื่อรายการ",
+  "enterItemName": "ป้อนชื่ออาหาร",
+  "enterDescription": "ป้อนคำอธิบาย",
+  "enterImageUrl": "ป้อน URL รูปภาพ"
 }

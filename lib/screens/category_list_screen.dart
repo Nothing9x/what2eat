@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../l10n/app_localizations.dart';
 import '../models/food_category.dart';
 import '../providers/category_provider.dart';
 import '../widgets/category_card.dart';
@@ -13,6 +14,7 @@ class CategoryListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bgColor = isDark ? const Color(0xFF221a10) : const Color(0xFFF8F7F6);
     final primaryColor = const Color(0xFFEC9213);
@@ -22,9 +24,9 @@ class CategoryListScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: bgColor,
         elevation: 0,
-        title: const Text(
-          'Danh sách Quay',
-          style: TextStyle(
+        title: Text(
+          l10n.manageLists,
+          style: const TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.w800,
           ),
@@ -57,9 +59,9 @@ class CategoryListScreen extends StatelessWidget {
           if (provider.categories.isEmpty) {
             return EmptyState(
               icon: Icons.add_task,
-              title: 'Chưa có danh sách nào',
-              subtitle: 'Tạo danh sách mới để\nphục vụ sở thích ăn uống của bạn!',
-              actionLabel: 'Tạo danh sách',
+              title: l10n.noListsYet,
+              subtitle: l10n.noListsSubtitle,
+              actionLabel: l10n.createList,
               onAction: () => _navigateToAddCategory(context),
             );
           }
@@ -124,12 +126,13 @@ class CategoryListScreen extends StatelessWidget {
   }
 
   Future<void> _handleDelete(BuildContext context, FoodCategory category) async {
+    final l10n = AppLocalizations.of(context)!;
     final confirmed = await ConfirmDialog.show(
       context: context,
-      title: 'Xóa danh sách',
-      message: 'Bạn có chắc muốn xóa "${category.name}" và ${category.itemCount} món ăn?',
-      confirmText: 'Xóa',
-      cancelText: 'Hủy',
+      title: l10n.deleteList,
+      message: '${l10n.confirmDelete}\n"${category.name}" - ${category.itemCount} ${l10n.noItems}',
+      confirmText: l10n.delete,
+      cancelText: l10n.cancel,
       isDestructive: true,
     );
 
@@ -138,13 +141,13 @@ class CategoryListScreen extends StatelessWidget {
         await context.read<CategoryProvider>().deleteCategory(category.id);
         if (context.mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Đã xóa danh sách')),
+            SnackBar(content: Text('${l10n.deleteList} - ${category.name}')),
           );
         }
       } catch (e) {
         if (context.mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Lỗi: ${e.toString()}')),
+            SnackBar(content: Text('Error: ${e.toString()}')),
           );
         }
       }

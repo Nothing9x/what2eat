@@ -115,5 +115,17 @@
   "confirmDelete": "이 목록을 삭제하시겠습니까?",
   "delete": "삭제",
   "edit": "수정",
-  "noItems": "아직 항목이 없습니다"
+  "noItems": "아직 항목이 없습니다",
+  "createList": "목록 만들기",
+  "noListsYet": "아직 목록이 없습니다",
+  "noListsSubtitle": "새 목록을 만들어\n음식 선호도를 설정하세요!",
+  "itemsCount": "{count}개 제안",
+  "foodItems": "음식 항목",
+  "addFoodItem": "음식 추가",
+  "noFoodItems": "아직 음식이 없습니다",
+  "noFoodItemsSubtitle": "이 목록에 음식 추가",
+  "enterListName": "목록 이름 입력",
+  "enterItemName": "항목 이름 입력",
+  "enterDescription": "설명 입력",
+  "enterImageUrl": "이미지 URL 입력"
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../l10n/app_localizations.dart';
 import '../models/food_category.dart';
 import '../providers/category_provider.dart';
 import '../widgets/emoji_picker.dart';
@@ -37,6 +38,7 @@ class _CategoryFormScreenState extends State<CategoryFormScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bgColor = isDark ? const Color(0xFF221a10) : const Color(0xFFF8F7F6);
 
@@ -46,7 +48,7 @@ class _CategoryFormScreenState extends State<CategoryFormScreen> {
         backgroundColor: bgColor,
         elevation: 0,
         title: Text(
-          isEditing ? 'Sửa danh sách' : 'Tạo danh sách mới',
+          isEditing ? l10n.editList : l10n.addNewList,
           style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
       ),
@@ -55,16 +57,16 @@ class _CategoryFormScreenState extends State<CategoryFormScreen> {
         child: ListView(
           padding: const EdgeInsets.all(16),
           children: [
-            _buildEmojiSelector(isDark),
+            _buildEmojiSelector(context, isDark),
             const SizedBox(height: 24),
-            _buildNameField(isDark),
+            _buildNameField(context, isDark),
             const SizedBox(height: 24),
-            _buildColorSelector(isDark),
+            _buildColorSelector(context, isDark),
             const SizedBox(height: 32),
-            _buildSaveButton(),
+            _buildSaveButton(context),
             if (isEditing) ...[
               const SizedBox(height: 12),
-              _buildDeleteButton(),
+              _buildDeleteButton(context),
             ],
           ],
         ),
@@ -72,12 +74,13 @@ class _CategoryFormScreenState extends State<CategoryFormScreen> {
     );
   }
 
-  Widget _buildEmojiSelector(bool isDark) {
+  Widget _buildEmojiSelector(BuildContext context, bool isDark) {
+    final l10n = AppLocalizations.of(context)!;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Biểu tượng',
+          l10n.selectIcon,
           style: TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.bold,
@@ -102,7 +105,7 @@ class _CategoryFormScreenState extends State<CategoryFormScreen> {
                 Text(_selectedEmoji, style: const TextStyle(fontSize: 32)),
                 const SizedBox(width: 16),
                 Text(
-                  'Nhấn để chọn biểu tượng',
+                  l10n.selectIcon,
                   style: TextStyle(
                     color: isDark ? Colors.grey[400] : Colors.grey[600],
                   ),
@@ -115,12 +118,13 @@ class _CategoryFormScreenState extends State<CategoryFormScreen> {
     );
   }
 
-  Widget _buildNameField(bool isDark) {
+  Widget _buildNameField(BuildContext context, bool isDark) {
+    final l10n = AppLocalizations.of(context)!;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Tên danh sách',
+          l10n.listName,
           style: TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.bold,
@@ -131,7 +135,7 @@ class _CategoryFormScreenState extends State<CategoryFormScreen> {
         TextFormField(
           controller: _nameController,
           decoration: InputDecoration(
-            hintText: 'VD: Bữa Sáng, Bữa Trưa...',
+            hintText: l10n.enterListName,
             filled: true,
             fillColor: isDark ? const Color(0xFF2c241b) : Colors.white,
             border: OutlineInputBorder(
@@ -149,10 +153,10 @@ class _CategoryFormScreenState extends State<CategoryFormScreen> {
           ),
           validator: (value) {
             if (value == null || value.trim().isEmpty) {
-              return 'Vui lòng nhập tên danh sách';
+              return l10n.enterListName;
             }
             if (value.trim().length > 50) {
-              return 'Tên quá dài (tối đa 50 ký tự)';
+              return 'Name too long (max 50 characters)';
             }
             return null;
           },
@@ -161,7 +165,8 @@ class _CategoryFormScreenState extends State<CategoryFormScreen> {
     );
   }
 
-  Widget _buildColorSelector(bool isDark) {
+  Widget _buildColorSelector(BuildContext context, bool isDark) {
+    final l10n = AppLocalizations.of(context)!;
     final colors = [
       const Color(0xFFEC9213),
       const Color(0xFFe94560),
@@ -177,7 +182,7 @@ class _CategoryFormScreenState extends State<CategoryFormScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Màu sắc',
+          l10n.selectColor,
           style: TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.bold,
@@ -223,7 +228,8 @@ class _CategoryFormScreenState extends State<CategoryFormScreen> {
     );
   }
 
-  Widget _buildSaveButton() {
+  Widget _buildSaveButton(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return ElevatedButton(
       onPressed: _handleSave,
       style: ElevatedButton.styleFrom(
@@ -235,13 +241,14 @@ class _CategoryFormScreenState extends State<CategoryFormScreen> {
         ),
       ),
       child: Text(
-        isEditing ? 'Cập nhật' : 'Tạo danh sách',
+        isEditing ? l10n.save : l10n.createList,
         style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
       ),
     );
   }
 
-  Widget _buildDeleteButton() {
+  Widget _buildDeleteButton(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return OutlinedButton(
       onPressed: _handleDelete,
       style: OutlinedButton.styleFrom(
@@ -252,9 +259,9 @@ class _CategoryFormScreenState extends State<CategoryFormScreen> {
         ),
         side: const BorderSide(color: Colors.red),
       ),
-      child: const Text(
-        'Xóa danh sách',
-        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+      child: Text(
+        l10n.deleteList,
+        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
       ),
     );
   }
@@ -294,17 +301,18 @@ class _CategoryFormScreenState extends State<CategoryFormScreen> {
       }
 
       if (mounted) {
+        final l10n = AppLocalizations.of(context)!;
         Navigator.pop(context);
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(isEditing ? 'Đã cập nhật danh sách' : 'Đã tạo danh sách mới'),
+            content: Text(isEditing ? '${l10n.editList} - ${l10n.save}' : l10n.createList),
           ),
         );
       }
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Lỗi: ${e.toString()}')),
+          SnackBar(content: Text('Error: ${e.toString()}')),
         );
       }
     }

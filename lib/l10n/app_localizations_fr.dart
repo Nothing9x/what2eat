@@ -285,6 +285,16 @@ class AppLocalizationsFr extends AppLocalizations {
   String get addNewList => 'Ajouter une nouvelle liste';
 
   @override
+  String get createList => 'Créer une liste';
+
+  @override
+  String get noListsYet => 'Pas encore de listes';
+
+  @override
+  String get noListsSubtitle =>
+      'Créez une nouvelle liste pour\nrépondre à vos préférences alimentaires!';
+
+  @override
   String get listName => 'Nom de la liste';
 
   @override
@@ -325,4 +335,33 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get noItems => 'Pas encore d\'éléments';
+
+  @override
+  String itemsCount(int count) {
+    return '$count éléments suggérés';
+  }
+
+  @override
+  String get foodItems => 'Éléments de nourriture';
+
+  @override
+  String get addFoodItem => 'Ajouter de la nourriture';
+
+  @override
+  String get noFoodItems => 'Pas encore de nourriture';
+
+  @override
+  String get noFoodItemsSubtitle => 'Ajoutez de la nourriture à cette liste';
+
+  @override
+  String get enterListName => 'Entrez le nom de la liste';
+
+  @override
+  String get enterItemName => 'Entrez le nom de l\'élément';
+
+  @override
+  String get enterDescription => 'Entrez la description';
+
+  @override
+  String get enterImageUrl => 'Entrez l\'URL de l\'image';
 }

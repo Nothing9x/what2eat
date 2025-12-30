@@ -279,10 +279,20 @@ class AppLocalizationsVi extends AppLocalizations {
   String get cancel => 'Hủy';
 
   @override
-  String get manageLists => 'Quản Lý Danh Sách';
+  String get manageLists => 'Danh Sách Quay';
 
   @override
   String get addNewList => 'Thêm Danh Sách Mới';
+
+  @override
+  String get createList => 'Tạo Danh Sách';
+
+  @override
+  String get noListsYet => 'Chưa có danh sách nào';
+
+  @override
+  String get noListsSubtitle =>
+      'Tạo danh sách mới để\nphục vụ sở thích ăn uống của bạn!';
 
   @override
   String get listName => 'Tên Danh Sách';
@@ -325,4 +335,33 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get noItems => 'Chưa có món nào';
+
+  @override
+  String itemsCount(int count) {
+    return '$count món gợi ý';
+  }
+
+  @override
+  String get foodItems => 'Món Ăn';
+
+  @override
+  String get addFoodItem => 'Thêm Món Ăn';
+
+  @override
+  String get noFoodItems => 'Chưa có món ăn';
+
+  @override
+  String get noFoodItemsSubtitle => 'Thêm món ăn vào danh sách này';
+
+  @override
+  String get enterListName => 'Nhập tên danh sách';
+
+  @override
+  String get enterItemName => 'Nhập tên món';
+
+  @override
+  String get enterDescription => 'Nhập mô tả';
+
+  @override
+  String get enterImageUrl => 'Nhập URL hình ảnh';
 }

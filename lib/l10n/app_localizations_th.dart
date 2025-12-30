@@ -284,6 +284,16 @@ class AppLocalizationsTh extends AppLocalizations {
   String get addNewList => 'เพิ่มรายการใหม่';
 
   @override
+  String get createList => 'สร้างรายการ';
+
+  @override
+  String get noListsYet => 'ยังไม่มีรายการ';
+
+  @override
+  String get noListsSubtitle =>
+      'สร้างรายการใหม่เพื่อ\nตอบสนองความชอบอาหารของคุณ!';
+
+  @override
   String get listName => 'ชื่อรายการ';
 
   @override
@@ -324,4 +334,33 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get noItems => 'ยังไม่มีรายการ';
+
+  @override
+  String itemsCount(int count) {
+    return '$count รายการแนะนำ';
+  }
+
+  @override
+  String get foodItems => 'รายการอาหาร';
+
+  @override
+  String get addFoodItem => 'เพิ่มอาหาร';
+
+  @override
+  String get noFoodItems => 'ยังไม่มีอาหาร';
+
+  @override
+  String get noFoodItemsSubtitle => 'เพิ่มอาหารในรายการนี้';
+
+  @override
+  String get enterListName => 'ป้อนชื่อรายการ';
+
+  @override
+  String get enterItemName => 'ป้อนชื่ออาหาร';
+
+  @override
+  String get enterDescription => 'ป้อนคำอธิบาย';
+
+  @override
+  String get enterImageUrl => 'ป้อน URL รูปภาพ';
 }

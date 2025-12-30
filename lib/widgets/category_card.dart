@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../l10n/app_localizations.dart';
 import '../models/food_category.dart';
 
 class CategoryCard extends StatelessWidget {
@@ -17,6 +18,7 @@ class CategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return InkWell(
@@ -75,7 +77,7 @@ class CategoryCard extends StatelessWidget {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    '${category.itemCount} món gợi ý',
+                    l10n.itemsCount(category.itemCount),
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w500,

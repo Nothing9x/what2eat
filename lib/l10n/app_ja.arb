@@ -115,5 +115,17 @@
   "confirmDelete": "このリストを削除してもよろしいですか？",
   "delete": "削除",
   "edit": "編集",
-  "noItems": "まだ項目がありません"
+  "noItems": "まだ項目がありません",
+  "createList": "リストを作成",
+  "noListsYet": "まだリストがありません",
+  "noListsSubtitle": "新しいリストを作成して\n食事の好みに合わせましょう!",
+  "itemsCount": "{count}件の提案",
+  "foodItems": "食品項目",
+  "addFoodItem": "食品を追加",
+  "noFoodItems": "まだ食品がありません",
+  "noFoodItemsSubtitle": "このリストに食品を追加",
+  "enterListName": "リスト名を入力",
+  "enterItemName": "項目名を入力",
+  "enterDescription": "説明を入力",
+  "enterImageUrl": "画像URLを入力"
 }

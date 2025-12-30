@@ -284,6 +284,15 @@ class AppLocalizationsZh extends AppLocalizations {
   String get addNewList => '添加新列表';
 
   @override
+  String get createList => '创建列表';
+
+  @override
+  String get noListsYet => '还没有列表';
+
+  @override
+  String get noListsSubtitle => '创建新列表以\n满足您的食物偏好!';
+
+  @override
   String get listName => '列表名称';
 
   @override
@@ -324,4 +333,33 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get noItems => '还没有项目';
+
+  @override
+  String itemsCount(int count) {
+    return '$count个建议';
+  }
+
+  @override
+  String get foodItems => '食物项目';
+
+  @override
+  String get addFoodItem => '添加食物';
+
+  @override
+  String get noFoodItems => '还没有食物';
+
+  @override
+  String get noFoodItemsSubtitle => '向此列表添加食物';
+
+  @override
+  String get enterListName => '输入列表名称';
+
+  @override
+  String get enterItemName => '输入项目名称';
+
+  @override
+  String get enterDescription => '输入描述';
+
+  @override
+  String get enterImageUrl => '输入图片网址';
 }
