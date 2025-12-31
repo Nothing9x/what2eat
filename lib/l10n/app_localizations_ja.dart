@@ -272,6 +272,27 @@ class AppLocalizationsJa extends AppLocalizations {
   String get sunday => '日曜日';
 
   @override
+  String get mondayShort => '月';
+
+  @override
+  String get tuesdayShort => '火';
+
+  @override
+  String get wednesdayShort => '水';
+
+  @override
+  String get thursdayShort => '木';
+
+  @override
+  String get fridayShort => '金';
+
+  @override
+  String get saturdayShort => '土';
+
+  @override
+  String get sundayShort => '日';
+
+  @override
   String get save => '保存';
 
   @override

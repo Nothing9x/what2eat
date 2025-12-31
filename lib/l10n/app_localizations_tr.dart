@@ -272,6 +272,27 @@ class AppLocalizationsTr extends AppLocalizations {
   String get sunday => 'Pazar';
 
   @override
+  String get mondayShort => 'Pzt';
+
+  @override
+  String get tuesdayShort => 'Sal';
+
+  @override
+  String get wednesdayShort => 'Çar';
+
+  @override
+  String get thursdayShort => 'Per';
+
+  @override
+  String get fridayShort => 'Cum';
+
+  @override
+  String get saturdayShort => 'Cmt';
+
+  @override
+  String get sundayShort => 'Paz';
+
+  @override
   String get save => 'Kaydet';
 
   @override

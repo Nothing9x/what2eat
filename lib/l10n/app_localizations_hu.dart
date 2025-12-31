@@ -273,6 +273,27 @@ class AppLocalizationsHu extends AppLocalizations {
   String get sunday => 'Vasárnap';
 
   @override
+  String get mondayShort => 'H';
+
+  @override
+  String get tuesdayShort => 'K';
+
+  @override
+  String get wednesdayShort => 'Sze';
+
+  @override
+  String get thursdayShort => 'Cs';
+
+  @override
+  String get fridayShort => 'P';
+
+  @override
+  String get saturdayShort => 'Szo';
+
+  @override
+  String get sundayShort => 'V';
+
+  @override
   String get save => 'Mentés';
 
   @override

@@ -273,6 +273,27 @@ class AppLocalizationsCs extends AppLocalizations {
   String get sunday => 'Neděle';
 
   @override
+  String get mondayShort => 'Po';
+
+  @override
+  String get tuesdayShort => 'Út';
+
+  @override
+  String get wednesdayShort => 'St';
+
+  @override
+  String get thursdayShort => 'Čt';
+
+  @override
+  String get fridayShort => 'Pá';
+
+  @override
+  String get saturdayShort => 'So';
+
+  @override
+  String get sundayShort => 'Ne';
+
+  @override
   String get save => 'Uložit';
 
   @override

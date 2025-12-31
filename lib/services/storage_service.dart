@@ -1,9 +1,8 @@
 import 'dart:convert';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/food_category.dart';
 import '../models/default_food_data.dart';
+import 'country_detection_service.dart';
 
 class StorageService {
   final SharedPreferences _prefs;
@@ -72,9 +71,8 @@ class StorageService {
     if (hasMigrated) return;
 
     try {
-      // Detect country from locale
-      final locale = WidgetsBinding.instance.platformDispatcher.locale;
-      String countryCode = locale.countryCode ?? 'US';
+      // Detect country based on timezone (geographic location, not language)
+      String countryCode = CountryDetectionService.detectCountryCode();
 
       // Get default categories for the detected country
       final categories = DefaultFoodData.getCategoriesByCountry(countryCode);

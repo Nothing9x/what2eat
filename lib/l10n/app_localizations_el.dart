@@ -273,6 +273,27 @@ class AppLocalizationsEl extends AppLocalizations {
   String get sunday => 'Κυριακή';
 
   @override
+  String get mondayShort => 'Δευ';
+
+  @override
+  String get tuesdayShort => 'Τρί';
+
+  @override
+  String get wednesdayShort => 'Τετ';
+
+  @override
+  String get thursdayShort => 'Πέμ';
+
+  @override
+  String get fridayShort => 'Παρ';
+
+  @override
+  String get saturdayShort => 'Σάβ';
+
+  @override
+  String get sundayShort => 'Κυρ';
+
+  @override
   String get save => 'Αποθήκευση';
 
   @override

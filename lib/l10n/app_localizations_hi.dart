@@ -273,6 +273,27 @@ class AppLocalizationsHi extends AppLocalizations {
   String get sunday => 'रविवार';
 
   @override
+  String get mondayShort => 'सोम';
+
+  @override
+  String get tuesdayShort => 'मंगल';
+
+  @override
+  String get wednesdayShort => 'बुध';
+
+  @override
+  String get thursdayShort => 'गुरु';
+
+  @override
+  String get fridayShort => 'शुक्र';
+
+  @override
+  String get saturdayShort => 'शनि';
+
+  @override
+  String get sundayShort => 'रवि';
+
+  @override
   String get save => 'सहेजें';
 
   @override

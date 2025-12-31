@@ -4,6 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../l10n/app_localizations.dart';
 import '../models/food_item.dart';
 import '../models/food_delivery_platform.dart';
+import '../services/country_detection_service.dart';
 
 class ResultScreen extends StatefulWidget {
   final FoodItem foodItem;
@@ -68,9 +69,8 @@ class _ResultScreenState extends State<ResultScreen>
   }
 
   void _detectCountryAndSetPlatforms() {
-    // Try to get country from locale
-    final locale = WidgetsBinding.instance.platformDispatcher.locale;
-    String countryCode = locale.countryCode ?? 'US';
+    // Detect country based on timezone (geographic location, not language)
+    String countryCode = CountryDetectionService.detectCountryCode();
 
     // Get platforms for the detected country
     _platforms = FoodDeliveryConfig.getPlatformsByCountry(countryCode);

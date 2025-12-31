@@ -273,6 +273,27 @@ class AppLocalizationsId extends AppLocalizations {
   String get sunday => 'Minggu';
 
   @override
+  String get mondayShort => 'Sen';
+
+  @override
+  String get tuesdayShort => 'Sel';
+
+  @override
+  String get wednesdayShort => 'Rab';
+
+  @override
+  String get thursdayShort => 'Kam';
+
+  @override
+  String get fridayShort => 'Jum';
+
+  @override
+  String get saturdayShort => 'Sab';
+
+  @override
+  String get sundayShort => 'Min';
+
+  @override
   String get save => 'Simpan';
 
   @override

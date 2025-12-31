@@ -272,6 +272,27 @@ class AppLocalizationsZh extends AppLocalizations {
   String get sunday => '星期日';
 
   @override
+  String get mondayShort => '一';
+
+  @override
+  String get tuesdayShort => '二';
+
+  @override
+  String get wednesdayShort => '三';
+
+  @override
+  String get thursdayShort => '四';
+
+  @override
+  String get fridayShort => '五';
+
+  @override
+  String get saturdayShort => '六';
+
+  @override
+  String get sundayShort => '日';
+
+  @override
   String get save => '保存';
 
   @override

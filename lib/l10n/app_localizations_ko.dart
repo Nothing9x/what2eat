@@ -272,6 +272,27 @@ class AppLocalizationsKo extends AppLocalizations {
   String get sunday => '일요일';
 
   @override
+  String get mondayShort => '월';
+
+  @override
+  String get tuesdayShort => '화';
+
+  @override
+  String get wednesdayShort => '수';
+
+  @override
+  String get thursdayShort => '목';
+
+  @override
+  String get fridayShort => '금';
+
+  @override
+  String get saturdayShort => '토';
+
+  @override
+  String get sundayShort => '일';
+
+  @override
   String get save => '저장';
 
   @override

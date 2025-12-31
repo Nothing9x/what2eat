@@ -273,6 +273,27 @@ class AppLocalizationsVi extends AppLocalizations {
   String get sunday => 'Chủ Nhật';
 
   @override
+  String get mondayShort => 'T2';
+
+  @override
+  String get tuesdayShort => 'T3';
+
+  @override
+  String get wednesdayShort => 'T4';
+
+  @override
+  String get thursdayShort => 'T5';
+
+  @override
+  String get fridayShort => 'T6';
+
+  @override
+  String get saturdayShort => 'T7';
+
+  @override
+  String get sundayShort => 'CN';
+
+  @override
   String get save => 'Lưu';
 
   @override

@@ -272,6 +272,27 @@ class AppLocalizationsSv extends AppLocalizations {
   String get sunday => 'Söndag';
 
   @override
+  String get mondayShort => 'Mån';
+
+  @override
+  String get tuesdayShort => 'Tis';
+
+  @override
+  String get wednesdayShort => 'Ons';
+
+  @override
+  String get thursdayShort => 'Tor';
+
+  @override
+  String get fridayShort => 'Fre';
+
+  @override
+  String get saturdayShort => 'Lör';
+
+  @override
+  String get sundayShort => 'Sön';
+
+  @override
   String get save => 'Spara';
 
   @override

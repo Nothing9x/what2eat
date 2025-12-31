@@ -272,6 +272,27 @@ class AppLocalizationsNl extends AppLocalizations {
   String get sunday => 'Zondag';
 
   @override
+  String get mondayShort => 'Ma';
+
+  @override
+  String get tuesdayShort => 'Di';
+
+  @override
+  String get wednesdayShort => 'Wo';
+
+  @override
+  String get thursdayShort => 'Do';
+
+  @override
+  String get fridayShort => 'Vr';
+
+  @override
+  String get saturdayShort => 'Za';
+
+  @override
+  String get sundayShort => 'Zo';
+
+  @override
   String get save => 'Opslaan';
 
   @override

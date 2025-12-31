@@ -273,6 +273,27 @@ class AppLocalizationsPt extends AppLocalizations {
   String get sunday => 'Domingo';
 
   @override
+  String get mondayShort => 'Seg';
+
+  @override
+  String get tuesdayShort => 'Ter';
+
+  @override
+  String get wednesdayShort => 'Qua';
+
+  @override
+  String get thursdayShort => 'Qui';
+
+  @override
+  String get fridayShort => 'Sex';
+
+  @override
+  String get saturdayShort => 'Sáb';
+
+  @override
+  String get sundayShort => 'Dom';
+
+  @override
   String get save => 'Salvar';
 
   @override

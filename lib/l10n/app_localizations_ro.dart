@@ -273,6 +273,27 @@ class AppLocalizationsRo extends AppLocalizations {
   String get sunday => 'Duminică';
 
   @override
+  String get mondayShort => 'Lun';
+
+  @override
+  String get tuesdayShort => 'Mar';
+
+  @override
+  String get wednesdayShort => 'Mie';
+
+  @override
+  String get thursdayShort => 'Joi';
+
+  @override
+  String get fridayShort => 'Vin';
+
+  @override
+  String get saturdayShort => 'Sâm';
+
+  @override
+  String get sundayShort => 'Dum';
+
+  @override
   String get save => 'Salvează';
 
   @override

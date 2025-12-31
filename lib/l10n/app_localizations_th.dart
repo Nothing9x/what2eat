@@ -272,6 +272,27 @@ class AppLocalizationsTh extends AppLocalizations {
   String get sunday => 'วันอาทิตย์';
 
   @override
+  String get mondayShort => 'จ';
+
+  @override
+  String get tuesdayShort => 'อ';
+
+  @override
+  String get wednesdayShort => 'พ';
+
+  @override
+  String get thursdayShort => 'พฤ';
+
+  @override
+  String get fridayShort => 'ศ';
+
+  @override
+  String get saturdayShort => 'ส';
+
+  @override
+  String get sundayShort => 'อา';
+
+  @override
   String get save => 'บันทึก';
 
   @override
