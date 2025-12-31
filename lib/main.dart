@@ -7,6 +7,7 @@ import 'l10n/app_localizations.dart';
 import 'providers/category_provider.dart';
 import 'services/storage_service.dart';
 import 'services/ad_service.dart';
+import 'services/notification_service.dart';
 import 'screens/home_screen.dart';
 
 void main() async {
@@ -16,23 +17,29 @@ void main() async {
   final prefs = await SharedPreferences.getInstance();
   final storage = StorageService(prefs);
 
+  // Initialize Notifications
+  final notificationService = NotificationService();
+  await notificationService.initialize();
+  await notificationService.requestPermissions();
+
   // Initialize AdMob
   await AdService().initialize();
 
-  runApp(What2EatApp(storage: storage));
+  runApp(What2EatApp(storage: storage, notificationService: notificationService));
 }
 
 class What2EatApp extends StatelessWidget {
   final StorageService storage;
+  final NotificationService notificationService;
 
-  const What2EatApp({super.key, required this.storage});
+  const What2EatApp({super.key, required this.storage, required this.notificationService});
 
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (_) => CategoryProvider(storage)..loadCategories(),
+          create: (_) => CategoryProvider(storage, notificationService)..loadCategories(),
         ),
       ],
       child: MaterialApp(

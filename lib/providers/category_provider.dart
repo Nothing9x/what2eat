@@ -1,18 +1,22 @@
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart' as material;
+import 'dart:math';
 import '../models/food_category.dart';
 import '../models/food_item.dart';
 import '../models/notification_settings.dart';
 import '../services/storage_service.dart';
+import '../services/notification_service.dart';
 
 class CategoryProvider extends ChangeNotifier {
   final StorageService _storage;
+  final NotificationService _notificationService;
 
   List<FoodCategory> _categories = [];
   String? _selectedCategoryId;
   bool _isLoading = false;
   String? _error;
 
-  CategoryProvider(this._storage);
+  CategoryProvider(this._storage, this._notificationService);
 
   // Getters
   List<FoodCategory> get categories => _categories;
@@ -237,12 +241,68 @@ class CategoryProvider extends ChangeNotifier {
         throw Exception('Category not found');
       }
 
-      _categories[categoryIndex] = _categories[categoryIndex].copyWith(
+      final category = _categories[categoryIndex];
+
+      _categories[categoryIndex] = category.copyWith(
         notificationSettings: settings,
         updatedAt: DateTime.now(),
       );
 
       await _storage.saveCategories(_categories);
+
+      // Handle Notifications
+      final notificationId = categoryId.hashCode;
+      
+      // Cancel existing notifications for this category
+      // Cancel base ID (for one-time notifications)
+      await _notificationService.cancelNotification(notificationId);
+      // Cancel weekday-based IDs (base + 1..7)
+      for (int i = 1; i <= 7; i++) {
+         await _notificationService.cancelNotification(notificationId + i);
+      }
+
+      if (settings.enabled) {
+        final time = material.TimeOfDay(
+          hour: settings.time.hour, 
+          minute: settings.time.minute
+        );
+        
+        // Prepare notification content based on mode
+        String title;
+        String body;
+        
+        if (settings.mode == OperationMode.autoSpin && category.items.isNotEmpty) {
+          // Auto-spin mode: pick a random meal and show it
+          final random = Random();
+          final randomItem = category.items[random.nextInt(category.items.length)];
+          title = '${randomItem.icon} ${category.name}';
+          body = 'Hôm nay ăn: ${randomItem.name}!';
+        } else {
+          // Notify only mode: show reminder
+          title = '🍽️ ${category.name}';
+          body = 'Đã đến giờ chọn món ăn!';
+        }
+        
+        if (settings.onceNextDay) {
+          // Schedule one-time notification for the next occurrence of the specified time
+          await _notificationService.scheduleOneTimeNotification(
+            id: notificationId,
+            title: title,
+            body: body,
+            time: time,
+          );
+        } else if (settings.weekdays.isNotEmpty) {
+          // Schedule weekly recurring notifications
+          await _notificationService.scheduleWeeklyNotification(
+            id: notificationId,
+            title: title,
+            body: body,
+            time: time,
+            weekdays: settings.weekdays,
+          );
+        }
+      }
+
       notifyListeners();
     } catch (e) {
       _error = 'Không thể cập nhật cài đặt: ${e.toString()}';

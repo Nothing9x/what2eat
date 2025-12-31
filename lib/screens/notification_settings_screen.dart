@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../l10n/app_localizations.dart';
 import '../models/notification_settings.dart' as model;
 import '../providers/category_provider.dart';
+import '../services/notification_service.dart';
 
 class NotificationSettingsScreen extends StatefulWidget {
   const NotificationSettingsScreen({super.key});
@@ -88,11 +89,23 @@ class _NotificationSettingsScreenState extends State<NotificationSettingsScreen>
 
     provider.updateCategoryNotificationSettings(category.id, settings);
 
+    // Debug: Check pending notifications
+    NotificationService().getPendingNotifications();
+
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text(l10n.save)),
     );
 
     Navigator.pop(context);
+  }
+
+  Future<void> _testNotification() async {
+    await NotificationService().showTestNotification();
+    if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Test notification sent!')),
+      );
+    }
   }
 
   @override
@@ -427,32 +440,48 @@ class _NotificationSettingsScreenState extends State<NotificationSettingsScreen>
                   ],
                 ),
               ),
-              child: ElevatedButton(
-                onPressed: _saveSettings,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: primaryColor,
-                  foregroundColor: Colors.white,
-                  minimumSize: const Size(double.infinity, 56),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  elevation: 8,
-                  shadowColor: primaryColor.withOpacity(0.3),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Icon(Icons.save, size: 24),
-                    const SizedBox(width: 12),
-                    Text(
-                      l10n.save,
-                      style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  // Test Notification Button
+                  TextButton.icon(
+                    onPressed: _testNotification,
+                    icon: const Icon(Icons.notifications_active),
+                    label: const Text('Test Notification'),
+                    style: TextButton.styleFrom(
+                      foregroundColor: primaryColor,
                     ),
-                  ],
-                ),
+                  ),
+                  const SizedBox(height: 8),
+                  // Save Button
+                  ElevatedButton(
+                    onPressed: _saveSettings,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: primaryColor,
+                      foregroundColor: Colors.white,
+                      minimumSize: const Size(double.infinity, 56),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      elevation: 8,
+                      shadowColor: primaryColor.withOpacity(0.3),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Icon(Icons.save, size: 24),
+                        const SizedBox(width: 12),
+                        Text(
+                          l10n.save,
+                          style: const TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
