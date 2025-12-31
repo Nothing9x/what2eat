@@ -1,23 +1,19 @@
 {
   "@@locale": "pt",
-
-  "appTitle": "O Que Comer?",
+  "appTitle": "O Que Comer: Decisor de Refeições",
   "homeTitle": "O que vamos comer hoje? 🤔",
   "spinButton": "GIRAR AGORA",
   "spinning": "GIRANDO...",
   "spinHint": "Toque para escolher aleatoriamente",
-
   "noCategoryTitle": "Sem listas de comida ainda",
   "noCategoryButton": "Criar agora",
   "noItemsInCategory": "Esta lista não tem comida. Por favor adicione alguma!",
   "selectCategoryFirst": "Por favor selecione uma lista primeiro",
-
   "categoryBreakfast": "Café da manhã",
   "categoryLunch": "Almoço",
   "categoryDinner": "Jantar",
   "categoryParty": "Festa",
   "categoryCafe": "Café",
-
   "foodBanhMi": "Banh Mi",
   "foodBanhMiDesc": "Baguete Vietnamita",
   "foodPho": "Pho",
@@ -30,7 +26,6 @@
   "foodBunBoDesc": "Sopa de Macarrão de Carne Picante",
   "foodHuTieu": "Hu Tieu",
   "foodHuTieuDesc": "Sopa de Macarrão de Porco",
-
   "foodComTam": "Arroz Quebrado",
   "foodComTamDesc": "Arroz Quebrado com Porco Grelhado",
   "foodMiQuang": "Mi Quang",
@@ -39,7 +34,6 @@
   "foodComRangDesc": "Arroz Frito Yang Chow",
   "foodBunCha": "Bun Cha",
   "foodBunChaDesc": "Porco Grelhado com Macarrão",
-
   "foodLau": "Hot Pot",
   "foodLauDesc": "Hot Pot Tailandês",
   "foodNuong": "Grelhado",
@@ -52,7 +46,6 @@
   "foodBurgerDesc": "Cheeseburger",
   "foodMiY": "Massa",
   "foodMiYDesc": "Espaguete à Bolonhesa",
-
   "foodPizzaL": "Pizza",
   "foodPizzaLDesc": "Pizza Grande",
   "foodBurgerSet": "Hambúrguer",
@@ -65,7 +58,6 @@
   "foodSushiDesc": "Sushi Misto",
   "foodSalad": "Salada",
   "foodSaladDesc": "Salada Mista",
-
   "foodCafe": "Café",
   "foodCafeDesc": "Café Preto Gelado",
   "foodTraSua": "Chá com Leite",
@@ -78,13 +70,11 @@
   "foodCroissantDesc": "Croissant de Manteiga",
   "foodTraTraiCay": "Chá de Frutas",
   "foodTraTraiCayDesc": "Chá de Pêssego e Laranja",
-
   "resultTitle": "A escolha de hoje é",
   "resultSubtitle": "Aproveite esta refeição deliciosa!",
   "orderOn": "Pedir no {platform}",
   "spinAgain": "Girar Novamente",
   "backToHome": "Voltar ao Início",
-
   "notificationSettings": "Configurações de Notificação",
   "enableNotifications": "Ativar Notificações",
   "notifyOnceOnly": "Notificar apenas uma vez",
@@ -99,7 +89,6 @@
   "sunday": "Domingo",
   "save": "Salvar",
   "cancel": "Cancelar",
-
   "manageLists": "Gerenciar Listas",
   "addNewList": "Adicionar Nova Lista",
   "createList": "Criar Lista",

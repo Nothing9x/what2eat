@@ -1,23 +1,19 @@
 {
   "@@locale": "sv",
-
-  "appTitle": "Vad ska vi äta?",
+  "appTitle": "Vad ska vi äta: Måltidsväljare",
   "homeTitle": "Vad ska vi äta idag? 🤔",
   "spinButton": "SNURRA NU",
   "spinning": "SNURRAR...",
   "spinHint": "Tryck för att välja slumpmässigt",
-
   "noCategoryTitle": "Inga matlistor än",
   "noCategoryButton": "Skapa nu",
   "noItemsInCategory": "Denna lista har ingen mat. Lägg till lite!",
   "selectCategoryFirst": "Välj en lista först",
-
   "categoryBreakfast": "Frukost",
   "categoryLunch": "Lunch",
   "categoryDinner": "Middag",
   "categoryParty": "Fest",
   "categoryCafe": "Kafé",
-
   "foodBanhMi": "Banh Mi",
   "foodBanhMiDesc": "Vietnamesisk baguette",
   "foodPho": "Pho",
@@ -30,7 +26,6 @@
   "foodBunBoDesc": "Kryddig biffnudelsoppa",
   "foodHuTieu": "Hu Tieu",
   "foodHuTieuDesc": "Fläsknudelsoppa",
-
   "foodComTam": "Krossat ris",
   "foodComTamDesc": "Krossat ris med grillat fläsk",
   "foodMiQuang": "Mi Quang",
@@ -39,7 +34,6 @@
   "foodComRangDesc": "Yang Chow stekt ris",
   "foodBunCha": "Bun Cha",
   "foodBunChaDesc": "Grillat fläsk med nudlar",
-
   "foodLau": "Hot Pot",
   "foodLauDesc": "Thailändsk Hot Pot",
   "foodNuong": "Grillat",
@@ -52,7 +46,6 @@
   "foodBurgerDesc": "Ostburgare",
   "foodMiY": "Pasta",
   "foodMiYDesc": "Spaghetti Bolognese",
-
   "foodPizzaL": "Pizza",
   "foodPizzaLDesc": "Stor pizza",
   "foodBurgerSet": "Burgare",
@@ -65,7 +58,6 @@
   "foodSushiDesc": "Blandad sushi",
   "foodSalad": "Sallad",
   "foodSaladDesc": "Blandad sallad",
-
   "foodCafe": "Kaffe",
   "foodCafeDesc": "Iskallt svart kaffe",
   "foodTraSua": "Mjölkte",
@@ -78,13 +70,11 @@
   "foodCroissantDesc": "Smör croissant",
   "foodTraTraiCay": "Fruktte",
   "foodTraTraiCayDesc": "Persika apelsinte",
-
   "resultTitle": "Dagens val är",
   "resultSubtitle": "Njut av denna läckra måltid!",
   "orderOn": "Beställ på {platform}",
   "spinAgain": "Snurra igen",
   "backToHome": "Tillbaka till hem",
-
   "notificationSettings": "Aviseringsinställningar",
   "enableNotifications": "Aktivera aviseringar",
   "notifyOnceOnly": "Meddela endast en gång",
@@ -99,7 +89,6 @@
   "sunday": "Söndag",
   "save": "Spara",
   "cancel": "Avbryt",
-
   "manageLists": "Hantera listor",
   "addNewList": "Lägg till ny lista",
   "createList": "Skapa lista",

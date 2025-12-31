@@ -9,7 +9,7 @@ class AppLocalizationsPl extends AppLocalizations {
   AppLocalizationsPl([String locale = 'pl']) : super(locale);
 
   @override
-  String get appTitle => 'Co zjeść?';
+  String get appTitle => 'Co Zjeść: Wybór Posiłku';
 
   @override
   String get homeTitle => 'Co dziś zjemy? 🤔';

@@ -1,23 +1,19 @@
 {
   "@@locale": "fr",
-
-  "appTitle": "Quoi Manger?",
+  "appTitle": "Que Manger: Décideur de Repas",
   "homeTitle": "Qu'allons-nous manger aujourd'hui? 🤔",
   "spinButton": "TOURNER MAINTENANT",
   "spinning": "EN ROTATION...",
   "spinHint": "Appuyez pour choisir au hasard",
-
   "noCategoryTitle": "Pas encore de listes de nourriture",
   "noCategoryButton": "Créer maintenant",
   "noItemsInCategory": "Cette liste n'a pas de nourriture. Veuillez en ajouter!",
   "selectCategoryFirst": "Veuillez d'abord sélectionner une liste",
-
   "categoryBreakfast": "Petit déjeuner",
   "categoryLunch": "Déjeuner",
   "categoryDinner": "Dîner",
   "categoryParty": "Fête",
   "categoryCafe": "Café",
-
   "foodBanhMi": "Banh Mi",
   "foodBanhMiDesc": "Sandwich vietnamien",
   "foodPho": "Pho",
@@ -30,7 +26,6 @@
   "foodBunBoDesc": "Soupe de nouilles épicée au bœuf",
   "foodHuTieu": "Hu Tieu",
   "foodHuTieuDesc": "Soupe de nouilles au porc",
-
   "foodComTam": "Riz brisé",
   "foodComTamDesc": "Riz brisé au porc grillé",
   "foodMiQuang": "Mi Quang",
@@ -39,7 +34,6 @@
   "foodComRangDesc": "Riz frit Yang Chow",
   "foodBunCha": "Bun Cha",
   "foodBunChaDesc": "Porc grillé aux nouilles",
-
   "foodLau": "Fondue",
   "foodLauDesc": "Fondue thaïlandaise",
   "foodNuong": "Grillé",
@@ -52,7 +46,6 @@
   "foodBurgerDesc": "Cheeseburger",
   "foodMiY": "Pâtes",
   "foodMiYDesc": "Spaghetti bolognaise",
-
   "foodPizzaL": "Pizza",
   "foodPizzaLDesc": "Grande pizza",
   "foodBurgerSet": "Burger",
@@ -65,7 +58,6 @@
   "foodSushiDesc": "Sushi mixte",
   "foodSalad": "Salade",
   "foodSaladDesc": "Salade mixte",
-
   "foodCafe": "Café",
   "foodCafeDesc": "Café noir glacé",
   "foodTraSua": "Thé au lait",
@@ -78,13 +70,11 @@
   "foodCroissantDesc": "Croissant au beurre",
   "foodTraTraiCay": "Thé aux fruits",
   "foodTraTraiCayDesc": "Thé pêche orange",
-
   "resultTitle": "Le choix d'aujourd'hui est",
   "resultSubtitle": "Profitez de ce délicieux repas!",
   "orderOn": "Commander sur {platform}",
   "spinAgain": "Tourner à nouveau",
   "backToHome": "Retour à l'accueil",
-
   "notificationSettings": "Paramètres de notification",
   "enableNotifications": "Activer les notifications",
   "notifyOnceOnly": "Notifier une seule fois",
@@ -99,7 +89,6 @@
   "sunday": "Dimanche",
   "save": "Enregistrer",
   "cancel": "Annuler",
-
   "manageLists": "Gérer les listes",
   "addNewList": "Ajouter une nouvelle liste",
   "listName": "Nom de la liste",

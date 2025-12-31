@@ -9,7 +9,7 @@ class AppLocalizationsIt extends AppLocalizations {
   AppLocalizationsIt([String locale = 'it']) : super(locale);
 
   @override
-  String get appTitle => 'Cosa Mangiare?';
+  String get appTitle => 'Cosa Mangiare: Decidi Pasto';
 
   @override
   String get homeTitle => 'Cosa mangiamo oggi? 🤔';

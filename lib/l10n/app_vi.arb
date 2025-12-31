@@ -1,23 +1,19 @@
 {
   "@@locale": "vi",
-
-  "appTitle": "Hôm Nay Ăn Gì?",
+  "appTitle": "Hôm nay ăn gì",
   "homeTitle": "Hôm nay ăn gì nhỉ? 🤔",
   "spinButton": "QUAY NGAY",
   "spinning": "ĐANG QUAY...",
   "spinHint": "Nhấn để chọn món ngẫu nhiên",
-
   "noCategoryTitle": "Chưa có danh sách món ăn",
   "noCategoryButton": "Tạo ngay",
   "noItemsInCategory": "Danh sách này chưa có món ăn. Vui lòng thêm món!",
   "selectCategoryFirst": "Vui lòng chọn danh sách trước",
-
   "categoryBreakfast": "Sáng",
   "categoryLunch": "Trưa",
   "categoryDinner": "Tối",
   "categoryParty": "Party",
   "categoryCafe": "Cafe",
-
   "foodBanhMi": "Bánh Mì",
   "foodBanhMiDesc": "Bánh mì Việt Nam",
   "foodPho": "Phở",
@@ -30,7 +26,6 @@
   "foodBunBoDesc": "Bún bò Huế",
   "foodHuTieu": "Hủ Tiếu",
   "foodHuTieuDesc": "Hủ tiếu Nam Vang",
-
   "foodComTam": "Cơm Tấm",
   "foodComTamDesc": "Cơm tấm sườn bì",
   "foodMiQuang": "Mì Quảng",
@@ -39,7 +34,6 @@
   "foodComRangDesc": "Cơm rang dương châu",
   "foodBunCha": "Bún Chả",
   "foodBunChaDesc": "Bún chả Hà Nội",
-
   "foodLau": "Lẩu",
   "foodLauDesc": "Lẩu Thái",
   "foodNuong": "Nướng",
@@ -52,7 +46,6 @@
   "foodBurgerDesc": "Burger bò phô mai",
   "foodMiY": "Mì Ý",
   "foodMiYDesc": "Mì Ý sốt bò băm",
-
   "foodPizzaL": "Pizza",
   "foodPizzaLDesc": "Pizza Size L",
   "foodBurgerSet": "Burger",
@@ -65,7 +58,6 @@
   "foodSushiDesc": "Sushi Mix",
   "foodSalad": "Salad",
   "foodSaladDesc": "Salad trộn",
-
   "foodCafe": "Cà Phê",
   "foodCafeDesc": "Cà phê đen đá",
   "foodTraSua": "Trà Sữa",
@@ -78,13 +70,11 @@
   "foodCroissantDesc": "Croissant bơ",
   "foodTraTraiCay": "Trà Trái Cây",
   "foodTraTraiCayDesc": "Trà đào cam sả",
-
   "resultTitle": "Hôm nay ăn",
   "resultSubtitle": "Hãy thưởng thức bữa ăn ngon miệng nhé!",
   "orderOn": "Đặt ngay trên {platform}",
   "spinAgain": "Quay Lại",
   "backToHome": "Về Trang Chủ",
-
   "notificationSettings": "Cài Đặt Nhắc Nhở",
   "enableNotifications": "Bật Nhắc Nhở",
   "notifyOnceOnly": "Chỉ nhắc 1 lần",
@@ -99,7 +89,6 @@
   "sunday": "Chủ Nhật",
   "save": "Lưu",
   "cancel": "Hủy",
-
   "manageLists": "Danh Sách Quay",
   "addNewList": "Thêm Danh Sách Mới",
   "createList": "Tạo Danh Sách",

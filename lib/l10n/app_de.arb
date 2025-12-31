@@ -1,23 +1,19 @@
 {
   "@@locale": "de",
-
-  "appTitle": "Was Essen?",
+  "appTitle": "Was essen: Essensentscheider",
   "homeTitle": "Was essen wir heute? 🤔",
   "spinButton": "JETZT DREHEN",
   "spinning": "DREHEN...",
   "spinHint": "Tippen Sie, um zufällig auszuwählen",
-
   "noCategoryTitle": "Noch keine Essenlisten",
   "noCategoryButton": "Jetzt erstellen",
   "noItemsInCategory": "Diese Liste hat kein Essen. Bitte fügen Sie welches hinzu!",
   "selectCategoryFirst": "Bitte wählen Sie zuerst eine Liste",
-
   "categoryBreakfast": "Frühstück",
   "categoryLunch": "Mittagessen",
   "categoryDinner": "Abendessen",
   "categoryParty": "Party",
   "categoryCafe": "Café",
-
   "foodBanhMi": "Banh Mi",
   "foodBanhMiDesc": "Vietnamesisches Sandwich",
   "foodPho": "Pho",
@@ -30,7 +26,6 @@
   "foodBunBoDesc": "Scharfe Rindfleisch-Nudelsuppe",
   "foodHuTieu": "Hu Tieu",
   "foodHuTieuDesc": "Schweinefleisch-Nudelsuppe",
-
   "foodComTam": "Gebrochener Reis",
   "foodComTamDesc": "Gebrochener Reis mit gegrilltem Schweinefleisch",
   "foodMiQuang": "Mi Quang",
@@ -39,7 +34,6 @@
   "foodComRangDesc": "Yang Chow gebratener Reis",
   "foodBunCha": "Bun Cha",
   "foodBunChaDesc": "Gegrilltes Schweinefleisch mit Nudeln",
-
   "foodLau": "Feuertopf",
   "foodLauDesc": "Thailändischer Feuertopf",
   "foodNuong": "Gegrillt",
@@ -52,7 +46,6 @@
   "foodBurgerDesc": "Cheeseburger",
   "foodMiY": "Pasta",
   "foodMiYDesc": "Spaghetti Bolognese",
-
   "foodPizzaL": "Pizza",
   "foodPizzaLDesc": "Große Pizza",
   "foodBurgerSet": "Burger",
@@ -65,7 +58,6 @@
   "foodSushiDesc": "Gemischtes Sushi",
   "foodSalad": "Salat",
   "foodSaladDesc": "Gemischter Salat",
-
   "foodCafe": "Kaffee",
   "foodCafeDesc": "Eiskaffee schwarz",
   "foodTraSua": "Milchtee",
@@ -78,13 +70,11 @@
   "foodCroissantDesc": "Butter-Croissant",
   "foodTraTraiCay": "Früchtetee",
   "foodTraTraiCayDesc": "Pfirsich-Orangen-Tee",
-
   "resultTitle": "Die heutige Wahl ist",
   "resultSubtitle": "Genießen Sie diese köstliche Mahlzeit!",
   "orderOn": "Bestellen auf {platform}",
   "spinAgain": "Erneut drehen",
   "backToHome": "Zurück zur Startseite",
-
   "notificationSettings": "Benachrichtigungseinstellungen",
   "enableNotifications": "Benachrichtigungen aktivieren",
   "notifyOnceOnly": "Nur einmal benachrichtigen",
@@ -99,7 +89,6 @@
   "sunday": "Sonntag",
   "save": "Speichern",
   "cancel": "Abbrechen",
-
   "manageLists": "Listen verwalten",
   "addNewList": "Neue Liste hinzufügen",
   "listName": "Listenname",

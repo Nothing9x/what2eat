@@ -1,23 +1,19 @@
 {
   "@@locale": "es",
-
-  "appTitle": "¿Qué Comer?",
+  "appTitle": "Qué Comer: Decidir Comida",
   "homeTitle": "¿Qué comemos hoy? 🤔",
   "spinButton": "GIRAR AHORA",
   "spinning": "GIRANDO...",
   "spinHint": "Toca para elegir al azar",
-
   "noCategoryTitle": "Aún no hay listas de comida",
   "noCategoryButton": "Crear ahora",
   "noItemsInCategory": "Esta lista no tiene comida. ¡Por favor añade algo!",
   "selectCategoryFirst": "Por favor selecciona una lista primero",
-
   "categoryBreakfast": "Desayuno",
   "categoryLunch": "Almuerzo",
   "categoryDinner": "Cena",
   "categoryParty": "Fiesta",
   "categoryCafe": "Café",
-
   "foodBanhMi": "Banh Mi",
   "foodBanhMiDesc": "Sándwich vietnamita",
   "foodPho": "Pho",
@@ -30,7 +26,6 @@
   "foodBunBoDesc": "Sopa de fideos picante de res",
   "foodHuTieu": "Hu Tieu",
   "foodHuTieuDesc": "Sopa de fideos de cerdo",
-
   "foodComTam": "Arroz quebrado",
   "foodComTamDesc": "Arroz quebrado con cerdo a la parrilla",
   "foodMiQuang": "Mi Quang",
@@ -39,7 +34,6 @@
   "foodComRangDesc": "Arroz frito Yang Chow",
   "foodBunCha": "Bun Cha",
   "foodBunChaDesc": "Cerdo a la parrilla con fideos",
-
   "foodLau": "Fondue",
   "foodLauDesc": "Fondue tailandés",
   "foodNuong": "A la parrilla",
@@ -52,7 +46,6 @@
   "foodBurgerDesc": "Hamburguesa con queso",
   "foodMiY": "Pasta",
   "foodMiYDesc": "Espagueti a la boloñesa",
-
   "foodPizzaL": "Pizza",
   "foodPizzaLDesc": "Pizza grande",
   "foodBurgerSet": "Hamburguesa",
@@ -65,7 +58,6 @@
   "foodSushiDesc": "Sushi mixto",
   "foodSalad": "Ensalada",
   "foodSaladDesc": "Ensalada mixta",
-
   "foodCafe": "Café",
   "foodCafeDesc": "Café negro helado",
   "foodTraSua": "Té con leche",
@@ -78,13 +70,11 @@
   "foodCroissantDesc": "Croissant de mantequilla",
   "foodTraTraiCay": "Té de frutas",
   "foodTraTraiCayDesc": "Té de melocotón y naranja",
-
   "resultTitle": "La elección de hoy es",
   "resultSubtitle": "¡Disfruta de esta deliciosa comida!",
   "orderOn": "Pedir en {platform}",
   "spinAgain": "Girar de nuevo",
   "backToHome": "Volver al inicio",
-
   "notificationSettings": "Configuración de notificaciones",
   "enableNotifications": "Activar notificaciones",
   "notifyOnceOnly": "Notificar solo una vez",
@@ -99,7 +89,6 @@
   "sunday": "Domingo",
   "save": "Guardar",
   "cancel": "Cancelar",
-
   "manageLists": "Administrar listas",
   "addNewList": "Añadir nueva lista",
   "listName": "Nombre de la lista",

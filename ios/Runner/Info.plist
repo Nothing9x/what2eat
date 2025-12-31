@@ -23,6 +23,11 @@
 		<string>pl</string>
 		<string>nl</string>
 		<string>sv</string>
+		<string>uk</string>
+		<string>el</string>
+		<string>hu</string>
+		<string>cs</string>
+		<string>ro</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>

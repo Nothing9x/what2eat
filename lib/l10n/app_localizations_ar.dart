@@ -9,7 +9,7 @@ class AppLocalizationsAr extends AppLocalizations {
   AppLocalizationsAr([String locale = 'ar']) : super(locale);
 
   @override
-  String get appTitle => 'ماذا نأكل؟';
+  String get appTitle => 'ماذا آكل: مقرر الوجبات';
 
   @override
   String get homeTitle => 'ماذا يجب أن نأكل اليوم؟ 🤔';

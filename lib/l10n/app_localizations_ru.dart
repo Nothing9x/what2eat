@@ -9,7 +9,7 @@ class AppLocalizationsRu extends AppLocalizations {
   AppLocalizationsRu([String locale = 'ru']) : super(locale);
 
   @override
-  String get appTitle => 'Что поесть?';
+  String get appTitle => 'Что поесть: Выбор еды';
 
   @override
   String get homeTitle => 'Что будем есть сегодня? 🤔';

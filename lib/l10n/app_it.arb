@@ -1,23 +1,19 @@
 {
   "@@locale": "it",
-
-  "appTitle": "Cosa Mangiare?",
+  "appTitle": "Cosa Mangiare: Decidi Pasto",
   "homeTitle": "Cosa mangiamo oggi? 🤔",
   "spinButton": "GIRA ORA",
   "spinning": "GIRANDO...",
   "spinHint": "Tocca per scegliere a caso",
-
   "noCategoryTitle": "Nessuna lista di cibo",
   "noCategoryButton": "Crea ora",
   "noItemsInCategory": "Questa lista non ha cibo. Aggiungine un po'!",
   "selectCategoryFirst": "Seleziona prima una lista",
-
   "categoryBreakfast": "Colazione",
   "categoryLunch": "Pranzo",
   "categoryDinner": "Cena",
   "categoryParty": "Festa",
   "categoryCafe": "Caffè",
-
   "foodBanhMi": "Banh Mi",
   "foodBanhMiDesc": "Baguette vietnamita",
   "foodPho": "Pho",
@@ -30,7 +26,6 @@
   "foodBunBoDesc": "Zuppa di manzo piccante",
   "foodHuTieu": "Hu Tieu",
   "foodHuTieuDesc": "Zuppa di maiale",
-
   "foodComTam": "Riso spezzato",
   "foodComTamDesc": "Riso spezzato con maiale grigliato",
   "foodMiQuang": "Mi Quang",
@@ -39,7 +34,6 @@
   "foodComRangDesc": "Riso fritto Yang Chow",
   "foodBunCha": "Bun Cha",
   "foodBunChaDesc": "Maiale grigliato con tagliatelle",
-
   "foodLau": "Hot Pot",
   "foodLauDesc": "Hot Pot thailandese",
   "foodNuong": "Grigliata",
@@ -52,7 +46,6 @@
   "foodBurgerDesc": "Cheeseburger",
   "foodMiY": "Pasta",
   "foodMiYDesc": "Spaghetti alla bolognese",
-
   "foodPizzaL": "Pizza",
   "foodPizzaLDesc": "Pizza grande",
   "foodBurgerSet": "Hamburger",
@@ -65,7 +58,6 @@
   "foodSushiDesc": "Sushi misto",
   "foodSalad": "Insalata",
   "foodSaladDesc": "Insalata mista",
-
   "foodCafe": "Caffè",
   "foodCafeDesc": "Caffè nero ghiacciato",
   "foodTraSua": "Tè al latte",
@@ -78,13 +70,11 @@
   "foodCroissantDesc": "Cornetto al burro",
   "foodTraTraiCay": "Tè alla frutta",
   "foodTraTraiCayDesc": "Tè pesca e arancia",
-
   "resultTitle": "La scelta di oggi è",
   "resultSubtitle": "Goditi questo pasto delizioso!",
   "orderOn": "Ordina su {platform}",
   "spinAgain": "Gira di nuovo",
   "backToHome": "Torna alla Home",
-
   "notificationSettings": "Impostazioni notifiche",
   "enableNotifications": "Abilita notifiche",
   "notifyOnceOnly": "Notifica una sola volta",
@@ -99,7 +89,6 @@
   "sunday": "Domenica",
   "save": "Salva",
   "cancel": "Annulla",
-
   "manageLists": "Gestisci liste",
   "addNewList": "Aggiungi nuova lista",
   "createList": "Crea lista",

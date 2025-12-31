@@ -1,23 +1,19 @@
 {
   "@@locale": "en",
-
-  "appTitle": "What to Eat?",
+  "appTitle": "What to Eat: Meal Decider",
   "homeTitle": "What should we eat today? 🤔",
   "spinButton": "SPIN NOW",
   "spinning": "SPINNING...",
   "spinHint": "Tap to choose randomly",
-
   "noCategoryTitle": "No food lists yet",
   "noCategoryButton": "Create now",
   "noItemsInCategory": "This list has no food items. Please add some!",
   "selectCategoryFirst": "Please select a list first",
-
   "categoryBreakfast": "Breakfast",
   "categoryLunch": "Lunch",
   "categoryDinner": "Dinner",
   "categoryParty": "Party",
   "categoryCafe": "Cafe",
-
   "foodBanhMi": "Banh Mi",
   "foodBanhMiDesc": "Vietnamese Baguette",
   "foodPho": "Pho",
@@ -30,7 +26,6 @@
   "foodBunBoDesc": "Spicy Beef Noodle Soup",
   "foodHuTieu": "Hu Tieu",
   "foodHuTieuDesc": "Pork Noodle Soup",
-
   "foodComTam": "Broken Rice",
   "foodComTamDesc": "Broken Rice with Grilled Pork",
   "foodMiQuang": "Mi Quang",
@@ -39,7 +34,6 @@
   "foodComRangDesc": "Yang Chow Fried Rice",
   "foodBunCha": "Bun Cha",
   "foodBunChaDesc": "Grilled Pork with Noodles",
-
   "foodLau": "Hot Pot",
   "foodLauDesc": "Thai Hot Pot",
   "foodNuong": "Grilled",
@@ -52,7 +46,6 @@
   "foodBurgerDesc": "Cheese Burger",
   "foodMiY": "Pasta",
   "foodMiYDesc": "Spaghetti Bolognese",
-
   "foodPizzaL": "Pizza",
   "foodPizzaLDesc": "Large Pizza",
   "foodBurgerSet": "Burger",
@@ -65,7 +58,6 @@
   "foodSushiDesc": "Mixed Sushi",
   "foodSalad": "Salad",
   "foodSaladDesc": "Mixed Salad",
-
   "foodCafe": "Coffee",
   "foodCafeDesc": "Iced Black Coffee",
   "foodTraSua": "Milk Tea",
@@ -78,7 +70,6 @@
   "foodCroissantDesc": "Butter Croissant",
   "foodTraTraiCay": "Fruit Tea",
   "foodTraTraiCayDesc": "Peach Orange Tea",
-
   "resultTitle": "Today's choice is",
   "resultSubtitle": "Let's enjoy this delicious meal!",
   "orderOn": "Order on {platform}",
@@ -91,7 +82,6 @@
   },
   "spinAgain": "Spin Again",
   "backToHome": "Back to Home",
-
   "notificationSettings": "Notification Settings",
   "enableNotifications": "Enable Notifications",
   "notifyOnceOnly": "Notify only once",
@@ -106,7 +96,6 @@
   "sunday": "Sunday",
   "save": "Save",
   "cancel": "Cancel",
-
   "manageLists": "Spin Lists",
   "addNewList": "Add New List",
   "createList": "Create List",

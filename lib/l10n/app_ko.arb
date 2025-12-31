@@ -1,23 +1,19 @@
 {
   "@@locale": "ko",
-
-  "appTitle": "오늘 뭐 먹지?",
+  "appTitle": "뭐 먹지? 식사 결정",
   "homeTitle": "오늘 뭐 먹을까? 🤔",
   "spinButton": "지금 돌리기",
   "spinning": "돌리는 중...",
   "spinHint": "탭하여 랜덤 선택",
-
   "noCategoryTitle": "아직 음식 목록이 없습니다",
   "noCategoryButton": "지금 만들기",
   "noItemsInCategory": "이 목록에 음식이 없습니다. 추가해주세요!",
   "selectCategoryFirst": "먼저 목록을 선택해주세요",
-
   "categoryBreakfast": "아침",
   "categoryLunch": "점심",
   "categoryDinner": "저녁",
   "categoryParty": "파티",
   "categoryCafe": "카페",
-
   "foodBanhMi": "반미",
   "foodBanhMiDesc": "베트남 샌드위치",
   "foodPho": "쌀국수",
@@ -30,7 +26,6 @@
   "foodBunBoDesc": "매운 소고기 쌀국수",
   "foodHuTieu": "후띠우",
   "foodHuTieuDesc": "돼지고기 국수",
-
   "foodComTam": "깨진 쌀밥",
   "foodComTamDesc": "깨진 쌀밥과 구운 돼지고기",
   "foodMiQuang": "미꽝",
@@ -39,7 +34,6 @@
   "foodComRangDesc": "양주 볶음밥",
   "foodBunCha": "분짜",
   "foodBunChaDesc": "구운 돼지고기와 국수",
-
   "foodLau": "전골",
   "foodLauDesc": "태국식 전골",
   "foodNuong": "구이",
@@ -52,7 +46,6 @@
   "foodBurgerDesc": "치즈버거",
   "foodMiY": "파스타",
   "foodMiYDesc": "볼로네제 스파게티",
-
   "foodPizzaL": "피자",
   "foodPizzaLDesc": "라지 피자",
   "foodBurgerSet": "버거",
@@ -65,7 +58,6 @@
   "foodSushiDesc": "모듬 스시",
   "foodSalad": "샐러드",
   "foodSaladDesc": "모듬 샐러드",
-
   "foodCafe": "커피",
   "foodCafeDesc": "아이스 블랙 커피",
   "foodTraSua": "밀크티",
@@ -78,13 +70,11 @@
   "foodCroissantDesc": "버터 크루아상",
   "foodTraTraiCay": "과일차",
   "foodTraTraiCayDesc": "복숭아 오렌지 차",
-
   "resultTitle": "오늘의 선택은",
   "resultSubtitle": "이 맛있는 식사를 즐기세요!",
   "orderOn": "{platform}에서 주문",
   "spinAgain": "다시 돌리기",
   "backToHome": "홈으로 돌아가기",
-
   "notificationSettings": "알림 설정",
   "enableNotifications": "알림 활성화",
   "notifyOnceOnly": "한 번만 알림",
@@ -99,7 +89,6 @@
   "sunday": "일요일",
   "save": "저장",
   "cancel": "취소",
-
   "manageLists": "목록 관리",
   "addNewList": "새 목록 추가",
   "listName": "목록 이름",

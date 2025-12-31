@@ -1,23 +1,19 @@
 {
   "@@locale": "ja",
-
-  "appTitle": "今日は何を食べる?",
+  "appTitle": "何食べる？食事の決定",
   "homeTitle": "今日は何を食べようか? 🤔",
   "spinButton": "今すぐ回す",
   "spinning": "回転中...",
   "spinHint": "タップしてランダムに選択",
-
   "noCategoryTitle": "まだ食べ物リストがありません",
   "noCategoryButton": "今すぐ作成",
   "noItemsInCategory": "このリストには食べ物がありません。追加してください!",
   "selectCategoryFirst": "最初にリストを選択してください",
-
   "categoryBreakfast": "朝食",
   "categoryLunch": "昼食",
   "categoryDinner": "夕食",
   "categoryParty": "パーティー",
   "categoryCafe": "カフェ",
-
   "foodBanhMi": "バインミー",
   "foodBanhMiDesc": "ベトナムサンドイッチ",
   "foodPho": "フォー",
@@ -30,7 +26,6 @@
   "foodBunBoDesc": "スパイシー牛肉麺",
   "foodHuTieu": "フーティウ",
   "foodHuTieuDesc": "豚肉麺スープ",
-
   "foodComTam": "砕き米",
   "foodComTamDesc": "砕き米と焼き豚肉",
   "foodMiQuang": "ミークアン",
@@ -39,7 +34,6 @@
   "foodComRangDesc": "揚州チャーハン",
   "foodBunCha": "ブンチャー",
   "foodBunChaDesc": "焼き豚肉と麺",
-
   "foodLau": "鍋",
   "foodLauDesc": "タイ風鍋",
   "foodNuong": "焼き肉",
@@ -52,7 +46,6 @@
   "foodBurgerDesc": "チーズバーガー",
   "foodMiY": "パスタ",
   "foodMiYDesc": "ボロネーゼスパゲッティ",
-
   "foodPizzaL": "ピザ",
   "foodPizzaLDesc": "ラージピザ",
   "foodBurgerSet": "ハンバーガー",
@@ -65,7 +58,6 @@
   "foodSushiDesc": "ミックス寿司",
   "foodSalad": "サラダ",
   "foodSaladDesc": "ミックスサラダ",
-
   "foodCafe": "コーヒー",
   "foodCafeDesc": "アイスブラックコーヒー",
   "foodTraSua": "ミルクティー",
@@ -78,13 +70,11 @@
   "foodCroissantDesc": "バタークロワッサン",
   "foodTraTraiCay": "フルーツティー",
   "foodTraTraiCayDesc": "ピーチオレンジティー",
-
   "resultTitle": "今日の選択は",
   "resultSubtitle": "この美味しい食事を楽しみましょう!",
   "orderOn": "{platform}で注文",
   "spinAgain": "もう一度回す",
   "backToHome": "ホームに戻る",
-
   "notificationSettings": "通知設定",
   "enableNotifications": "通知を有効にする",
   "notifyOnceOnly": "一度だけ通知",
@@ -99,7 +89,6 @@
   "sunday": "日曜日",
   "save": "保存",
   "cancel": "キャンセル",
-
   "manageLists": "リストを管理",
   "addNewList": "新しいリストを追加",
   "listName": "リスト名",

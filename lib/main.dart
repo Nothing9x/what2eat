@@ -32,7 +32,7 @@ class What2EatApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        title: 'What to Eat?',
+        onGenerateTitle: (context) => AppLocalizations.of(context)!.appTitle,
         debugShowCheckedModeBanner: false,
         localizationsDelegates: const [
           AppLocalizations.delegate,
@@ -60,6 +60,11 @@ class What2EatApp extends StatelessWidget {
           Locale('pl'), // Polish
           Locale('nl'), // Dutch
           Locale('sv'), // Swedish
+          Locale('uk'), // Ukrainian
+          Locale('el'), // Greek
+          Locale('hu'), // Hungarian
+          Locale('cs'), // Czech
+          Locale('ro'), // Romanian
         ],
         theme: ThemeData(
           useMaterial3: true,

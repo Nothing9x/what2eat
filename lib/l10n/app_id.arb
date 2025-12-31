@@ -1,23 +1,19 @@
 {
   "@@locale": "id",
-
-  "appTitle": "Makan Apa?",
+  "appTitle": "Makan Apa: Pemilih Makanan",
   "homeTitle": "Kita makan apa hari ini? 🤔",
   "spinButton": "PUTAR SEKARANG",
   "spinning": "MEMUTAR...",
   "spinHint": "Ketuk untuk memilih secara acak",
-
   "noCategoryTitle": "Belum ada daftar makanan",
   "noCategoryButton": "Buat sekarang",
   "noItemsInCategory": "Daftar ini tidak memiliki makanan. Silakan tambahkan!",
   "selectCategoryFirst": "Silakan pilih daftar terlebih dahulu",
-
   "categoryBreakfast": "Sarapan",
   "categoryLunch": "Makan Siang",
   "categoryDinner": "Makan Malam",
   "categoryParty": "Pesta",
   "categoryCafe": "Kafe",
-
   "foodBanhMi": "Banh Mi",
   "foodBanhMiDesc": "Baguette Vietnam",
   "foodPho": "Pho",
@@ -30,7 +26,6 @@
   "foodBunBoDesc": "Sup Mie Sapi Pedas",
   "foodHuTieu": "Hu Tieu",
   "foodHuTieuDesc": "Sup Mie Babi",
-
   "foodComTam": "Nasi Pecah",
   "foodComTamDesc": "Nasi Pecah dengan Babi Panggang",
   "foodMiQuang": "Mi Quang",
@@ -39,7 +34,6 @@
   "foodComRangDesc": "Nasi Goreng Yang Chow",
   "foodBunCha": "Bun Cha",
   "foodBunChaDesc": "Babi Panggang dengan Mie",
-
   "foodLau": "Hot Pot",
   "foodLauDesc": "Hot Pot Thailand",
   "foodNuong": "Panggang",
@@ -52,7 +46,6 @@
   "foodBurgerDesc": "Burger Keju",
   "foodMiY": "Pasta",
   "foodMiYDesc": "Spaghetti Bolognese",
-
   "foodPizzaL": "Pizza",
   "foodPizzaLDesc": "Pizza Besar",
   "foodBurgerSet": "Burger",
@@ -65,7 +58,6 @@
   "foodSushiDesc": "Sushi Campur",
   "foodSalad": "Salad",
   "foodSaladDesc": "Salad Campur",
-
   "foodCafe": "Kopi",
   "foodCafeDesc": "Kopi Hitam Es",
   "foodTraSua": "Teh Susu",
@@ -78,13 +70,11 @@
   "foodCroissantDesc": "Croissant Mentega",
   "foodTraTraiCay": "Teh Buah",
   "foodTraTraiCayDesc": "Teh Jeruk Persik",
-
   "resultTitle": "Pilihan hari ini adalah",
   "resultSubtitle": "Nikmati makanan lezat ini!",
   "orderOn": "Pesan di {platform}",
   "spinAgain": "Putar Lagi",
   "backToHome": "Kembali ke Beranda",
-
   "notificationSettings": "Pengaturan Notifikasi",
   "enableNotifications": "Aktifkan Notifikasi",
   "notifyOnceOnly": "Beritahu hanya sekali",
@@ -99,7 +89,6 @@
   "sunday": "Minggu",
   "save": "Simpan",
   "cancel": "Batal",
-
   "manageLists": "Kelola Daftar",
   "addNewList": "Tambah Daftar Baru",
   "createList": "Buat Daftar",

@@ -1,23 +1,19 @@
 {
   "@@locale": "pl",
-
-  "appTitle": "Co zjeść?",
+  "appTitle": "Co Zjeść: Wybór Posiłku",
   "homeTitle": "Co dziś zjemy? 🤔",
   "spinButton": "ZAKRĘĆ TERAZ",
   "spinning": "KRĘCENIE...",
   "spinHint": "Dotknij, aby wybrać losowo",
-
   "noCategoryTitle": "Brak list jedzenia",
   "noCategoryButton": "Utwórz teraz",
   "noItemsInCategory": "Ta lista nie ma jedzenia. Dodaj coś!",
   "selectCategoryFirst": "Najpierw wybierz listę",
-
   "categoryBreakfast": "Śniadanie",
   "categoryLunch": "Obiad",
   "categoryDinner": "Kolacja",
   "categoryParty": "Impreza",
   "categoryCafe": "Kawiarnia",
-
   "foodBanhMi": "Banh Mi",
   "foodBanhMiDesc": "Wietnamska bagietka",
   "foodPho": "Pho",
@@ -30,7 +26,6 @@
   "foodBunBoDesc": "Pikantna zupa z wołowiną",
   "foodHuTieu": "Hu Tieu",
   "foodHuTieuDesc": "Zupa z wieprzowiną",
-
   "foodComTam": "Ryż łamany",
   "foodComTamDesc": "Ryż łamany z grillowaną wieprzowiną",
   "foodMiQuang": "Mi Quang",
@@ -39,7 +34,6 @@
   "foodComRangDesc": "Smażony ryż Yang Chow",
   "foodBunCha": "Bun Cha",
   "foodBunChaDesc": "Grillowana wieprzowina z makaronem",
-
   "foodLau": "Gorący kociołek",
   "foodLauDesc": "Tajski gorący kociołek",
   "foodNuong": "Grillowane",
@@ -52,7 +46,6 @@
   "foodBurgerDesc": "Cheeseburger",
   "foodMiY": "Makaron",
   "foodMiYDesc": "Spaghetti Bolognese",
-
   "foodPizzaL": "Pizza",
   "foodPizzaLDesc": "Duża pizza",
   "foodBurgerSet": "Burger",
@@ -65,7 +58,6 @@
   "foodSushiDesc": "Mieszane sushi",
   "foodSalad": "Sałatka",
   "foodSaladDesc": "Sałatka mieszana",
-
   "foodCafe": "Kawa",
   "foodCafeDesc": "Mrożona czarna kawa",
   "foodTraSua": "Herbata mleczna",
@@ -78,13 +70,11 @@
   "foodCroissantDesc": "Rogalik maślany",
   "foodTraTraiCay": "Herbata owocowa",
   "foodTraTraiCayDesc": "Herbata brzoskwiniowo-pomarańczowa",
-
   "resultTitle": "Dzisiejszy wybór to",
   "resultSubtitle": "Ciesz się tym pysznym posiłkiem!",
   "orderOn": "Zamów na {platform}",
   "spinAgain": "Zakręć ponownie",
   "backToHome": "Powrót do domu",
-
   "notificationSettings": "Ustawienia powiadomień",
   "enableNotifications": "Włącz powiadomienia",
   "notifyOnceOnly": "Powiadom tylko raz",
@@ -99,7 +89,6 @@
   "sunday": "Niedziela",
   "save": "Zapisz",
   "cancel": "Anuluj",
-
   "manageLists": "Zarządzaj listami",
   "addNewList": "Dodaj nową listę",
   "createList": "Utwórz listę",

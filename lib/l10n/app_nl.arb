@@ -1,23 +1,19 @@
 {
   "@@locale": "nl",
-
-  "appTitle": "Wat te eten?",
+  "appTitle": "Wat te Eten: Maaltijd Kiezer",
   "homeTitle": "Wat zullen we vandaag eten? 🤔",
   "spinButton": "DRAAI NU",
   "spinning": "DRAAIEN...",
   "spinHint": "Tik om willekeurig te kiezen",
-
   "noCategoryTitle": "Nog geen voedsellijsten",
   "noCategoryButton": "Maak nu",
   "noItemsInCategory": "Deze lijst heeft geen eten. Voeg wat toe!",
   "selectCategoryFirst": "Selecteer eerst een lijst",
-
   "categoryBreakfast": "Ontbijt",
   "categoryLunch": "Lunch",
   "categoryDinner": "Diner",
   "categoryParty": "Feest",
   "categoryCafe": "Café",
-
   "foodBanhMi": "Banh Mi",
   "foodBanhMiDesc": "Vietnamees stokbrood",
   "foodPho": "Pho",
@@ -30,7 +26,6 @@
   "foodBunBoDesc": "Pittige rundvleesnoedelsoep",
   "foodHuTieu": "Hu Tieu",
   "foodHuTieuDesc": "Varkensvleesnoedelsoep",
-
   "foodComTam": "Gebroken rijst",
   "foodComTamDesc": "Gebroken rijst met gegrild varkensvlees",
   "foodMiQuang": "Mi Quang",
@@ -39,7 +34,6 @@
   "foodComRangDesc": "Yang Chow gebakken rijst",
   "foodBunCha": "Bun Cha",
   "foodBunChaDesc": "Gegrild varkensvlees met noedels",
-
   "foodLau": "Hot Pot",
   "foodLauDesc": "Thaise Hot Pot",
   "foodNuong": "Gegrild",
@@ -52,7 +46,6 @@
   "foodBurgerDesc": "Cheeseburger",
   "foodMiY": "Pasta",
   "foodMiYDesc": "Spaghetti Bolognese",
-
   "foodPizzaL": "Pizza",
   "foodPizzaLDesc": "Grote pizza",
   "foodBurgerSet": "Burger",
@@ -65,7 +58,6 @@
   "foodSushiDesc": "Gemengde sushi",
   "foodSalad": "Salade",
   "foodSaladDesc": "Gemengde salade",
-
   "foodCafe": "Koffie",
   "foodCafeDesc": "IJskoude zwarte koffie",
   "foodTraSua": "Melkthee",
@@ -78,13 +70,11 @@
   "foodCroissantDesc": "Boter croissant",
   "foodTraTraiCay": "Vruchtenthee",
   "foodTraTraiCayDesc": "Perzik sinaasappelthee",
-
   "resultTitle": "De keuze van vandaag is",
   "resultSubtitle": "Geniet van deze heerlijke maaltijd!",
   "orderOn": "Bestel op {platform}",
   "spinAgain": "Opnieuw draaien",
   "backToHome": "Terug naar Home",
-
   "notificationSettings": "Meldingen instellingen",
   "enableNotifications": "Meldingen inschakelen",
   "notifyOnceOnly": "Slechts één keer melden",
@@ -99,7 +89,6 @@
   "sunday": "Zondag",
   "save": "Opslaan",
   "cancel": "Annuleren",
-
   "manageLists": "Lijsten beheren",
   "addNewList": "Nieuwe lijst toevoegen",
   "createList": "Lijst maken",

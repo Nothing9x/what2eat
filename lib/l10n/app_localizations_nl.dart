@@ -9,7 +9,7 @@ class AppLocalizationsNl extends AppLocalizations {
   AppLocalizationsNl([String locale = 'nl']) : super(locale);
 
   @override
-  String get appTitle => 'Wat te eten?';
+  String get appTitle => 'Wat te Eten: Maaltijd Kiezer';
 
   @override
   String get homeTitle => 'Wat zullen we vandaag eten? 🤔';

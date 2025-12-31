@@ -9,7 +9,7 @@ class AppLocalizationsVi extends AppLocalizations {
   AppLocalizationsVi([String locale = 'vi']) : super(locale);
 
   @override
-  String get appTitle => 'Hôm Nay Ăn Gì?';
+  String get appTitle => 'Hôm nay ăn gì';
 
   @override
   String get homeTitle => 'Hôm nay ăn gì nhỉ? 🤔';

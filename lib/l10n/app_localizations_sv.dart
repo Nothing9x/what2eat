@@ -9,7 +9,7 @@ class AppLocalizationsSv extends AppLocalizations {
   AppLocalizationsSv([String locale = 'sv']) : super(locale);
 
   @override
-  String get appTitle => 'Vad ska vi äta?';
+  String get appTitle => 'Vad ska vi äta: Måltidsväljare';
 
   @override
   String get homeTitle => 'Vad ska vi äta idag? 🤔';
