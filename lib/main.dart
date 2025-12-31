@@ -6,6 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'l10n/app_localizations.dart';
 import 'providers/category_provider.dart';
 import 'services/storage_service.dart';
+import 'services/ad_service.dart';
 import 'screens/home_screen.dart';
 
 void main() async {
@@ -14,6 +15,9 @@ void main() async {
   // Initialize services
   final prefs = await SharedPreferences.getInstance();
   final storage = StorageService(prefs);
+
+  // Initialize AdMob
+  await AdService().initialize();
 
   runApp(What2EatApp(storage: storage));
 }
