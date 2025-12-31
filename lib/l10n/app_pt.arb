@@ -116,5 +116,8 @@
   "enterListName": "Digite o nome da lista",
   "enterItemName": "Digite o nome do item",
   "enterDescription": "Digite a descrição",
-  "enterImageUrl": "Digite a URL da imagem"
+  "enterImageUrl": "Digite a URL da imagem",
+  "notificationTimeToChoose": "Hora de escolher sua refeição!",
+  "notificationTodayEat": "Hoje comer: {mealName}!",
+  "testNotification": "Notificação de teste"
 }

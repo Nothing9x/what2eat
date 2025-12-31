@@ -364,4 +364,15 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get enterImageUrl => 'Zadejte URL obrázku';
+
+  @override
+  String get notificationTimeToChoose => 'Je čas vybrat si jídlo!';
+
+  @override
+  String notificationTodayEat(String mealName) {
+    return 'Dnešní jídlo: $mealName!';
+  }
+
+  @override
+  String get testNotification => 'Testovací oznámení';
 }

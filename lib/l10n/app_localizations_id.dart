@@ -364,4 +364,15 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get enterImageUrl => 'Masukkan URL gambar';
+
+  @override
+  String get notificationTimeToChoose => 'Waktunya memilih makanan!';
+
+  @override
+  String notificationTodayEat(String mealName) {
+    return 'Hari ini makan: $mealName!';
+  }
+
+  @override
+  String get testNotification => 'Notifikasi Tes';
 }

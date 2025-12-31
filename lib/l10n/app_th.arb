@@ -116,5 +116,8 @@
   "enterListName": "ป้อนชื่อรายการ",
   "enterItemName": "ป้อนชื่ออาหาร",
   "enterDescription": "ป้อนคำอธิบาย",
-  "enterImageUrl": "ป้อน URL รูปภาพ"
+  "enterImageUrl": "ป้อน URL รูปภาพ",
+  "notificationTimeToChoose": "ถึงเวลาเลือกอาหารแล้ว!",
+  "notificationTodayEat": "วันนี้กิน: {mealName}!",
+  "testNotification": "ทดสอบการแจ้งเตือน"
 }

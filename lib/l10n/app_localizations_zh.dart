@@ -362,4 +362,15 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get enterImageUrl => '输入图片网址';
+
+  @override
+  String get notificationTimeToChoose => '是时候选择你的餐点了！';
+
+  @override
+  String notificationTodayEat(String mealName) {
+    return '今天吃：$mealName！';
+  }
+
+  @override
+  String get testNotification => '测试通知';
 }

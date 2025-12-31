@@ -116,5 +116,8 @@
   "enterListName": "목록 이름 입력",
   "enterItemName": "항목 이름 입력",
   "enterDescription": "설명 입력",
-  "enterImageUrl": "이미지 URL 입력"
+  "enterImageUrl": "이미지 URL 입력",
+  "notificationTimeToChoose": "음식을 선택할 시간입니다!",
+  "notificationTodayEat": "오늘 식사: {mealName}!",
+  "testNotification": "테스트 알림"
 }

@@ -130,5 +130,8 @@
   "enterListName": "Zadejte název seznamu",
   "enterItemName": "Zadejte název položky",
   "enterDescription": "Zadejte popis",
-  "enterImageUrl": "Zadejte URL obrázku"
+  "enterImageUrl": "Zadejte URL obrázku",
+  "notificationTimeToChoose": "Je čas vybrat si jídlo!",
+  "notificationTodayEat": "Dnešní jídlo: {mealName}!",
+  "testNotification": "Testovací oznámení"
 }

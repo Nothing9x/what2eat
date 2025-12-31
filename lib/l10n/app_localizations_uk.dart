@@ -364,4 +364,15 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get enterImageUrl => 'Введіть URL зображення';
+
+  @override
+  String get notificationTimeToChoose => 'Час обрати їжу!';
+
+  @override
+  String notificationTodayEat(String mealName) {
+    return 'Сьогодні їмо: $mealName!';
+  }
+
+  @override
+  String get testNotification => 'Тестове сповіщення';
 }

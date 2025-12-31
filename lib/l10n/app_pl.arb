@@ -116,5 +116,8 @@
   "enterListName": "Wpisz nazwę listy",
   "enterItemName": "Wpisz nazwę elementu",
   "enterDescription": "Wpisz opis",
-  "enterImageUrl": "Wpisz adres URL obrazu"
+  "enterImageUrl": "Wpisz adres URL obrazu",
+  "notificationTimeToChoose": "Czas wybrać posiłek!",
+  "notificationTodayEat": "Dziś jemy: {mealName}!",
+  "testNotification": "Powiadomienie testowe"
 }

@@ -116,5 +116,8 @@
   "enterListName": "Voer lijstnaam in",
   "enterItemName": "Voer itemnaam in",
   "enterDescription": "Voer beschrijving in",
-  "enterImageUrl": "Voer afbeeldings-URL in"
+  "enterImageUrl": "Voer afbeeldings-URL in",
+  "notificationTimeToChoose": "Tijd om je maaltijd te kiezen!",
+  "notificationTodayEat": "Vandaag eten: {mealName}!",
+  "testNotification": "Testmelding"
 }

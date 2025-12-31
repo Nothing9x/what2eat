@@ -363,4 +363,15 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get enterImageUrl => 'Resim URL\'si girin';
+
+  @override
+  String get notificationTimeToChoose => 'Yemeğini seçme zamanı!';
+
+  @override
+  String notificationTodayEat(String mealName) {
+    return 'Bugün ye: $mealName!';
+  }
+
+  @override
+  String get testNotification => 'Test bildirimi';
 }

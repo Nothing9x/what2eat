@@ -843,6 +843,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Enter image URL'**
   String get enterImageUrl;
+
+  /// No description provided for @notificationTimeToChoose.
+  ///
+  /// In en, this message translates to:
+  /// **'Time to choose your meal!'**
+  String get notificationTimeToChoose;
+
+  /// No description provided for @notificationTodayEat.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'\'s meal: {mealName}!'**
+  String notificationTodayEat(String mealName);
+
+  /// No description provided for @testNotification.
+  ///
+  /// In en, this message translates to:
+  /// **'Test Notification'**
+  String get testNotification;
 }
 
 class _AppLocalizationsDelegate

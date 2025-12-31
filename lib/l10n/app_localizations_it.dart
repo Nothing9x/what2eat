@@ -364,4 +364,15 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get enterImageUrl => 'Inserisci URL immagine';
+
+  @override
+  String get notificationTimeToChoose => 'È ora di scegliere il tuo pasto!';
+
+  @override
+  String notificationTodayEat(String mealName) {
+    return 'Oggi mangiamo: $mealName!';
+  }
+
+  @override
+  String get testNotification => 'Notifica di test';
 }

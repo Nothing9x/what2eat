@@ -130,5 +130,15 @@
   "enterListName": "Enter list name",
   "enterItemName": "Enter item name",
   "enterDescription": "Enter description",
-  "enterImageUrl": "Enter image URL"
+  "enterImageUrl": "Enter image URL",
+  "notificationTimeToChoose": "Time to choose your meal!",
+  "notificationTodayEat": "Today''s meal: {mealName}!",
+  "@notificationTodayEat": {
+    "placeholders": {
+      "mealName": {
+        "type": "String"
+      }
+    }
+  },
+  "testNotification": "Test Notification"
 }

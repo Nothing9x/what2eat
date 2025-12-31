@@ -116,5 +116,8 @@
   "enterListName": "リスト名を入力",
   "enterItemName": "項目名を入力",
   "enterDescription": "説明を入力",
-  "enterImageUrl": "画像URLを入力"
+  "enterImageUrl": "画像URLを入力",
+  "notificationTimeToChoose": "食事を選ぶ時間です！",
+  "notificationTodayEat": "今日の食事: {mealName}!",
+  "testNotification": "テスト通知"
 }

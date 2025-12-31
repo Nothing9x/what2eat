@@ -116,5 +116,8 @@
   "enterListName": "Ange listnamn",
   "enterItemName": "Ange objektnamn",
   "enterDescription": "Ange beskrivning",
-  "enterImageUrl": "Ange bild-URL"
+  "enterImageUrl": "Ange bild-URL",
+  "notificationTimeToChoose": "Dags att välja din måltid!",
+  "notificationTodayEat": "Dagens mat: {mealName}!",
+  "testNotification": "Testavisering"
 }

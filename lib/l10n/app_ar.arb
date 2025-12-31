@@ -116,5 +116,8 @@
   "enterListName": "أدخل اسم القائمة",
   "enterItemName": "أدخل اسم العنصر",
   "enterDescription": "أدخل الوصف",
-  "enterImageUrl": "أدخل رابط الصورة"
+  "enterImageUrl": "أدخل رابط الصورة",
+  "notificationTimeToChoose": "حان وقت اختيار وجبتك!",
+  "notificationTodayEat": "وجبة اليوم: {mealName}!",
+  "testNotification": "اختبار الإشعار"
 }

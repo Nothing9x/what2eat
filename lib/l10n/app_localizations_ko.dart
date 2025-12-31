@@ -362,4 +362,15 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get enterImageUrl => '이미지 URL 입력';
+
+  @override
+  String get notificationTimeToChoose => '음식을 선택할 시간입니다!';
+
+  @override
+  String notificationTodayEat(String mealName) {
+    return '오늘 식사: $mealName!';
+  }
+
+  @override
+  String get testNotification => '테스트 알림';
 }

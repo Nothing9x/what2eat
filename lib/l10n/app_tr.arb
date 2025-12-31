@@ -116,5 +116,8 @@
   "enterListName": "Liste adını girin",
   "enterItemName": "Öğe adını girin",
   "enterDescription": "Açıklama girin",
-  "enterImageUrl": "Resim URL'si girin"
+  "enterImageUrl": "Resim URL'si girin",
+  "notificationTimeToChoose": "Yemeğini seçme zamanı!",
+  "notificationTodayEat": "Bugün ye: {mealName}!",
+  "testNotification": "Test bildirimi"
 }

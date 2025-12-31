@@ -364,4 +364,15 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get enterImageUrl => 'छवि URL दर्ज करें';
+
+  @override
+  String get notificationTimeToChoose => 'अपना भोजन चुनने का समय!';
+
+  @override
+  String notificationTodayEat(String mealName) {
+    return 'आज का भोजन: $mealName!';
+  }
+
+  @override
+  String get testNotification => 'टेस्ट नोटिफिकेशन';
 }

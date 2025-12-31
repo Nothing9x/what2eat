@@ -130,5 +130,8 @@
   "enterListName": "Введіть назву списку",
   "enterItemName": "Введіть назву елемента",
   "enterDescription": "Введіть опис",
-  "enterImageUrl": "Введіть URL зображення"
+  "enterImageUrl": "Введіть URL зображення",
+  "notificationTimeToChoose": "Час обрати їжу!",
+  "notificationTodayEat": "Сьогодні їмо: {mealName}!",
+  "testNotification": "Тестове сповіщення"
 }

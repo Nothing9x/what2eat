@@ -130,5 +130,8 @@
   "enterListName": "Adja meg a lista nevét",
   "enterItemName": "Adja meg az elem nevét",
   "enterDescription": "Adja meg a leírást",
-  "enterImageUrl": "Adja meg a kép URL-jét"
+  "enterImageUrl": "Adja meg a kép URL-jét",
+  "notificationTimeToChoose": "Ideje kiválasztani az ételt!",
+  "notificationTodayEat": "Mai étel: {mealName}!",
+  "testNotification": "Teszt értesítés"
 }

@@ -364,4 +364,15 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get enterImageUrl => 'Adja meg a kép URL-jét';
+
+  @override
+  String get notificationTimeToChoose => 'Ideje kiválasztani az ételt!';
+
+  @override
+  String notificationTodayEat(String mealName) {
+    return 'Mai étel: $mealName!';
+  }
+
+  @override
+  String get testNotification => 'Teszt értesítés';
 }

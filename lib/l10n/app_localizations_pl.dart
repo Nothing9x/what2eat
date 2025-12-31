@@ -363,4 +363,15 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get enterImageUrl => 'Wpisz adres URL obrazu';
+
+  @override
+  String get notificationTimeToChoose => 'Czas wybrać posiłek!';
+
+  @override
+  String notificationTodayEat(String mealName) {
+    return 'Dziś jemy: $mealName!';
+  }
+
+  @override
+  String get testNotification => 'Powiadomienie testowe';
 }

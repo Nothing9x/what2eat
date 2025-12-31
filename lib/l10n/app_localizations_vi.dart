@@ -364,4 +364,15 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get enterImageUrl => 'Nhập URL hình ảnh';
+
+  @override
+  String get notificationTimeToChoose => 'Đã đến giờ chọn món ăn!';
+
+  @override
+  String notificationTodayEat(String mealName) {
+    return 'Hôm nay ăn: $mealName!';
+  }
+
+  @override
+  String get testNotification => 'Thử Thông Báo';
 }

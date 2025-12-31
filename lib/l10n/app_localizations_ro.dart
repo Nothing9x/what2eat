@@ -364,4 +364,15 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get enterImageUrl => 'Introduceți URL-ul imaginii';
+
+  @override
+  String get notificationTimeToChoose => 'E timpul să alegi mâncarea!';
+
+  @override
+  String notificationTodayEat(String mealName) {
+    return 'Azi mâncăm: $mealName!';
+  }
+
+  @override
+  String get testNotification => 'Notificare de test';
 }

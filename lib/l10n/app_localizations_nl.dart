@@ -363,4 +363,15 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get enterImageUrl => 'Voer afbeeldings-URL in';
+
+  @override
+  String get notificationTimeToChoose => 'Tijd om je maaltijd te kiezen!';
+
+  @override
+  String notificationTodayEat(String mealName) {
+    return 'Vandaag eten: $mealName!';
+  }
+
+  @override
+  String get testNotification => 'Testmelding';
 }

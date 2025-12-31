@@ -116,5 +116,8 @@
   "enterListName": "Masukkan nama daftar",
   "enterItemName": "Masukkan nama item",
   "enterDescription": "Masukkan deskripsi",
-  "enterImageUrl": "Masukkan URL gambar"
+  "enterImageUrl": "Masukkan URL gambar",
+  "notificationTimeToChoose": "Waktunya memilih makanan!",
+  "notificationTodayEat": "Hari ini makan: {mealName}!",
+  "testNotification": "Notifikasi Tes"
 }

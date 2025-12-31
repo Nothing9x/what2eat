@@ -233,8 +233,10 @@ class CategoryProvider extends ChangeNotifier {
   /// Update notification settings for a category
   Future<void> updateCategoryNotificationSettings(
     String categoryId,
-    NotificationSettings settings,
-  ) async {
+    NotificationSettings settings, {
+    required String notificationTimeToChooseText,
+    required String Function(String mealName) notificationTodayEatText,
+  }) async {
     try {
       final categoryIndex = _categories.indexWhere((cat) => cat.id == categoryId);
       if (categoryIndex == -1) {
@@ -276,11 +278,11 @@ class CategoryProvider extends ChangeNotifier {
           final random = Random();
           final randomItem = category.items[random.nextInt(category.items.length)];
           title = '${randomItem.icon} ${category.name}';
-          body = 'Hôm nay ăn: ${randomItem.name}!';
+          body = notificationTodayEatText(randomItem.name);
         } else {
           // Notify only mode: show reminder
           title = '🍽️ ${category.name}';
-          body = 'Đã đến giờ chọn món ăn!';
+          body = notificationTimeToChooseText;
         }
         
         if (settings.onceNextDay) {

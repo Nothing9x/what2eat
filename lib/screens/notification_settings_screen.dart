@@ -87,7 +87,12 @@ class _NotificationSettingsScreenState extends State<NotificationSettingsScreen>
       mode: _selectedMode,
     );
 
-    provider.updateCategoryNotificationSettings(category.id, settings);
+    provider.updateCategoryNotificationSettings(
+      category.id, 
+      settings,
+      notificationTimeToChooseText: l10n.notificationTimeToChoose,
+      notificationTodayEatText: (mealName) => l10n.notificationTodayEat(mealName),
+    );
 
     // Debug: Check pending notifications
     NotificationService().getPendingNotifications();
@@ -447,7 +452,7 @@ class _NotificationSettingsScreenState extends State<NotificationSettingsScreen>
                   TextButton.icon(
                     onPressed: _testNotification,
                     icon: const Icon(Icons.notifications_active),
-                    label: const Text('Test Notification'),
+                    label: Text(l10n.testNotification),
                     style: TextButton.styleFrom(
                       foregroundColor: primaryColor,
                     ),

@@ -363,4 +363,15 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get enterImageUrl => 'ป้อน URL รูปภาพ';
+
+  @override
+  String get notificationTimeToChoose => 'ถึงเวลาเลือกอาหารแล้ว!';
+
+  @override
+  String notificationTodayEat(String mealName) {
+    return 'วันนี้กิน: $mealName!';
+  }
+
+  @override
+  String get testNotification => 'ทดสอบการแจ้งเตือน';
 }

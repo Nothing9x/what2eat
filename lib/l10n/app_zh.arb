@@ -116,5 +116,8 @@
   "enterListName": "输入列表名称",
   "enterItemName": "输入项目名称",
   "enterDescription": "输入描述",
-  "enterImageUrl": "输入图片网址"
+  "enterImageUrl": "输入图片网址",
+  "notificationTimeToChoose": "是时候选择你的餐点了！",
+  "notificationTodayEat": "今天吃：{mealName}！",
+  "testNotification": "测试通知"
 }

@@ -363,4 +363,15 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get enterImageUrl => 'أدخل رابط الصورة';
+
+  @override
+  String get notificationTimeToChoose => 'حان وقت اختيار وجبتك!';
+
+  @override
+  String notificationTodayEat(String mealName) {
+    return 'وجبة اليوم: $mealName!';
+  }
+
+  @override
+  String get testNotification => 'اختبار الإشعار';
 }

@@ -116,5 +116,8 @@
   "enterListName": "Nhập tên danh sách",
   "enterItemName": "Nhập tên món",
   "enterDescription": "Nhập mô tả",
-  "enterImageUrl": "Nhập URL hình ảnh"
+  "enterImageUrl": "Nhập URL hình ảnh",
+  "notificationTimeToChoose": "Đã đến giờ chọn món ăn!",
+  "notificationTodayEat": "Hôm nay ăn: {mealName}!",
+  "testNotification": "Thử Thông Báo"
 }

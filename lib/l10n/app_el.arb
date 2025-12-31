@@ -130,5 +130,8 @@
   "enterListName": "Εισάγετε όνομα λίστας",
   "enterItemName": "Εισάγετε όνομα αντικειμένου",
   "enterDescription": "Εισάγετε περιγραφή",
-  "enterImageUrl": "Εισάγετε URL εικόνας"
+  "enterImageUrl": "Εισάγετε URL εικόνας",
+  "notificationTimeToChoose": "Ώρα να επιλέξετε το γεύμα σας!",
+  "notificationTodayEat": "Σημερινό γεύμα: {mealName}!",
+  "testNotification": "Δοκιμαστική ειδοποίηση"
 }

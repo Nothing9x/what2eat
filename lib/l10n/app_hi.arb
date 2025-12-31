@@ -116,5 +116,8 @@
   "enterListName": "सूची का नाम दर्ज करें",
   "enterItemName": "आइटम का नाम दर्ज करें",
   "enterDescription": "विवरण दर्ज करें",
-  "enterImageUrl": "छवि URL दर्ज करें"
+  "enterImageUrl": "छवि URL दर्ज करें",
+  "notificationTimeToChoose": "अपना भोजन चुनने का समय!",
+  "notificationTodayEat": "आज का भोजन: {mealName}!",
+  "testNotification": "टेस्ट नोटिफिकेशन"
 }

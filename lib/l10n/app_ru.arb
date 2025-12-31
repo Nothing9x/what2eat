@@ -116,5 +116,8 @@
   "enterListName": "Введите название списка",
   "enterItemName": "Введите название элемента",
   "enterDescription": "Введите описание",
-  "enterImageUrl": "Введите URL изображения"
+  "enterImageUrl": "Введите URL изображения",
+  "notificationTimeToChoose": "Пора выбрать еду!",
+  "notificationTodayEat": "Сегодня едим: {mealName}!",
+  "testNotification": "Тестовое уведомление"
 }

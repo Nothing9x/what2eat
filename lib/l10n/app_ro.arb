@@ -130,5 +130,8 @@
   "enterListName": "Introduceți numele listei",
   "enterItemName": "Introduceți numele elementului",
   "enterDescription": "Introduceți descrierea",
-  "enterImageUrl": "Introduceți URL-ul imaginii"
+  "enterImageUrl": "Introduceți URL-ul imaginii",
+  "notificationTimeToChoose": "E timpul să alegi mâncarea!",
+  "notificationTodayEat": "Azi mâncăm: {mealName}!",
+  "testNotification": "Notificare de test"
 }

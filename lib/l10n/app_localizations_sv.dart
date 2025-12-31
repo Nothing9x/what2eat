@@ -363,4 +363,15 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get enterImageUrl => 'Ange bild-URL';
+
+  @override
+  String get notificationTimeToChoose => 'Dags att välja din måltid!';
+
+  @override
+  String notificationTodayEat(String mealName) {
+    return 'Dagens mat: $mealName!';
+  }
+
+  @override
+  String get testNotification => 'Testavisering';
 }
