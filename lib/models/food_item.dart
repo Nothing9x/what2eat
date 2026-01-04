@@ -14,7 +14,7 @@ class FoodItem {
     required this.name,
     required this.icon,
     required this.description,
-    required this.imageUrl,
+    this.imageUrl = '', // Make imageUrl optional with default empty string
   })  : id = id ?? const Uuid().v4(),
         categoryId = categoryId ?? '';
 

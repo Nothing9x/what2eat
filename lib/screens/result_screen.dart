@@ -281,14 +281,15 @@ class _ResultScreenState extends State<ResultScreen>
                                   ],
                                 ),
                               ),
-                              // Image container
+                              // Icon container - always show emoji icon
                               Container(
                                 width: 200,
                                 height: 200,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
+                                  color: surfaceColor,
                                   border: Border.all(
-                                    color: surfaceColor,
+                                    color: primaryColor,
                                     width: 4,
                                   ),
                                   boxShadow: [
@@ -299,20 +300,10 @@ class _ResultScreenState extends State<ResultScreen>
                                     ),
                                   ],
                                 ),
-                                child: ClipOval(
-                                  child: Image.network(
-                                    widget.foodItem.imageUrl,
-                                    fit: BoxFit.cover,
-                                    errorBuilder: (context, error, stackTrace) =>
-                                        Container(
-                                      color: Colors.grey[300],
-                                      child: Center(
-                                        child: Text(
-                                          widget.foodItem.icon,
-                                          style: const TextStyle(fontSize: 60),
-                                        ),
-                                      ),
-                                    ),
+                                child: Center(
+                                  child: Text(
+                                    widget.foodItem.icon,
+                                    style: const TextStyle(fontSize: 100),
                                   ),
                                 ),
                               ),
