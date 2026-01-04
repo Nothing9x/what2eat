@@ -126,5 +126,8 @@
   "enterImageUrl": "Masukkan URL gambar",
   "notificationTimeToChoose": "Waktunya memilih makanan!",
   "notificationTodayEat": "Hari ini makan: {mealName}!",
-  "testNotification": "Notifikasi Tes"
+  "notifyOnlyTitle": "Notifikasi Saja",
+  "notifyOnlyDesc": "Dapatkan pengingat, buka app untuk putar manual",
+  "autoSpinTitle": "Putar Otomatis",
+  "autoSpinDesc": "Putar otomatis dan dapatkan hasil di notifikasi"
 }

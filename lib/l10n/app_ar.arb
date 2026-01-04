@@ -126,5 +126,8 @@
   "enterImageUrl": "أدخل رابط الصورة",
   "notificationTimeToChoose": "حان وقت اختيار وجبتك!",
   "notificationTodayEat": "وجبة اليوم: {mealName}!",
-  "testNotification": "اختبار الإشعار"
+  "notifyOnlyTitle": "إشعار فقط",
+  "notifyOnlyDesc": "احصل على تذكير، افتح التطبيق للدوران يدويًا",
+  "autoSpinTitle": "دوران تلقائي",
+  "autoSpinDesc": "الدوران تلقائيًا والحصول على النتيجة في الإشعار"
 }

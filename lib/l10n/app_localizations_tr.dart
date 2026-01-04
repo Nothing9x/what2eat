@@ -394,5 +394,15 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get testNotification => 'Test bildirimi';
+  String get notifyOnlyTitle => 'Sadece Bildirim';
+
+  @override
+  String get notifyOnlyDesc =>
+      'Hatırlatma al, manuel çevirmek için uygulamayı aç';
+
+  @override
+  String get autoSpinTitle => 'Otomatik Çevirme';
+
+  @override
+  String get autoSpinDesc => 'Otomatik çevir ve bildirimde sonucu al';
 }

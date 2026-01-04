@@ -396,5 +396,16 @@ class AppLocalizationsEl extends AppLocalizations {
   }
 
   @override
-  String get testNotification => 'Δοκιμαστική ειδοποίηση';
+  String get notifyOnlyTitle => 'Μόνο ειδοποίηση';
+
+  @override
+  String get notifyOnlyDesc =>
+      'Λάβετε υπενθύμιση, ανοίξτε την εφαρμογή για χειροκίνητη περιστροφή';
+
+  @override
+  String get autoSpinTitle => 'Αυτόματη περιστροφή';
+
+  @override
+  String get autoSpinDesc =>
+      'Περιστροφή αυτόματα και λήψη αποτελέσματος στην ειδοποίηση';
 }

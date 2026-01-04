@@ -140,5 +140,8 @@
   "enterImageUrl": "Zadejte URL obrázku",
   "notificationTimeToChoose": "Je čas vybrat si jídlo!",
   "notificationTodayEat": "Dnešní jídlo: {mealName}!",
-  "testNotification": "Testovací oznámení"
+  "notifyOnlyTitle": "Pouze upozornění",
+  "notifyOnlyDesc": "Dostat připomínku, otevřít aplikaci pro ruční točení",
+  "autoSpinTitle": "Automatické točení",
+  "autoSpinDesc": "Automaticky točit a dostat výsledek v upozornění"
 }

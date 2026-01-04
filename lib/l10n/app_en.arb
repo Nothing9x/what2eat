@@ -147,5 +147,8 @@
       }
     }
   },
-  "testNotification": "Test Notification"
+  "notifyOnlyTitle": "Notify Only",
+  "notifyOnlyDesc": "Get a reminder notification, open app to spin manually",
+  "autoSpinTitle": "Auto Spin & Notify",
+  "autoSpinDesc": "Automatically spin and get the result in notification"
 }

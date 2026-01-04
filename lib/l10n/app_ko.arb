@@ -126,5 +126,8 @@
   "enterImageUrl": "이미지 URL 입력",
   "notificationTimeToChoose": "음식을 선택할 시간입니다!",
   "notificationTodayEat": "오늘 식사: {mealName}!",
-  "testNotification": "테스트 알림"
+  "notifyOnlyTitle": "알림만",
+  "notifyOnlyDesc": "알림을 받고 앱을 열어 수동으로 돌리기",
+  "autoSpinTitle": "자동 회전",
+  "autoSpinDesc": "자동으로 돌리고 알림으로 결과 받기"
 }

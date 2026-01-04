@@ -394,5 +394,15 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
-  String get testNotification => 'Testavisering';
+  String get notifyOnlyTitle => 'Endast avisering';
+
+  @override
+  String get notifyOnlyDesc =>
+      'Få påminnelse, öppna app för att snurra manuellt';
+
+  @override
+  String get autoSpinTitle => 'Auto-snurr';
+
+  @override
+  String get autoSpinDesc => 'Snurra automatiskt och få resultat i avisering';
 }

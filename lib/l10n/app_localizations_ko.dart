@@ -393,5 +393,14 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get testNotification => '테스트 알림';
+  String get notifyOnlyTitle => '알림만';
+
+  @override
+  String get notifyOnlyDesc => '알림을 받고 앱을 열어 수동으로 돌리기';
+
+  @override
+  String get autoSpinTitle => '자동 회전';
+
+  @override
+  String get autoSpinDesc => '자동으로 돌리고 알림으로 결과 받기';
 }

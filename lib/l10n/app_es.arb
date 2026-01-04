@@ -126,5 +126,8 @@
   "enterImageUrl": "Ingresa la URL de la imagen",
   "notificationTimeToChoose": "¡Es hora de elegir tu comida!",
   "notificationTodayEat": "Hoy come: {mealName}!",
-  "testNotification": "Notificación de prueba"
+  "notifyOnlyTitle": "Solo Notificar",
+  "notifyOnlyDesc": "Recibir recordatorio, abrir app para girar manualmente",
+  "autoSpinTitle": "Giro Automático",
+  "autoSpinDesc": "Girar automáticamente y recibir resultado en notificación"
 }

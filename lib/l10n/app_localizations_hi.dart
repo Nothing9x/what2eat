@@ -395,5 +395,16 @@ class AppLocalizationsHi extends AppLocalizations {
   }
 
   @override
-  String get testNotification => 'टेस्ट नोटिफिकेशन';
+  String get notifyOnlyTitle => 'केवल सूचना';
+
+  @override
+  String get notifyOnlyDesc =>
+      'रिमाइंडर प्राप्त करें, मैन्युअल रूप से घुमाने के लिए ऐप खोलें';
+
+  @override
+  String get autoSpinTitle => 'ऑटो स्पिन';
+
+  @override
+  String get autoSpinDesc =>
+      'स्वचालित रूप से घुमाएं और सूचना में परिणाम प्राप्त करें';
 }

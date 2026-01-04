@@ -394,5 +394,16 @@ class AppLocalizationsNl extends AppLocalizations {
   }
 
   @override
-  String get testNotification => 'Testmelding';
+  String get notifyOnlyTitle => 'Alleen melden';
+
+  @override
+  String get notifyOnlyDesc =>
+      'Ontvang herinnering, open app om handmatig te draaien';
+
+  @override
+  String get autoSpinTitle => 'Auto-draaien';
+
+  @override
+  String get autoSpinDesc =>
+      'Automatisch draaien en resultaat in melding ontvangen';
 }

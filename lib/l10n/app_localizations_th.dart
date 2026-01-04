@@ -394,5 +394,14 @@ class AppLocalizationsTh extends AppLocalizations {
   }
 
   @override
-  String get testNotification => 'ทดสอบการแจ้งเตือน';
+  String get notifyOnlyTitle => 'แจ้งเตือนเท่านั้น';
+
+  @override
+  String get notifyOnlyDesc => 'รับการแจ้งเตือน เปิดแอปเพื่อหมุนเอง';
+
+  @override
+  String get autoSpinTitle => 'หมุนอัตโนมัติ';
+
+  @override
+  String get autoSpinDesc => 'หมุนอัตโนมัติและรับผลลัพธ์ทางการแจ้งเตือน';
 }

@@ -393,5 +393,14 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get testNotification => '测试通知';
+  String get notifyOnlyTitle => '仅通知';
+
+  @override
+  String get notifyOnlyDesc => '收到提醒通知，打开应用手动转盘';
+
+  @override
+  String get autoSpinTitle => '自动转盘';
+
+  @override
+  String get autoSpinDesc => '自动转盘并通过通知接收结果';
 }

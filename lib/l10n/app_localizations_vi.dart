@@ -395,5 +395,14 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String get testNotification => 'Thử Thông Báo';
+  String get notifyOnlyTitle => 'Chỉ Nhắc Nhở';
+
+  @override
+  String get notifyOnlyDesc => 'Nhận thông báo nhắc nhở, mở app để quay wheel';
+
+  @override
+  String get autoSpinTitle => 'Tự Động Quay';
+
+  @override
+  String get autoSpinDesc => 'Tự động quay wheel và nhận kết quả qua thông báo';
 }

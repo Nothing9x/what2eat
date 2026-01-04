@@ -140,5 +140,8 @@
   "enterImageUrl": "Introduceți URL-ul imaginii",
   "notificationTimeToChoose": "E timpul să alegi mâncarea!",
   "notificationTodayEat": "Azi mâncăm: {mealName}!",
-  "testNotification": "Notificare de test"
+  "notifyOnlyTitle": "Doar notificare",
+  "notifyOnlyDesc": "Primiți memento, deschideți aplicația pentru rotire manuală",
+  "autoSpinTitle": "Rotire automată",
+  "autoSpinDesc": "Rotiți automat și primiți rezultatul în notificare"
 }

@@ -104,15 +104,6 @@ class _NotificationSettingsScreenState extends State<NotificationSettingsScreen>
     Navigator.pop(context);
   }
 
-  Future<void> _testNotification() async {
-    await NotificationService().showTestNotification();
-    if (mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Test notification sent!')),
-      );
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
@@ -408,16 +399,16 @@ class _NotificationSettingsScreenState extends State<NotificationSettingsScreen>
                         _buildModeOption(
                           mode: model.OperationMode.notifyOnly,
                           icon: Icons.notifications_active,
-                          title: l10n.enableNotifications,
-                          description: l10n.spinHint,
+                          title: l10n.notifyOnlyTitle,
+                          description: l10n.notifyOnlyDesc,
                         ),
                         const SizedBox(height: 12),
                         // Auto Spin Option
                         _buildModeOption(
                           mode: model.OperationMode.autoSpin,
                           icon: Icons.autorenew,
-                          title: l10n.spinButton,
-                          description: l10n.spinning,
+                          title: l10n.autoSpinTitle,
+                          description: l10n.autoSpinDesc,
                         ),
                         const SizedBox(height: 100),
                       ],
@@ -448,16 +439,6 @@ class _NotificationSettingsScreenState extends State<NotificationSettingsScreen>
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  // Test Notification Button
-                  TextButton.icon(
-                    onPressed: _testNotification,
-                    icon: const Icon(Icons.notifications_active),
-                    label: Text(l10n.testNotification),
-                    style: TextButton.styleFrom(
-                      foregroundColor: primaryColor,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
                   // Save Button
                   ElevatedButton(
                     onPressed: _saveSettings,

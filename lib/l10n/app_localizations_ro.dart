@@ -395,5 +395,16 @@ class AppLocalizationsRo extends AppLocalizations {
   }
 
   @override
-  String get testNotification => 'Notificare de test';
+  String get notifyOnlyTitle => 'Doar notificare';
+
+  @override
+  String get notifyOnlyDesc =>
+      'Primiți memento, deschideți aplicația pentru rotire manuală';
+
+  @override
+  String get autoSpinTitle => 'Rotire automată';
+
+  @override
+  String get autoSpinDesc =>
+      'Rotiți automat și primiți rezultatul în notificare';
 }

@@ -394,5 +394,16 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
-  String get testNotification => 'Powiadomienie testowe';
+  String get notifyOnlyTitle => 'Tylko powiadom';
+
+  @override
+  String get notifyOnlyDesc =>
+      'Otrzymaj przypomnienie, otwórz aplikację aby kręcić ręcznie';
+
+  @override
+  String get autoSpinTitle => 'Auto-obrót';
+
+  @override
+  String get autoSpinDesc =>
+      'Obróć automatycznie i otrzymaj wynik w powiadomieniu';
 }

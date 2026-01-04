@@ -395,5 +395,15 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
-  String get testNotification => 'Testovací oznámení';
+  String get notifyOnlyTitle => 'Pouze upozornění';
+
+  @override
+  String get notifyOnlyDesc =>
+      'Dostat připomínku, otevřít aplikaci pro ruční točení';
+
+  @override
+  String get autoSpinTitle => 'Automatické točení';
+
+  @override
+  String get autoSpinDesc => 'Automaticky točit a dostat výsledek v upozornění';
 }

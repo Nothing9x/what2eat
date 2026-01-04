@@ -396,5 +396,16 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get testNotification => 'Notification test';
+  String get notifyOnlyTitle => 'Notification Seule';
+
+  @override
+  String get notifyOnlyDesc =>
+      'Recevoir un rappel, ouvrir l\'app pour tourner manuellement';
+
+  @override
+  String get autoSpinTitle => 'Rotation Auto';
+
+  @override
+  String get autoSpinDesc =>
+      'Tourner automatiquement et recevoir le résultat par notification';
 }

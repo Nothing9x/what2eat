@@ -126,5 +126,8 @@
   "enterImageUrl": "Resim URL'si girin",
   "notificationTimeToChoose": "Yemeğini seçme zamanı!",
   "notificationTodayEat": "Bugün ye: {mealName}!",
-  "testNotification": "Test bildirimi"
+  "notifyOnlyTitle": "Sadece Bildirim",
+  "notifyOnlyDesc": "Hatırlatma al, manuel çevirmek için uygulamayı aç",
+  "autoSpinTitle": "Otomatik Çevirme",
+  "autoSpinDesc": "Otomatik çevir ve bildirimde sonucu al"
 }

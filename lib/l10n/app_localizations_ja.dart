@@ -393,5 +393,14 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get testNotification => 'テスト通知';
+  String get notifyOnlyTitle => '通知のみ';
+
+  @override
+  String get notifyOnlyDesc => 'リマインダー通知を受け取り、アプリを開いて手動で回転';
+
+  @override
+  String get autoSpinTitle => '自動回転';
+
+  @override
+  String get autoSpinDesc => '自動的に回転し、通知で結果を受け取る';
 }

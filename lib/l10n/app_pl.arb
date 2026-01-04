@@ -126,5 +126,8 @@
   "enterImageUrl": "Wpisz adres URL obrazu",
   "notificationTimeToChoose": "Czas wybrać posiłek!",
   "notificationTodayEat": "Dziś jemy: {mealName}!",
-  "testNotification": "Powiadomienie testowe"
+  "notifyOnlyTitle": "Tylko powiadom",
+  "notifyOnlyDesc": "Otrzymaj przypomnienie, otwórz aplikację aby kręcić ręcznie",
+  "autoSpinTitle": "Auto-obrót",
+  "autoSpinDesc": "Obróć automatycznie i otrzymaj wynik w powiadomieniu"
 }

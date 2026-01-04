@@ -126,5 +126,8 @@
   "enterImageUrl": "Nhập URL hình ảnh",
   "notificationTimeToChoose": "Đã đến giờ chọn món ăn!",
   "notificationTodayEat": "Hôm nay ăn: {mealName}!",
-  "testNotification": "Thử Thông Báo"
+  "notifyOnlyTitle": "Chỉ Nhắc Nhở",
+  "notifyOnlyDesc": "Nhận thông báo nhắc nhở, mở app để quay wheel",
+  "autoSpinTitle": "Tự Động Quay",
+  "autoSpinDesc": "Tự động quay wheel và nhận kết quả qua thông báo"
 }

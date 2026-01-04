@@ -140,5 +140,8 @@
   "enterImageUrl": "Εισάγετε URL εικόνας",
   "notificationTimeToChoose": "Ώρα να επιλέξετε το γεύμα σας!",
   "notificationTodayEat": "Σημερινό γεύμα: {mealName}!",
-  "testNotification": "Δοκιμαστική ειδοποίηση"
+  "notifyOnlyTitle": "Μόνο ειδοποίηση",
+  "notifyOnlyDesc": "Λάβετε υπενθύμιση, ανοίξτε την εφαρμογή για χειροκίνητη περιστροφή",
+  "autoSpinTitle": "Αυτόματη περιστροφή",
+  "autoSpinDesc": "Περιστροφή αυτόματα και λήψη αποτελέσματος στην ειδοποίηση"
 }

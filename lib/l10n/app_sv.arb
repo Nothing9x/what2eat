@@ -126,5 +126,8 @@
   "enterImageUrl": "Ange bild-URL",
   "notificationTimeToChoose": "Dags att välja din måltid!",
   "notificationTodayEat": "Dagens mat: {mealName}!",
-  "testNotification": "Testavisering"
+  "notifyOnlyTitle": "Endast avisering",
+  "notifyOnlyDesc": "Få påminnelse, öppna app för att snurra manuellt",
+  "autoSpinTitle": "Auto-snurr",
+  "autoSpinDesc": "Snurra automatiskt och få resultat i avisering"
 }

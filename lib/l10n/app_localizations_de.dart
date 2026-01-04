@@ -397,5 +397,16 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get testNotification => 'Testbenachrichtigung';
+  String get notifyOnlyTitle => 'Nur Benachrichtigen';
+
+  @override
+  String get notifyOnlyDesc =>
+      'Erinnerung erhalten, App öffnen zum manuellen Drehen';
+
+  @override
+  String get autoSpinTitle => 'Auto-Drehen';
+
+  @override
+  String get autoSpinDesc =>
+      'Automatisch drehen und Ergebnis per Benachrichtigung erhalten';
 }

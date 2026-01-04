@@ -140,5 +140,8 @@
   "enterImageUrl": "Adja meg a kép URL-jét",
   "notificationTimeToChoose": "Ideje kiválasztani az ételt!",
   "notificationTodayEat": "Mai étel: {mealName}!",
-  "testNotification": "Teszt értesítés"
+  "notifyOnlyTitle": "Csak értesítés",
+  "notifyOnlyDesc": "Emlékeztető fogadása, app megnyitása kézi forgatáshoz",
+  "autoSpinTitle": "Auto-forgatás",
+  "autoSpinDesc": "Automatikus forgatás és eredmény fogadása értesítésben"
 }

@@ -140,5 +140,8 @@
   "enterImageUrl": "Введіть URL зображення",
   "notificationTimeToChoose": "Час обрати їжу!",
   "notificationTodayEat": "Сьогодні їмо: {mealName}!",
-  "testNotification": "Тестове сповіщення"
+  "notifyOnlyTitle": "Лише сповіщення",
+  "notifyOnlyDesc": "Отримати нагадування, відкрити додаток для ручного обертання",
+  "autoSpinTitle": "Авто-обертання",
+  "autoSpinDesc": "Автоматично обертати та отримувати результат у сповіщенні"
 }

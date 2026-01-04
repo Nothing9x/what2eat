@@ -396,5 +396,16 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get testNotification => 'Notificación de prueba';
+  String get notifyOnlyTitle => 'Solo Notificar';
+
+  @override
+  String get notifyOnlyDesc =>
+      'Recibir recordatorio, abrir app para girar manualmente';
+
+  @override
+  String get autoSpinTitle => 'Giro Automático';
+
+  @override
+  String get autoSpinDesc =>
+      'Girar automáticamente y recibir resultado en notificación';
 }

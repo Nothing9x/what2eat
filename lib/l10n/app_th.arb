@@ -126,5 +126,8 @@
   "enterImageUrl": "ป้อน URL รูปภาพ",
   "notificationTimeToChoose": "ถึงเวลาเลือกอาหารแล้ว!",
   "notificationTodayEat": "วันนี้กิน: {mealName}!",
-  "testNotification": "ทดสอบการแจ้งเตือน"
+  "notifyOnlyTitle": "แจ้งเตือนเท่านั้น",
+  "notifyOnlyDesc": "รับการแจ้งเตือน เปิดแอปเพื่อหมุนเอง",
+  "autoSpinTitle": "หมุนอัตโนมัติ",
+  "autoSpinDesc": "หมุนอัตโนมัติและรับผลลัพธ์ทางการแจ้งเตือน"
 }

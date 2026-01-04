@@ -126,5 +126,8 @@
   "enterImageUrl": "Bild-URL eingeben",
   "notificationTimeToChoose": "Zeit, dein Essen auszuwählen!",
   "notificationTodayEat": "Heute essen: {mealName}!",
-  "testNotification": "Testbenachrichtigung"
+  "notifyOnlyTitle": "Nur Benachrichtigen",
+  "notifyOnlyDesc": "Erinnerung erhalten, App öffnen zum manuellen Drehen",
+  "autoSpinTitle": "Auto-Drehen",
+  "autoSpinDesc": "Automatisch drehen und Ergebnis per Benachrichtigung erhalten"
 }

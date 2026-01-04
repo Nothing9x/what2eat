@@ -395,5 +395,16 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
-  String get testNotification => 'Тестове сповіщення';
+  String get notifyOnlyTitle => 'Лише сповіщення';
+
+  @override
+  String get notifyOnlyDesc =>
+      'Отримати нагадування, відкрити додаток для ручного обертання';
+
+  @override
+  String get autoSpinTitle => 'Авто-обертання';
+
+  @override
+  String get autoSpinDesc =>
+      'Автоматично обертати та отримувати результат у сповіщенні';
 }

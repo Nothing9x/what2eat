@@ -898,11 +898,29 @@ abstract class AppLocalizations {
   /// **'Today\'\'s meal: {mealName}!'**
   String notificationTodayEat(String mealName);
 
-  /// No description provided for @testNotification.
+  /// No description provided for @notifyOnlyTitle.
   ///
   /// In en, this message translates to:
-  /// **'Test Notification'**
-  String get testNotification;
+  /// **'Notify Only'**
+  String get notifyOnlyTitle;
+
+  /// No description provided for @notifyOnlyDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Get a reminder notification, open app to spin manually'**
+  String get notifyOnlyDesc;
+
+  /// No description provided for @autoSpinTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Auto Spin & Notify'**
+  String get autoSpinTitle;
+
+  /// No description provided for @autoSpinDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Automatically spin and get the result in notification'**
+  String get autoSpinDesc;
 }
 
 class _AppLocalizationsDelegate

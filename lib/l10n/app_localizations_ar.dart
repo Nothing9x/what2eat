@@ -394,5 +394,14 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get testNotification => 'اختبار الإشعار';
+  String get notifyOnlyTitle => 'إشعار فقط';
+
+  @override
+  String get notifyOnlyDesc => 'احصل على تذكير، افتح التطبيق للدوران يدويًا';
+
+  @override
+  String get autoSpinTitle => 'دوران تلقائي';
+
+  @override
+  String get autoSpinDesc => 'الدوران تلقائيًا والحصول على النتيجة في الإشعار';
 }

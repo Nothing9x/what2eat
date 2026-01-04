@@ -395,5 +395,15 @@ class AppLocalizationsId extends AppLocalizations {
   }
 
   @override
-  String get testNotification => 'Notifikasi Tes';
+  String get notifyOnlyTitle => 'Notifikasi Saja';
+
+  @override
+  String get notifyOnlyDesc =>
+      'Dapatkan pengingat, buka app untuk putar manual';
+
+  @override
+  String get autoSpinTitle => 'Putar Otomatis';
+
+  @override
+  String get autoSpinDesc => 'Putar otomatis dan dapatkan hasil di notifikasi';
 }

@@ -395,5 +395,16 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
-  String get testNotification => 'Teszt értesítés';
+  String get notifyOnlyTitle => 'Csak értesítés';
+
+  @override
+  String get notifyOnlyDesc =>
+      'Emlékeztető fogadása, app megnyitása kézi forgatáshoz';
+
+  @override
+  String get autoSpinTitle => 'Auto-forgatás';
+
+  @override
+  String get autoSpinDesc =>
+      'Automatikus forgatás és eredmény fogadása értesítésben';
 }

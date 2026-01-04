@@ -126,5 +126,8 @@
   "enterImageUrl": "Voer afbeeldings-URL in",
   "notificationTimeToChoose": "Tijd om je maaltijd te kiezen!",
   "notificationTodayEat": "Vandaag eten: {mealName}!",
-  "testNotification": "Testmelding"
+  "notifyOnlyTitle": "Alleen melden",
+  "notifyOnlyDesc": "Ontvang herinnering, open app om handmatig te draaien",
+  "autoSpinTitle": "Auto-draaien",
+  "autoSpinDesc": "Automatisch draaien en resultaat in melding ontvangen"
 }

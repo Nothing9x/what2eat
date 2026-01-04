@@ -126,5 +126,8 @@
   "enterImageUrl": "Введите URL изображения",
   "notificationTimeToChoose": "Пора выбрать еду!",
   "notificationTodayEat": "Сегодня едим: {mealName}!",
-  "testNotification": "Тестовое уведомление"
+  "notifyOnlyTitle": "Только уведомление",
+  "notifyOnlyDesc": "Получить напоминание, открыть приложение для ручного вращения",
+  "autoSpinTitle": "Авто-вращение",
+  "autoSpinDesc": "Автоматически вращать и получать результат в уведомлении"
 }
