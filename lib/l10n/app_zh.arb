@@ -129,5 +129,10 @@
   "notifyOnlyTitle": "仅通知",
   "notifyOnlyDesc": "收到提醒通知，打开应用手动转盘",
   "autoSpinTitle": "自动转盘",
-  "autoSpinDesc": "自动转盘并通过通知接收结果"
+  "autoSpinDesc": "自动转盘并通过通知接收结果",
+  "adDialogTitle": "感谢使用 What2Eat！",
+  "adDialogMessage": "为了保持应用免费，请观看短广告。这有助于我们继续改进 What2Eat。",
+  "adDialogInfo": "观看广告后，按旋转按钮继续",
+  "watchAdButton": "观看广告",
+  "cancelButton": "取消"
 }

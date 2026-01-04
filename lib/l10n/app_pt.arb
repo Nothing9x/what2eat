@@ -129,5 +129,10 @@
   "notifyOnlyTitle": "Apenas Notificar",
   "notifyOnlyDesc": "Receber lembrete, abrir app para girar manualmente",
   "autoSpinTitle": "Giro Automático",
-  "autoSpinDesc": "Girar automaticamente e receber resultado na notificação"
+  "autoSpinDesc": "Girar automaticamente e receber resultado na notificação",
+  "adDialogTitle": "Obrigado por usar What2Eat!",
+  "adDialogMessage": "Para manter este aplicativo gratuito, assista a um anúncio curto. Isso nos ajuda a continuar melhorando o What2Eat.",
+  "adDialogInfo": "Após assistir ao anúncio, pressione o botão Girar para continuar",
+  "watchAdButton": "Assistir Anúncio",
+  "cancelButton": "Cancelar"
 }

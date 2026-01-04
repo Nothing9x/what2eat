@@ -129,5 +129,10 @@
   "notifyOnlyTitle": "Sadece Bildirim",
   "notifyOnlyDesc": "Hatırlatma al, manuel çevirmek için uygulamayı aç",
   "autoSpinTitle": "Otomatik Çevirme",
-  "autoSpinDesc": "Otomatik çevir ve bildirimde sonucu al"
+  "autoSpinDesc": "Otomatik çevir ve bildirimde sonucu al",
+  "adDialogTitle": "What2Eat'i kullandığınız için teşekkürler!",
+  "adDialogMessage": "Bu uygulamayı ücretsiz tutmak için lütfen kısa bir reklam izleyin. Bu, What2Eat'i geliştirmeye devam etmemize yardımcı olur.",
+  "adDialogInfo": "Reklamı izledikten sonra devam etmek için Döndür düğmesine basın",
+  "watchAdButton": "Reklamı İzle",
+  "cancelButton": "İptal"
 }

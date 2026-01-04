@@ -5,6 +5,9 @@ import '../l10n/app_localizations.dart';
 import '../providers/category_provider.dart';
 import '../widgets/lucky_wheel.dart';
 import '../widgets/ad_banner.dart';
+import '../services/ad_service.dart';
+import '../services/spin_counter_service.dart';
+import '../widgets/ad_dialog.dart';
 import 'result_screen.dart';
 import 'category_list_screen.dart';
 import 'notification_settings_screen.dart';
@@ -64,6 +67,25 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       return;
     }
 
+    // Check if should show ad BEFORE spinning
+    final shouldShowAd = await SpinCounterService.shouldShowAd();
+    if (shouldShowAd) {
+      // Show friendly dialog
+      if (!mounted) return;
+      await AdDialog.show(context);
+
+      // Show ad (user must watch to continue)
+      final adShown = await AdService().showInterstitialAd();
+
+      if (adShown) {
+        // Ad was shown, reset counter
+        await SpinCounterService.resetSpinCount();
+      }
+
+      // After ad, RETURN without spinning - user must press spin button again
+      return;
+    }
+
     // Select random item
     final randomIndex = Random().nextInt(items.length);
 
@@ -91,6 +113,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     );
 
     setState(() => _isSpinning = false);
+
+    // Increment spin count AFTER wheel finishes spinning
+    await SpinCounterService.incrementSpinCount();
 
     // Small delay before showing result
     await Future.delayed(const Duration(milliseconds: 300));

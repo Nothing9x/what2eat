@@ -403,4 +403,20 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get autoSpinDesc => '자동으로 돌리고 알림으로 결과 받기';
+
+  @override
+  String get adDialogTitle => 'What2Eat을 이용해 주셔서 감사합니다!';
+
+  @override
+  String get adDialogMessage =>
+      '앱을 무료로 유지하기 위해 짧은 광고를 시청해 주세요. 이는 What2Eat을 계속 개선하는 데 도움이 됩니다.';
+
+  @override
+  String get adDialogInfo => '광고를 본 후 회전 버튼을 눌러 계속하세요';
+
+  @override
+  String get watchAdButton => '광고 보기';
+
+  @override
+  String get cancelButton => '취소';
 }

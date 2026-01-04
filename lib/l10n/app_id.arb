@@ -129,5 +129,10 @@
   "notifyOnlyTitle": "Notifikasi Saja",
   "notifyOnlyDesc": "Dapatkan pengingat, buka app untuk putar manual",
   "autoSpinTitle": "Putar Otomatis",
-  "autoSpinDesc": "Putar otomatis dan dapatkan hasil di notifikasi"
+  "autoSpinDesc": "Putar otomatis dan dapatkan hasil di notifikasi",
+  "adDialogTitle": "Terima kasih telah menggunakan What2Eat!",
+  "adDialogMessage": "Untuk menjaga aplikasi ini gratis, silakan tonton iklan singkat. Ini membantu kami terus meningkatkan What2Eat.",
+  "adDialogInfo": "Setelah menonton iklan, tekan tombol Putar untuk melanjutkan",
+  "watchAdButton": "Tonton Iklan",
+  "cancelButton": "Batal"
 }

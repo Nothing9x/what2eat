@@ -8,6 +8,8 @@ class AdService {
   AdService._internal();
 
   bool _isInitialized = false;
+  InterstitialAd? _interstitialAd;
+  bool _isInterstitialAdReady = false;
 
   /// Initialize Google Mobile Ads SDK
   Future<void> initialize() async {
@@ -59,6 +61,27 @@ class AdService {
     throw UnsupportedError('Unsupported platform');
   }
 
+  String get interstitialAdUnitId {
+    // Use test ads for initial testing
+    if (kDebugMode && useTestAds) {
+      // Google's official test ad unit IDs
+      if (Platform.isAndroid) {
+        return 'ca-app-pub-3940256099942544/1033173712'; // Official Google test interstitial ID for Android
+      } else if (Platform.isIOS) {
+        return 'ca-app-pub-3940256099942544/4411468910'; // Official Google test interstitial ID for iOS
+      }
+    }
+
+    // Your real ad unit IDs
+    if (Platform.isAndroid) {
+      return 'ca-app-pub-7177141603793917/3644925402'; // Android interstitial/video ad
+    } else if (Platform.isIOS) {
+      return 'ca-app-pub-7177141603793917/3644925402'; // iOS (update when iOS ad unit is created)
+    }
+
+    throw UnsupportedError('Unsupported platform');
+  }
+
   /// Create a banner ad
   BannerAd createBannerAd({
     required AdSize adSize,
@@ -74,5 +97,67 @@ class AdService {
         onAdFailedToLoad: onAdFailedToLoad,
       ),
     );
+  }
+
+  /// Load an interstitial ad
+  Future<void> loadInterstitialAd() async {
+    await InterstitialAd.load(
+      adUnitId: interstitialAdUnitId,
+      request: const AdRequest(),
+      adLoadCallback: InterstitialAdLoadCallback(
+        onAdLoaded: (ad) {
+          _interstitialAd = ad;
+          _isInterstitialAdReady = true;
+
+          // Set up full screen content callback
+          _interstitialAd?.fullScreenContentCallback = FullScreenContentCallback(
+            onAdDismissedFullScreenContent: (ad) {
+              ad.dispose();
+              _interstitialAd = null;
+              _isInterstitialAdReady = false;
+              // Preload next ad
+              loadInterstitialAd();
+            },
+            onAdFailedToShowFullScreenContent: (ad, error) {
+              ad.dispose();
+              _interstitialAd = null;
+              _isInterstitialAdReady = false;
+              // Preload next ad
+              loadInterstitialAd();
+            },
+          );
+        },
+        onAdFailedToLoad: (error) {
+          _isInterstitialAdReady = false;
+          if (kDebugMode) {
+            print('InterstitialAd failed to load: $error');
+          }
+        },
+      ),
+    );
+  }
+
+  /// Show the interstitial ad if ready
+  /// Returns true if ad was shown, false otherwise
+  Future<bool> showInterstitialAd() async {
+    if (!_isInterstitialAdReady || _interstitialAd == null) {
+      if (kDebugMode) {
+        print('InterstitialAd not ready yet');
+      }
+      return false;
+    }
+
+    await _interstitialAd?.show();
+    return true;
+  }
+
+  /// Check if interstitial ad is ready to show
+  bool get isInterstitialAdReady => _isInterstitialAdReady;
+
+  /// Dispose interstitial ad
+  void disposeInterstitialAd() {
+    _interstitialAd?.dispose();
+    _interstitialAd = null;
+    _isInterstitialAdReady = false;
   }
 }

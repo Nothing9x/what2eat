@@ -143,5 +143,10 @@
   "notifyOnlyTitle": "Doar notificare",
   "notifyOnlyDesc": "Primiți memento, deschideți aplicația pentru rotire manuală",
   "autoSpinTitle": "Rotire automată",
-  "autoSpinDesc": "Rotiți automat și primiți rezultatul în notificare"
+  "autoSpinDesc": "Rotiți automat și primiți rezultatul în notificare",
+  "adDialogTitle": "Vă mulțumim că utilizați What2Eat!",
+  "adDialogMessage": "Pentru a păstra această aplicație gratuită, vă rugăm să vizionați o reclamă scurtă. Acest lucru ne ajută să continuăm să îmbunătățim What2Eat.",
+  "adDialogInfo": "După vizionarea reclamei, apăsați butonul Învârte pentru a continua",
+  "watchAdButton": "Vizionați Reclama",
+  "cancelButton": "Anulare"
 }

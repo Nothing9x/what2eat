@@ -921,6 +921,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Automatically spin and get the result in notification'**
   String get autoSpinDesc;
+
+  /// No description provided for @adDialogTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Thanks for Using What2Eat!'**
+  String get adDialogTitle;
+
+  /// No description provided for @adDialogMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'To keep this app free, please watch a short ad. This helps us continue improving What2Eat.'**
+  String get adDialogMessage;
+
+  /// No description provided for @adDialogInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'After watching the ad, press the Spin button to continue'**
+  String get adDialogInfo;
+
+  /// No description provided for @watchAdButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Watch Ad'**
+  String get watchAdButton;
+
+  /// No description provided for @cancelButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancelButton;
 }
 
 class _AppLocalizationsDelegate

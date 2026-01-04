@@ -404,4 +404,20 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get autoSpinDesc => 'الدوران تلقائيًا والحصول على النتيجة في الإشعار';
+
+  @override
+  String get adDialogTitle => 'شكراً لاستخدام What2Eat!';
+
+  @override
+  String get adDialogMessage =>
+      'للحفاظ على هذا التطبيق مجانياً، يرجى مشاهدة إعلان قصير. يساعدنا هذا في الاستمرار في تحسين What2Eat.';
+
+  @override
+  String get adDialogInfo => 'بعد مشاهدة الإعلان، اضغط على زر الدوران للمتابعة';
+
+  @override
+  String get watchAdButton => 'مشاهدة الإعلان';
+
+  @override
+  String get cancelButton => 'إلغاء';
 }

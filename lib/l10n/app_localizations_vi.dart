@@ -405,4 +405,20 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get autoSpinDesc => 'Tự động quay wheel và nhận kết quả qua thông báo';
+
+  @override
+  String get adDialogTitle => 'Cảm ơn bạn đã sử dụng What2Eat!';
+
+  @override
+  String get adDialogMessage =>
+      'Để giữ ứng dụng miễn phí, vui lòng xem quảng cáo ngắn. Điều này giúp chúng tôi tiếp tục cải thiện What2Eat.';
+
+  @override
+  String get adDialogInfo => 'Sau khi xem quảng cáo, bấm nút Quay để tiếp tục';
+
+  @override
+  String get watchAdButton => 'Xem Quảng Cáo';
+
+  @override
+  String get cancelButton => 'Hủy';
 }

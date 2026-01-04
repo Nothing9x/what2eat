@@ -129,5 +129,10 @@
   "notifyOnlyTitle": "Endast avisering",
   "notifyOnlyDesc": "Få påminnelse, öppna app för att snurra manuellt",
   "autoSpinTitle": "Auto-snurr",
-  "autoSpinDesc": "Snurra automatiskt och få resultat i avisering"
+  "autoSpinDesc": "Snurra automatiskt och få resultat i avisering",
+  "adDialogTitle": "Tack för att du använder What2Eat!",
+  "adDialogMessage": "För att hålla denna app gratis, titta på en kort annons. Detta hjälper oss att fortsätta förbättra What2Eat.",
+  "adDialogInfo": "Efter att ha tittat på annonsen, tryck på Snurra-knappen för att fortsätta",
+  "watchAdButton": "Titta på Annons",
+  "cancelButton": "Avbryt"
 }

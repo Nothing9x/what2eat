@@ -129,5 +129,10 @@
   "notifyOnlyTitle": "Nur Benachrichtigen",
   "notifyOnlyDesc": "Erinnerung erhalten, App öffnen zum manuellen Drehen",
   "autoSpinTitle": "Auto-Drehen",
-  "autoSpinDesc": "Automatisch drehen und Ergebnis per Benachrichtigung erhalten"
+  "autoSpinDesc": "Automatisch drehen und Ergebnis per Benachrichtigung erhalten",
+  "adDialogTitle": "Vielen Dank für die Nutzung von What2Eat!",
+  "adDialogMessage": "Um diese App kostenlos zu halten, schauen Sie sich bitte eine kurze Werbung an. Dies hilft uns, What2Eat weiter zu verbessern.",
+  "adDialogInfo": "Nach dem Ansehen der Werbung drücken Sie die Drehen-Taste, um fortzufahren",
+  "watchAdButton": "Werbung ansehen",
+  "cancelButton": "Abbrechen"
 }

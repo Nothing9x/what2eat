@@ -129,5 +129,10 @@
   "notifyOnlyTitle": "Chỉ Nhắc Nhở",
   "notifyOnlyDesc": "Nhận thông báo nhắc nhở, mở app để quay wheel",
   "autoSpinTitle": "Tự Động Quay",
-  "autoSpinDesc": "Tự động quay wheel và nhận kết quả qua thông báo"
+  "autoSpinDesc": "Tự động quay wheel và nhận kết quả qua thông báo",
+  "adDialogTitle": "Cảm ơn bạn đã sử dụng What2Eat!",
+  "adDialogMessage": "Để giữ ứng dụng miễn phí, vui lòng xem quảng cáo ngắn. Điều này giúp chúng tôi tiếp tục cải thiện What2Eat.",
+  "adDialogInfo": "Sau khi xem quảng cáo, bấm nút Quay để tiếp tục",
+  "watchAdButton": "Xem Quảng Cáo",
+  "cancelButton": "Hủy"
 }

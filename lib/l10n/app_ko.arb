@@ -129,5 +129,10 @@
   "notifyOnlyTitle": "알림만",
   "notifyOnlyDesc": "알림을 받고 앱을 열어 수동으로 돌리기",
   "autoSpinTitle": "자동 회전",
-  "autoSpinDesc": "자동으로 돌리고 알림으로 결과 받기"
+  "autoSpinDesc": "자동으로 돌리고 알림으로 결과 받기",
+  "adDialogTitle": "What2Eat을 이용해 주셔서 감사합니다!",
+  "adDialogMessage": "앱을 무료로 유지하기 위해 짧은 광고를 시청해 주세요. 이는 What2Eat을 계속 개선하는 데 도움이 됩니다.",
+  "adDialogInfo": "광고를 본 후 회전 버튼을 눌러 계속하세요",
+  "watchAdButton": "광고 보기",
+  "cancelButton": "취소"
 }

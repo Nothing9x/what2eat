@@ -405,4 +405,21 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get autoSpinDesc => 'Snurra automatiskt och få resultat i avisering';
+
+  @override
+  String get adDialogTitle => 'Tack för att du använder What2Eat!';
+
+  @override
+  String get adDialogMessage =>
+      'För att hålla denna app gratis, titta på en kort annons. Detta hjälper oss att fortsätta förbättra What2Eat.';
+
+  @override
+  String get adDialogInfo =>
+      'Efter att ha tittat på annonsen, tryck på Snurra-knappen för att fortsätta';
+
+  @override
+  String get watchAdButton => 'Titta på Annons';
+
+  @override
+  String get cancelButton => 'Avbryt';
 }

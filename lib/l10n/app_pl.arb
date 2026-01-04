@@ -129,5 +129,10 @@
   "notifyOnlyTitle": "Tylko powiadom",
   "notifyOnlyDesc": "Otrzymaj przypomnienie, otwórz aplikację aby kręcić ręcznie",
   "autoSpinTitle": "Auto-obrót",
-  "autoSpinDesc": "Obróć automatycznie i otrzymaj wynik w powiadomieniu"
+  "autoSpinDesc": "Obróć automatycznie i otrzymaj wynik w powiadomieniu",
+  "adDialogTitle": "Dziękujemy za korzystanie z What2Eat!",
+  "adDialogMessage": "Aby utrzymać tę aplikację jako darmową, obejrzyj krótką reklamę. To pomaga nam nadal ulepszać What2Eat.",
+  "adDialogInfo": "Po obejrzeniu reklamy naciśnij przycisk Obróć, aby kontynuować",
+  "watchAdButton": "Obejrzyj Reklamę",
+  "cancelButton": "Anuluj"
 }

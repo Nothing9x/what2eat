@@ -129,5 +129,10 @@
   "notifyOnlyTitle": "Alleen melden",
   "notifyOnlyDesc": "Ontvang herinnering, open app om handmatig te draaien",
   "autoSpinTitle": "Auto-draaien",
-  "autoSpinDesc": "Automatisch draaien en resultaat in melding ontvangen"
+  "autoSpinDesc": "Automatisch draaien en resultaat in melding ontvangen",
+  "adDialogTitle": "Bedankt voor het gebruik van What2Eat!",
+  "adDialogMessage": "Om deze app gratis te houden, bekijk alstublieft een korte advertentie. Dit helpt ons What2Eat te blijven verbeteren.",
+  "adDialogInfo": "Druk na het bekijken van de advertentie op de Draaien-knop om door te gaan",
+  "watchAdButton": "Advertentie Bekijken",
+  "cancelButton": "Annuleren"
 }

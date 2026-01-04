@@ -143,5 +143,10 @@
   "notifyOnlyTitle": "Pouze upozornění",
   "notifyOnlyDesc": "Dostat připomínku, otevřít aplikaci pro ruční točení",
   "autoSpinTitle": "Automatické točení",
-  "autoSpinDesc": "Automaticky točit a dostat výsledek v upozornění"
+  "autoSpinDesc": "Automaticky točit a dostat výsledek v upozornění",
+  "adDialogTitle": "Děkujeme za používání What2Eat!",
+  "adDialogMessage": "Abychom udrželi tuto aplikaci zdarma, podívejte se prosím na krátkou reklamu. To nám pomáhá pokračovat ve zlepšování What2Eat.",
+  "adDialogInfo": "Po shlédnutí reklamy stiskněte tlačítko Točit pro pokračování",
+  "watchAdButton": "Zobrazit Reklamu",
+  "cancelButton": "Zrušit"
 }

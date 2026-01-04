@@ -143,5 +143,10 @@
   "notifyOnlyTitle": "Csak értesítés",
   "notifyOnlyDesc": "Emlékeztető fogadása, app megnyitása kézi forgatáshoz",
   "autoSpinTitle": "Auto-forgatás",
-  "autoSpinDesc": "Automatikus forgatás és eredmény fogadása értesítésben"
+  "autoSpinDesc": "Automatikus forgatás és eredmény fogadása értesítésben",
+  "adDialogTitle": "Köszönjük, hogy használja a What2Eat-et!",
+  "adDialogMessage": "Az alkalmazás ingyenességének megőrzéséhez nézzen meg egy rövid hirdetést. Ez segít nekünk a What2Eat folyamatos fejlesztésében.",
+  "adDialogInfo": "A hirdetés megtekintése után nyomja meg a Pörgetés gombot a folytatáshoz",
+  "watchAdButton": "Hirdetés Megtekintése",
+  "cancelButton": "Mégse"
 }

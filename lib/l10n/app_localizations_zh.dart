@@ -403,4 +403,19 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get autoSpinDesc => '自动转盘并通过通知接收结果';
+
+  @override
+  String get adDialogTitle => '感谢使用 What2Eat！';
+
+  @override
+  String get adDialogMessage => '为了保持应用免费，请观看短广告。这有助于我们继续改进 What2Eat。';
+
+  @override
+  String get adDialogInfo => '观看广告后，按旋转按钮继续';
+
+  @override
+  String get watchAdButton => '观看广告';
+
+  @override
+  String get cancelButton => '取消';
 }

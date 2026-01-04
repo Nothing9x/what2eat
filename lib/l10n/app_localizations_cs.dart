@@ -406,4 +406,21 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get autoSpinDesc => 'Automaticky točit a dostat výsledek v upozornění';
+
+  @override
+  String get adDialogTitle => 'Děkujeme za používání What2Eat!';
+
+  @override
+  String get adDialogMessage =>
+      'Abychom udrželi tuto aplikaci zdarma, podívejte se prosím na krátkou reklamu. To nám pomáhá pokračovat ve zlepšování What2Eat.';
+
+  @override
+  String get adDialogInfo =>
+      'Po shlédnutí reklamy stiskněte tlačítko Točit pro pokračování';
+
+  @override
+  String get watchAdButton => 'Zobrazit Reklamu';
+
+  @override
+  String get cancelButton => 'Zrušit';
 }

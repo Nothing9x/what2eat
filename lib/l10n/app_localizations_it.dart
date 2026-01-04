@@ -407,4 +407,21 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get autoSpinDesc =>
       'Gira automaticamente e ricevi risultato in notifica';
+
+  @override
+  String get adDialogTitle => 'Grazie per aver utilizzato What2Eat!';
+
+  @override
+  String get adDialogMessage =>
+      'Per mantenere questa app gratuita, guarda un breve annuncio. Questo ci aiuta a continuare a migliorare What2Eat.';
+
+  @override
+  String get adDialogInfo =>
+      'Dopo aver visto l\'annuncio, premi il pulsante Gira per continuare';
+
+  @override
+  String get watchAdButton => 'Guarda Annuncio';
+
+  @override
+  String get cancelButton => 'Annulla';
 }

@@ -150,5 +150,10 @@
   "notifyOnlyTitle": "Notify Only",
   "notifyOnlyDesc": "Get a reminder notification, open app to spin manually",
   "autoSpinTitle": "Auto Spin & Notify",
-  "autoSpinDesc": "Automatically spin and get the result in notification"
+  "autoSpinDesc": "Automatically spin and get the result in notification",
+  "adDialogTitle": "Thanks for Using What2Eat!",
+  "adDialogMessage": "To keep this app free, please watch a short ad. This helps us continue improving What2Eat.",
+  "adDialogInfo": "After watching the ad, press the Spin button to continue",
+  "watchAdButton": "Watch Ad",
+  "cancelButton": "Cancel"
 }

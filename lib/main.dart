@@ -25,6 +25,9 @@ void main() async {
   // Initialize AdMob
   await AdService().initialize();
 
+  // Preload first interstitial ad
+  await AdService().loadInterstitialAd();
+
   runApp(What2EatApp(storage: storage, notificationService: notificationService));
 }
 

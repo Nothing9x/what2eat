@@ -129,5 +129,10 @@
   "notifyOnlyTitle": "通知のみ",
   "notifyOnlyDesc": "リマインダー通知を受け取り、アプリを開いて手動で回転",
   "autoSpinTitle": "自動回転",
-  "autoSpinDesc": "自動的に回転し、通知で結果を受け取る"
+  "autoSpinDesc": "自動的に回転し、通知で結果を受け取る",
+  "adDialogTitle": "What2Eatをご利用いただきありがとうございます！",
+  "adDialogMessage": "アプリを無料で提供するため、短い広告をご覧ください。これにより、What2Eatの改善を続けることができます。",
+  "adDialogInfo": "広告を見た後、スピンボタンを押して続ける",
+  "watchAdButton": "広告を見る",
+  "cancelButton": "キャンセル"
 }
