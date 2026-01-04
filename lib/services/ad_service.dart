@@ -13,31 +13,47 @@ class AdService {
   Future<void> initialize() async {
     if (_isInitialized) return;
 
+    // Configure test device for testing real ads before publishing
+    final RequestConfiguration configuration = RequestConfiguration(
+      testDeviceIds: [
+        "3CEEC2ACC6CE6FEF357A197589F988BE", // Your test device
+        // Add more device IDs here if needed
+      ],
+    );
+    MobileAds.instance.updateRequestConfiguration(configuration);
+
     await MobileAds.instance.initialize();
     _isInitialized = true;
   }
 
   /// Banner Ad Unit ID for your app
   /// App ID: ca-app-pub-7177141603793917~8941607826
-  /// Ad Unit ID: ca-app-pub-7177141603793917/9726229975
+  /// Android Main Bottom Banner: ca-app-pub-7177141603793917/2877804494
   ///
-  /// Automatically uses test ads in debug mode and real ads in release mode
+  /// Testing modes:
+  /// 1. For initial testing: Use Google test IDs (useTestAds = true)
+  /// 2. For pre-publish testing: Use your real ad unit ID + add device to testDeviceIds above
+  /// 3. For production: Build in release mode (kDebugMode = false)
+
+  /// Set to false to test your real ad unit (make sure to add your device ID above!)
+  static const bool useTestAds = false;
+
   String get bannerAdUnitId {
-    // Use test ads in debug mode to avoid policy violations
-    if (kDebugMode) {
+    // Use test ads for initial testing
+    if (kDebugMode && useTestAds) {
       // Google's official test ad unit IDs
       if (Platform.isAndroid) {
-        return 'ca-app-pub-3940256099942544/9726229975'; // Test ID
+        return 'ca-app-pub-3940256099942544/6300978111'; // Official Google test banner ID for Android
       } else if (Platform.isIOS) {
-        return 'ca-app-pub-3940256099942544/2934735716'; // Test ID
+        return 'ca-app-pub-3940256099942544/2934735716'; // Official Google test banner ID for iOS
       }
-    } else {
-      // Your real ad unit IDs (production - release mode)
-      if (Platform.isAndroid) {
-        return 'ca-app-pub-7177141603793917/9726229975';
-      } else if (Platform.isIOS) {
-        return 'ca-app-pub-7177141603793917/9726229975';
-      }
+    }
+
+    // Your real ad unit IDs (for testing before publish or production)
+    if (Platform.isAndroid) {
+      return 'ca-app-pub-7177141603793917/2877804494'; // Android Main Bottom Banner
+    } else if (Platform.isIOS) {
+      return 'ca-app-pub-7177141603793917/2877804494'; // iOS (update with iOS ad unit when created)
     }
 
     throw UnsupportedError('Unsupported platform');
