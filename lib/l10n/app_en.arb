@@ -155,5 +155,31 @@
   "adDialogMessage": "To keep this app free, please watch a short ad. This helps us continue improving What2Eat.",
   "adDialogInfo": "After watching the ad, press the Spin button to continue",
   "watchAdButton": "Watch Ad",
-  "cancelButton": "Cancel"
+  "cancelButton": "Cancel",
+  "editFoodTitle": "Edit Food",
+  "addFoodTitle": "Add Food",
+  "iconLabel": "Icon",
+  "iconSelectHint": "Tap to select icon",
+  "foodNameLabel": "Food Name",
+  "foodNameHint": "Ex: Pizza, Burger...",
+  "foodNameRequired": "Please enter food name",
+  "foodNameTooLong": "Name too long (max 50 chars)",
+  "descriptionLabel": "Description (optional)",
+  "descriptionHint": "Ex: Delicious food...",
+  "descriptionTooLong": "Description too long (max 200 chars)",
+  "imageLinkLabel": "Image Link (optional)",
+  "invalidLink": "Invalid link",
+  "updateButton": "Update",
+  "addButton": "Add Food",
+  "deleteButton": "Delete Food",
+  "foodUpdated": "Food updated",
+  "foodAdded": "New food added",
+  "errorLabel": "Error: {error}",
+  "@errorLabel": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  }
 }

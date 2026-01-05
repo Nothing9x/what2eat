@@ -424,4 +424,63 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get cancelButton => 'Anulare';
+
+  @override
+  String get editFoodTitle => 'Edit Food';
+
+  @override
+  String get addFoodTitle => 'Add Food';
+
+  @override
+  String get iconLabel => 'Icon';
+
+  @override
+  String get iconSelectHint => 'Tap to select icon';
+
+  @override
+  String get foodNameLabel => 'Food Name';
+
+  @override
+  String get foodNameHint => 'Ex: Pizza, Burger...';
+
+  @override
+  String get foodNameRequired => 'Please enter food name';
+
+  @override
+  String get foodNameTooLong => 'Name too long (max 50 chars)';
+
+  @override
+  String get descriptionLabel => 'Description (optional)';
+
+  @override
+  String get descriptionHint => 'Ex: Delicious food...';
+
+  @override
+  String get descriptionTooLong => 'Description too long (max 200 chars)';
+
+  @override
+  String get imageLinkLabel => 'Image Link (optional)';
+
+  @override
+  String get invalidLink => 'Invalid link';
+
+  @override
+  String get updateButton => 'Update';
+
+  @override
+  String get addButton => 'Add Food';
+
+  @override
+  String get deleteButton => 'Delete Food';
+
+  @override
+  String get foodUpdated => 'Food updated';
+
+  @override
+  String get foodAdded => 'New food added';
+
+  @override
+  String errorLabel(String error) {
+    return 'Error: $error';
+  }
 }

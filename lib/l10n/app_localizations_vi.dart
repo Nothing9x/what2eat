@@ -421,4 +421,63 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get cancelButton => 'Hủy';
+
+  @override
+  String get editFoodTitle => 'Sửa món ăn';
+
+  @override
+  String get addFoodTitle => 'Thêm món ăn';
+
+  @override
+  String get iconLabel => 'Biểu tượng';
+
+  @override
+  String get iconSelectHint => 'Nhấn để chọn biểu tượng';
+
+  @override
+  String get foodNameLabel => 'Tên món ăn';
+
+  @override
+  String get foodNameHint => 'VD: Phở Bò, Bún Chả...';
+
+  @override
+  String get foodNameRequired => 'Vui lòng nhập tên món ăn';
+
+  @override
+  String get foodNameTooLong => 'Tên quá dài (tối đa 50 ký tự)';
+
+  @override
+  String get descriptionLabel => 'Mô tả (tùy chọn)';
+
+  @override
+  String get descriptionHint => 'VD: Món ăn truyền thống Việt Nam...';
+
+  @override
+  String get descriptionTooLong => 'Mô tả quá dài (tối đa 200 ký tự)';
+
+  @override
+  String get imageLinkLabel => 'Link ảnh (tùy chọn)';
+
+  @override
+  String get invalidLink => 'Link không hợp lệ';
+
+  @override
+  String get updateButton => 'Cập nhật';
+
+  @override
+  String get addButton => 'Thêm món ăn';
+
+  @override
+  String get deleteButton => 'Xóa món ăn';
+
+  @override
+  String get foodUpdated => 'Đã cập nhật món ăn';
+
+  @override
+  String get foodAdded => 'Đã thêm món ăn mới';
+
+  @override
+  String errorLabel(String error) {
+    return 'Lỗi: $error';
+  }
 }

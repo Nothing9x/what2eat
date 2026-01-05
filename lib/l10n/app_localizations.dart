@@ -951,6 +951,120 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Cancel'**
   String get cancelButton;
+
+  /// No description provided for @editFoodTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Food'**
+  String get editFoodTitle;
+
+  /// No description provided for @addFoodTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Food'**
+  String get addFoodTitle;
+
+  /// No description provided for @iconLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Icon'**
+  String get iconLabel;
+
+  /// No description provided for @iconSelectHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to select icon'**
+  String get iconSelectHint;
+
+  /// No description provided for @foodNameLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Food Name'**
+  String get foodNameLabel;
+
+  /// No description provided for @foodNameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Ex: Pizza, Burger...'**
+  String get foodNameHint;
+
+  /// No description provided for @foodNameRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter food name'**
+  String get foodNameRequired;
+
+  /// No description provided for @foodNameTooLong.
+  ///
+  /// In en, this message translates to:
+  /// **'Name too long (max 50 chars)'**
+  String get foodNameTooLong;
+
+  /// No description provided for @descriptionLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Description (optional)'**
+  String get descriptionLabel;
+
+  /// No description provided for @descriptionHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Ex: Delicious food...'**
+  String get descriptionHint;
+
+  /// No description provided for @descriptionTooLong.
+  ///
+  /// In en, this message translates to:
+  /// **'Description too long (max 200 chars)'**
+  String get descriptionTooLong;
+
+  /// No description provided for @imageLinkLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Image Link (optional)'**
+  String get imageLinkLabel;
+
+  /// No description provided for @invalidLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid link'**
+  String get invalidLink;
+
+  /// No description provided for @updateButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Update'**
+  String get updateButton;
+
+  /// No description provided for @addButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Food'**
+  String get addButton;
+
+  /// No description provided for @deleteButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Food'**
+  String get deleteButton;
+
+  /// No description provided for @foodUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Food updated'**
+  String get foodUpdated;
+
+  /// No description provided for @foodAdded.
+  ///
+  /// In en, this message translates to:
+  /// **'New food added'**
+  String get foodAdded;
+
+  /// No description provided for @errorLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Error: {error}'**
+  String errorLabel(String error);
 }
 
 class _AppLocalizationsDelegate

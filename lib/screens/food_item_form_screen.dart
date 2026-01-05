@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../l10n/app_localizations.dart';
 import '../models/food_item.dart';
 import '../providers/category_provider.dart';
 import '../widgets/emoji_picker.dart';
@@ -55,7 +56,7 @@ class _FoodItemFormScreenState extends State<FoodItemFormScreen> {
         backgroundColor: bgColor,
         elevation: 0,
         title: Text(
-          isEditing ? 'Sửa món ăn' : 'Thêm món ăn',
+          isEditing ? AppLocalizations.of(context)!.editFoodTitle : AppLocalizations.of(context)!.addFoodTitle,
           style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
       ),
@@ -88,7 +89,7 @@ class _FoodItemFormScreenState extends State<FoodItemFormScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Biểu tượng',
+          AppLocalizations.of(context)!.iconLabel,
           style: TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.bold,
@@ -113,7 +114,7 @@ class _FoodItemFormScreenState extends State<FoodItemFormScreen> {
                 Text(_selectedEmoji, style: const TextStyle(fontSize: 32)),
                 const SizedBox(width: 16),
                 Text(
-                  'Nhấn để chọn biểu tượng',
+                  AppLocalizations.of(context)!.iconSelectHint,
                   style: TextStyle(
                     color: isDark ? Colors.grey[400] : Colors.grey[600],
                   ),
@@ -131,7 +132,7 @@ class _FoodItemFormScreenState extends State<FoodItemFormScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Tên món ăn',
+          AppLocalizations.of(context)!.foodNameLabel,
           style: TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.bold,
@@ -142,7 +143,7 @@ class _FoodItemFormScreenState extends State<FoodItemFormScreen> {
         TextFormField(
           controller: _nameController,
           decoration: InputDecoration(
-            hintText: 'VD: Phở Bò, Bún Chả...',
+            hintText: AppLocalizations.of(context)!.foodNameHint,
             filled: true,
             fillColor: isDark ? const Color(0xFF2c241b) : Colors.white,
             border: OutlineInputBorder(
@@ -160,10 +161,10 @@ class _FoodItemFormScreenState extends State<FoodItemFormScreen> {
           ),
           validator: (value) {
             if (value == null || value.trim().isEmpty) {
-              return 'Vui lòng nhập tên món ăn';
+              return AppLocalizations.of(context)!.foodNameRequired;
             }
             if (value.trim().length > 50) {
-              return 'Tên quá dài (tối đa 50 ký tự)';
+              return AppLocalizations.of(context)!.foodNameTooLong;
             }
             return null;
           },
@@ -177,7 +178,7 @@ class _FoodItemFormScreenState extends State<FoodItemFormScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Mô tả (tùy chọn)',
+          AppLocalizations.of(context)!.descriptionLabel,
           style: TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.bold,
@@ -189,7 +190,7 @@ class _FoodItemFormScreenState extends State<FoodItemFormScreen> {
           controller: _descriptionController,
           maxLines: 3,
           decoration: InputDecoration(
-            hintText: 'VD: Món ăn truyền thống Việt Nam...',
+            hintText: AppLocalizations.of(context)!.descriptionHint,
             filled: true,
             fillColor: isDark ? const Color(0xFF2c241b) : Colors.white,
             border: OutlineInputBorder(
@@ -207,7 +208,7 @@ class _FoodItemFormScreenState extends State<FoodItemFormScreen> {
           ),
           validator: (value) {
             if (value != null && value.trim().length > 200) {
-              return 'Mô tả quá dài (tối đa 200 ký tự)';
+              return AppLocalizations.of(context)!.descriptionTooLong;
             }
             return null;
           },
@@ -221,7 +222,7 @@ class _FoodItemFormScreenState extends State<FoodItemFormScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Link ảnh (tùy chọn)',
+          AppLocalizations.of(context)!.imageLinkLabel,
           style: TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.bold,
@@ -252,7 +253,7 @@ class _FoodItemFormScreenState extends State<FoodItemFormScreen> {
             if (value != null && value.trim().isNotEmpty) {
               final uri = Uri.tryParse(value.trim());
               if (uri == null || !uri.hasScheme) {
-                return 'Link không hợp lệ';
+                return AppLocalizations.of(context)!.invalidLink;
               }
             }
             return null;
@@ -274,7 +275,7 @@ class _FoodItemFormScreenState extends State<FoodItemFormScreen> {
         ),
       ),
       child: Text(
-        isEditing ? 'Cập nhật' : 'Thêm món ăn',
+        isEditing ? AppLocalizations.of(context)!.updateButton : AppLocalizations.of(context)!.addButton,
         style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
       ),
     );
@@ -291,9 +292,9 @@ class _FoodItemFormScreenState extends State<FoodItemFormScreen> {
         ),
         side: const BorderSide(color: Colors.red),
       ),
-      child: const Text(
-        'Xóa món ăn',
-        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+      child: Text(
+        AppLocalizations.of(context)!.deleteButton,
+        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
       ),
     );
   }
@@ -336,14 +337,14 @@ class _FoodItemFormScreenState extends State<FoodItemFormScreen> {
         Navigator.pop(context);
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(isEditing ? 'Đã cập nhật món ăn' : 'Đã thêm món ăn mới'),
+            content: Text(isEditing ? AppLocalizations.of(context)!.foodUpdated : AppLocalizations.of(context)!.foodAdded),
           ),
         );
       }
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Lỗi: ${e.toString()}')),
+          SnackBar(content: Text(AppLocalizations.of(context)!.errorLabel(e.toString()))),
         );
       }
     }
