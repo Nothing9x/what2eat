@@ -1,7 +1,7 @@
 name: what2eat
-description: A lucky wheel app to decide what to eat
+description: Can't decide what to eat? Spin the wheel and let fate decide! Create custom lists, find nearby restaurants, and make mealtime fun again.
 publish_to: 'none'
-version: 1.0.1+2
+version: 1.0.1+3
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
